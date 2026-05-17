@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Pagină inexistentă | B4B Moldova</title>
+<meta name="description" content="Pagina pe care o cauți nu există sau a fost mutată.">
+<meta name="robots" content="noindex, follow">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23fff' text-anchor='middle' font-weight='400'%3EB4%3Ctspan fill='%23C9A96A'%3EB%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Golos+Text:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#C9A96A;--gold2:#A8843F;
+  --black:#111;--gray1:#444;--gray2:#888;--gray3:#CCC;
+  --line:#E8E8E8;--bg:#fff;--bg2:#F9F9F9;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'Golos Text',sans-serif;
+}
+html,body{height:100%}
+body{
+  background:var(--bg);
+  color:var(--black);
+  font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;
+  font-weight:300;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+/* Simple header */
+.h{
+  padding:1.25rem 7%;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  font-family:var(--serif);
+  font-size:1.65rem;
+  color:var(--black);
+  text-decoration:none;
+  letter-spacing:-0.04em;
+}
+.logo em{color:var(--gold);font-style:normal}
+.h a.back{
+  font-size:0.78rem;
+  color:var(--gray2);
+  text-decoration:none;
+  letter-spacing:0.02em;
+  transition:color 0.2s;
+}
+.h a.back:hover{color:var(--black)}
+
+/* Main */
+main{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:4rem 7%;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Decorative parallax circles */
+.deco{
+  position:absolute;
+  border:1px solid rgba(201,169,106,0.12);
+  border-radius:50%;
+  pointer-events:none;
+}
+.deco-1{width:500px;height:500px;top:-150px;right:-100px;opacity:0.4}
+.deco-2{width:300px;height:300px;bottom:-80px;left:-60px;opacity:0.3}
+.deco-3{width:5px;height:5px;background:var(--gold);border:none;top:30%;right:15%;opacity:0.4}
+.deco-4{width:3px;height:3px;background:var(--gold);border:none;bottom:25%;left:20%;opacity:0.3}
+
+.content{
+  max-width:680px;
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+
+.eyebrow{
+  font-size:0.62rem;
+  font-weight:600;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--gold2);
+  margin-bottom:1.5rem;
+}
+
+.error-code{
+  font-family:var(--serif);
+  font-size:clamp(7rem,18vw,12rem);
+  line-height:1;
+  letter-spacing:-0.04em;
+  color:var(--black);
+  margin-bottom:0.5rem;
+  font-style:italic;
+}
+.error-code em{color:var(--gold);font-style:normal}
+
+h1{
+  font-family:var(--serif);
+  font-size:clamp(1.5rem,3vw,2.25rem);
+  font-weight:400;
+  letter-spacing:-0.02em;
+  line-height:1.2;
+  color:var(--black);
+  margin-bottom:1.25rem;
+}
+
+.lead{
+  font-size:1rem;
+  color:var(--gray1);
+  line-height:1.75;
+  max-width:520px;
+  margin:0 auto 2.5rem;
+}
+
+.actions{
+  display:flex;
+  gap:1.5rem;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.btn-primary{
+  display:inline-block;
+  background:var(--black);
+  color:#fff;
+  padding:1rem 1.75rem;
+  font-size:0.78rem;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:background 0.2s;
+}
+.btn-primary:hover{background:var(--gold2)}
+.btn-secondary{
+  display:inline-block;
+  color:var(--black);
+  padding:1rem 0;
+  font-size:0.78rem;
+  font-weight:500;
+  letter-spacing:0.02em;
+  text-decoration:none;
+  border-bottom:1px solid var(--gold);
+  transition:color 0.2s;
+}
+.btn-secondary:hover{color:var(--gold2)}
+
+/* Helpful links */
+.helpful{
+  margin-top:4rem;
+  padding-top:3rem;
+  border-top:1px solid var(--line);
+  max-width:680px;
+}
+.helpful-label{
+  font-size:0.62rem;
+  font-weight:600;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--gray2);
+  margin-bottom:1.5rem;
+  text-align:center;
+}
+.helpful-links{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.helpful-links a{
+  background:var(--bg);
+  padding:1.25rem 1.5rem;
+  text-decoration:none;
+  color:var(--black);
+  transition:background 0.2s;
+  display:flex;
+  flex-direction:column;
+  gap:0.3rem;
+}
+.helpful-links a:hover{background:#fafaf8}
+.helpful-links a .title{
+  font-family:var(--serif);
+  font-size:1rem;
+  letter-spacing:-0.01em;
+}
+.helpful-links a .desc{
+  font-size:0.72rem;
+  color:var(--gray2);
+  font-weight:300;
+}
+
+/* Footer */
+.f{
+  padding:1.5rem 7%;
+  border-top:1px solid var(--line);
+  background:var(--bg2);
+  font-size:0.7rem;
+  color:var(--gray3);
+  text-align:center;
+}
+
+@media(max-width:768px){
+  .helpful-links{grid-template-columns:1fr}
+  .actions{flex-direction:column;align-items:stretch}
+  .actions a{text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header class="h">
+  <a href="/" class="logo">B4<em>B</em></a>
+  <a href="/" class="back">← Pagina principală</a>
+</header>
+
+<main>
+  <!-- Decorative -->
+  <div class="deco deco-1"></div>
+  <div class="deco deco-2"></div>
+  <div class="deco deco-3"></div>
+  <div class="deco deco-4"></div>
+
+  <div class="content">
+    <div class="eyebrow">Eroare 404</div>
+    <div class="error-code">4<em>0</em>4</div>
+    <h1>Pagina căutată<br><em style="font-style:italic;color:var(--gold)">nu există.</em></h1>
+    <p class="lead">
+      Link-ul pe care l-ai accesat e probabil învechit, ai tastat o adresă greșită, sau pagina a fost mutată în timp ce restructuram conținutul. Hai să te ducem înapoi pe drumul cel bun.
+    </p>
+    <div class="actions">
+      <a href="/" class="btn-primary">Înapoi acasă →</a>
+      <a href="/#contact" class="btn-secondary">Contactează-ne</a>
+    </div>
+
+    <!-- Helpful links -->
+    <div class="helpful">
+      <div class="helpful-label">Sau încearcă una dintre aceste secțiuni</div>
+      <div class="helpful-links">
+        <a href="/#services">
+          <span class="title">Servicii</span>
+          <span class="desc">Cele 4 pachete de consultanță</span>
+        </a>
+        <a href="/#cases">
+          <span class="title">Studii de caz</span>
+          <span class="desc">Proiecte cu rezultate reale</span>
+        </a>
+        <a href="/#resources">
+          <span class="title">Ghid gratuit</span>
+          <span class="desc">7 procese pierdute · PDF 22p</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="f">© 2026 B4B Moldova · Business for Business · Chișinău</footer>
+
+</body>
+</html>

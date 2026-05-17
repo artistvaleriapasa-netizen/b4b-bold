@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://b4biz.md/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://b4biz.md/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://b4biz.md/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://b4biz.md/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://b4biz.md/"/>
+  </url>
+
+  <!-- Press kit -->
+  <url>
+    <loc>https://b4biz.md/press</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Legal pages -->
+  <url>
+    <loc>https://b4biz.md/privacy</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://b4biz.md/terms</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://b4biz.md/cookies</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Anchored sections -->
+  <url><loc>https://b4biz.md/#about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://b4biz.md/#team</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://b4biz.md/#services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://b4biz.md/#industries</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://b4biz.md/#cases</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://b4biz.md/#pricing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://b4biz.md/#resources</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://b4biz.md/#newsletter</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://b4biz.md/#faq</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://b4biz.md/#contact</loc><changefreq>yearly</changefreq><priority>0.9</priority></url>
+
+  <!-- Lead magnet -->
+  <url>
+    <loc>https://b4biz.md/B4B_Ghid_7_Procese_2026.pdf</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

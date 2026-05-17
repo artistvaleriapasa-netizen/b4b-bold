@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press Kit | B4B Moldova</title>
+<meta name="description" content="Resurse pentru jurnaliști și parteneri media: logo-uri, fact sheet, contact PR, fotografii echipă.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://b4biz.md/press">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23fff' text-anchor='middle'%3EB4%3Ctspan fill='%23C9A96A'%3EB%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Golos+Text:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#C9A96A;--gold2:#A8843F;
+  --black:#111;--gray1:#444;--gray2:#888;--gray3:#CCC;
+  --line:#E8E8E8;--bg:#fff;--bg2:#F9F9F9;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'Golos Text',sans-serif;
+}
+body{background:var(--bg);color:var(--black);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.7}
+
+.h{padding:1.25rem 7%;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);z-index:100}
+.logo{font-family:var(--serif);font-size:1.65rem;color:var(--black);text-decoration:none;letter-spacing:-0.04em}
+.logo em{color:var(--gold);font-style:normal}
+.h a.back{font-size:0.78rem;color:var(--gray2);text-decoration:none;letter-spacing:0.02em;transition:color 0.2s}
+.h a.back:hover{color:var(--black)}
+
+.hero{padding:6rem 7% 4rem;border-bottom:1px solid var(--line);max-width:1000px;margin:0 auto}
+.eyebrow{font-size:0.62rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:1rem}
+h1{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);font-weight:400;letter-spacing:-0.025em;line-height:1.1;color:var(--black);margin-bottom:1.5rem}
+h1 em{color:var(--gold);font-style:italic}
+.lead{font-size:1.1rem;color:var(--gray1);line-height:1.75;max-width:680px}
+
+main{max-width:1000px;margin:0 auto;padding:4rem 7% 6rem}
+
+section{margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid var(--line)}
+section:last-child{border-bottom:none}
+
+h2{font-family:var(--serif);font-size:1.75rem;font-weight:400;letter-spacing:-0.015em;color:var(--black);margin-bottom:1.5rem}
+
+p{font-size:0.95rem;color:var(--gray1);margin-bottom:1.25rem;line-height:1.75}
+
+/* Fact sheet grid */
+.facts-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  margin-top:2rem;
+}
+.fact{
+  background:#fff;
+  padding:2rem 1.5rem;
+  text-align:center;
+}
+.fact-n{
+  font-family:var(--serif);
+  font-size:2.5rem;
+  font-style:italic;
+  color:var(--black);
+  letter-spacing:-0.02em;
+  line-height:1;
+  margin-bottom:0.5rem;
+}
+.fact-n em{color:var(--gold);font-style:italic}
+.fact-l{
+  font-size:0.7rem;
+  font-weight:500;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--gray2);
+}
+
+/* Logo downloads */
+.logos-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+  margin-top:2rem;
+}
+.logo-card{
+  border:1px solid var(--line);
+  padding:2rem;
+  text-align:center;
+  transition:border-color 0.2s;
+}
+.logo-card:hover{border-color:var(--gold)}
+.logo-preview{
+  height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:1.25rem;
+  font-family:var(--serif);
+  font-size:2.25rem;
+  letter-spacing:-0.04em;
+}
+.logo-light{background:#fff;color:var(--black)}
+.logo-light em{color:var(--gold);font-style:normal}
+.logo-dark{background:var(--black);color:#fff}
+.logo-dark em{color:var(--gold);font-style:normal}
+.logo-mono{background:#fff;color:var(--black)}
+.logo-mono em{color:var(--black);font-style:normal}
+.logo-name{
+  font-family:var(--serif);
+  font-size:1rem;
+  margin-bottom:0.4rem;
+  color:var(--black);
+}
+.logo-desc{
+  font-size:0.7rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--gray2);
+  margin-bottom:1rem;
+}
+.dl-btn{
+  display:inline-block;
+  font-size:0.7rem;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--gold2);
+  text-decoration:none;
+  border-bottom:1px solid var(--gold);
+  padding-bottom:2px;
+  transition:color 0.2s;
+}
+.dl-btn:hover{color:var(--black)}
+
+/* Boilerplate */
+.boilerplate{
+  background:var(--bg2);
+  padding:2rem;
+  border-left:2px solid var(--gold);
+  margin-top:1.5rem;
+  font-size:0.92rem;
+  line-height:1.8;
+  color:var(--gray1);
+}
+
+/* Contact card */
+.press-contact{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:3rem;
+  align-items:center;
+  padding:2.5rem;
+  border:1px solid var(--line);
+  background:var(--bg2);
+}
+.pc-avatar{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#F5F3EF 0%,#E8DFC9 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--serif);
+  font-size:3rem;
+  color:var(--gold2);
+  font-style:italic;
+}
+.pc-info{}
+.pc-name{
+  font-family:var(--serif);
+  font-size:1.4rem;
+  letter-spacing:-0.01em;
+  margin-bottom:0.4rem;
+}
+.pc-role{
+  font-size:0.7rem;
+  font-weight:500;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--gold2);
+  margin-bottom:1rem;
+}
+.pc-contact a{
+  display:block;
+  font-size:0.92rem;
+  color:var(--gray1);
+  text-decoration:none;
+  padding:0.4rem 0;
+  border-bottom:1px solid var(--line);
+  transition:color 0.2s;
+}
+.pc-contact a:hover{color:var(--gold2)}
+
+a:not(.dl-btn):not(.pc-contact a){color:var(--gold2);text-decoration:none;border-bottom:1px solid var(--gold);transition:color 0.2s}
+a:hover{color:var(--black)}
+
+.f{padding:2rem 7%;border-top:1px solid var(--line);background:var(--bg2);font-size:0.72rem;color:var(--gray3);text-align:center}
+
+@media(max-width:768px){
+  .facts-grid{grid-template-columns:repeat(2,1fr)}
+  .logos-grid{grid-template-columns:1fr}
+  .press-contact{grid-template-columns:1fr;gap:1.5rem;text-align:center}
+  .pc-avatar{margin:0 auto}
+}
+</style>
+</head>
+<body>
+
+<header class="h">
+  <a href="/" class="logo">B4<em>B</em></a>
+  <a href="/" class="back">← Înapoi pe site</a>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">Press kit · pentru jurnaliști și parteneri media</div>
+  <h1>Resurse <em>media</em></h1>
+  <p class="lead">
+    Tot ce ai nevoie pentru a scrie despre B4B Moldova — logo-uri în toate formatele, descrieri pe diferite lungimi, fact sheet, fotografii echipă și contact PR direct.
+  </p>
+</section>
+
+<main>
+
+  <!-- Fact sheet -->
+  <section>
+    <h2>Despre B4B (fact sheet)</h2>
+    <p>
+      <strong>B4B Moldova</strong> este o firmă de consultanță înființată în 2026 la Chișinău, specializată în optimizarea proceselor operaționale și implementarea de soluții digitale pentru companii medii din Republica Moldova și regiunea Europei de Est.
+    </p>
+    <p>
+      Spre deosebire de modelul tradițional de consultanță (recomandări fără implementare), B4B oferă <strong>execuție end-to-end</strong> — de la diagnostic la livrarea sistemelor și training-ul echipelor, cu garanții contractuale legate de rezultate.
+    </p>
+
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-n">2026</div>
+        <div class="fact-l">Anul fondării</div>
+      </div>
+      <div class="fact">
+        <div class="fact-n">10<em>+</em></div>
+        <div class="fact-l">Companii deservite</div>
+      </div>
+      <div class="fact">
+        <div class="fact-n">1.6<em>×</em></div>
+        <div class="fact-l">ROI mediu</div>
+      </div>
+      <div class="fact">
+        <div class="fact-n">4.9<em>★</em></div>
+        <div class="fact-l">Scor satisfacție</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Boilerplate -->
+  <section>
+    <h2>Despre B4B (boilerplate)</h2>
+    <p style="color:var(--gray2);font-size:0.85rem;font-style:italic;font-family:var(--serif)">Versiune scurtă (până în 60 cuvinte):</p>
+    <div class="boilerplate">
+      B4B Moldova este o firmă de consultanță fondată în 2026 la Chișinău, specializată în optimizarea proceselor operaționale și transformarea digitală a companiilor medii. Cu un portofoliu inițial de companii din diverse industrii (beauty, sănătate, mobilitate, construcții), B4B se diferențiază prin execuție end-to-end și garanții contractuale pentru rezultate — clauză de extindere fără cost până la atingerea KPI-urilor agreate.
+    </div>
+
+    <p style="color:var(--gray2);font-size:0.85rem;font-style:italic;font-family:var(--serif);margin-top:2rem">Versiune extinsă (până în 120 cuvinte):</p>
+    <div class="boilerplate">
+      B4B Moldova este o firmă de consultanță înființată în 2026, cu sediul în Chișinău, specializată în transformarea digitală și optimizarea operațională a companiilor medii din Republica Moldova și Europa de Est. Cu un portofoliu inițial de companii din diverse industrii (beauty & lifestyle, sănătate, parking & mobilitate, construcții), B4B se diferențiază prin abordarea end-to-end — de la diagnostic riguros la implementare, training și măsurare rezultate. Compania oferă garanții contractuale unice pe piața moldovenească: clauză de anulare fără penalități în primele 30 de zile și extindere gratuită a implementării până la atingerea KPI-urilor agreate. Rezultatele tipice ale clienților: reducere costuri operaționale de 22%, recuperare investiție în luna 9, ROI mediu 1.6× în primul an.
+    </div>
+  </section>
+
+  <!-- Logo downloads -->
+  <section>
+    <h2>Logo & brand assets</h2>
+    <p>Logo-uri B4B în toate formatele necesare. Folosește versiunea light pe fundal alb/luminos, versiunea dark pe fundal închis, versiunea monocrome pentru print sau materiale unde nu poți folosi auriu.</p>
+
+    <div class="logos-grid">
+      <div class="logo-card">
+        <div class="logo-preview logo-light">B4<em>B</em></div>
+        <div class="logo-name">B4B · Light</div>
+        <div class="logo-desc">SVG · PNG · pentru fundal alb</div>
+        <a href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 80'%3E%3Ctext x='0' y='60' font-family='Georgia,serif' font-size='72' font-weight='400'%3EB4%3Ctspan fill='%23C9A96A'%3EB%3C/tspan%3E%3C/text%3E%3C/svg%3E" download="b4b-logo-light.svg" class="dl-btn">Descarcă SVG →</a>
+      </div>
+      <div class="logo-card">
+        <div class="logo-preview logo-dark">B4<em>B</em></div>
+        <div class="logo-name">B4B · Dark</div>
+        <div class="logo-desc">SVG · PNG · pentru fundal negru</div>
+        <a href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 80'%3E%3Crect width='240' height='80' fill='%23111'/%3E%3Ctext x='40' y='60' font-family='Georgia,serif' font-size='72' fill='%23fff' font-weight='400'%3EB4%3Ctspan fill='%23C9A96A'%3EB%3C/tspan%3E%3C/text%3E%3C/svg%3E" download="b4b-logo-dark.svg" class="dl-btn">Descarcă SVG →</a>
+      </div>
+      <div class="logo-card">
+        <div class="logo-preview logo-mono">B4<em>B</em></div>
+        <div class="logo-name">B4B · Monocrome</div>
+        <div class="logo-desc">SVG · pentru print / fax</div>
+        <a href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 80'%3E%3Ctext x='0' y='60' font-family='Georgia,serif' font-size='72' font-weight='400'%3EB4B%3C/text%3E%3C/svg%3E" download="b4b-logo-mono.svg" class="dl-btn">Descarcă SVG →</a>
+      </div>
+    </div>
+
+    <p style="margin-top:2.5rem;font-size:0.85rem;color:var(--gray2);font-style:italic;font-family:var(--serif)">
+      Pentru variante PNG la rezoluții specifice sau pentru spațiu de respirație în jurul logo-ului (clear space), contactează-ne la <a href="mailto:b4b@gmail.com">b4b@gmail.com</a>.
+    </p>
+  </section>
+
+  <!-- Brand colors -->
+  <section>
+    <h2>Paletă de culori</h2>
+    <p>Identitatea vizuală B4B folosește o paletă editorial-minimalistă, restrânsă intentionat pentru a comunica seriozitate și încredere.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2rem" class="colors-grid">
+      <div>
+        <div style="height:80px;background:#111;margin-bottom:0.625rem"></div>
+        <div style="font-family:var(--serif);font-size:0.92rem;color:var(--black)">Black</div>
+        <div style="font-size:0.7rem;color:var(--gray2);font-family:'Courier New',monospace;letter-spacing:0.05em">#111111</div>
+      </div>
+      <div>
+        <div style="height:80px;background:#C9A96A;margin-bottom:0.625rem"></div>
+        <div style="font-family:var(--serif);font-size:0.92rem;color:var(--black)">Gold</div>
+        <div style="font-size:0.7rem;color:var(--gray2);font-family:'Courier New',monospace;letter-spacing:0.05em">#C9A96A</div>
+      </div>
+      <div>
+        <div style="height:80px;background:#A8843F;margin-bottom:0.625rem"></div>
+        <div style="font-family:var(--serif);font-size:0.92rem;color:var(--black)">Gold dark</div>
+        <div style="font-size:0.7rem;color:var(--gray2);font-family:'Courier New',monospace;letter-spacing:0.05em">#A8843F</div>
+      </div>
+      <div>
+        <div style="height:80px;background:#F9F9F9;border:1px solid var(--line);margin-bottom:0.625rem"></div>
+        <div style="font-family:var(--serif);font-size:0.92rem;color:var(--black)">Light gray</div>
+        <div style="font-size:0.7rem;color:var(--gray2);font-family:'Courier New',monospace;letter-spacing:0.05em">#F9F9F9</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resurse downloads -->
+  <section>
+    <h2>Resurse pentru articole</h2>
+    <p>Materiale gata pentru a fi folosite în articole, comunicate de presă sau ca surse:</p>
+
+    <ul style="list-style:none;padding-left:0;margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem">
+      <li style="padding:1.25rem 1.5rem;border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:1rem">
+        <div>
+          <div style="font-family:var(--serif);font-size:1rem;margin-bottom:0.2rem">Ghid: 7 procese pierdute lunar de IMM-uri</div>
+          <div style="font-size:0.78rem;color:var(--gray2);font-weight:300">PDF · 22 pagini · Limba română · Cifre piață 2026</div>
+        </div>
+        <a href="/B4B_Ghid_7_Procese_2026.pdf" target="_blank" rel="noopener" class="dl-btn">Descarcă →</a>
+      </li>
+      <li style="padding:1.25rem 1.5rem;border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:1rem">
+        <div>
+          <div style="font-family:var(--serif);font-size:1rem;margin-bottom:0.2rem">Site oficial B4B Moldova</div>
+          <div style="font-size:0.78rem;color:var(--gray2);font-weight:300">Pagina principală · multilingv RO/EN/RU</div>
+        </div>
+        <a href="/" class="dl-btn">Vizitează →</a>
+      </li>
+      <li style="padding:1.25rem 1.5rem;border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:1rem">
+        <div>
+          <div style="font-family:var(--serif);font-size:1rem;margin-bottom:0.2rem">Social preview image</div>
+          <div style="font-size:0.78rem;color:var(--gray2);font-weight:300">JPG · 1200×630px · pentru distribuție social media</div>
+        </div>
+        <a href="/og-image.jpg" target="_blank" rel="noopener" class="dl-btn">Descarcă →</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Press contact -->
+  <section>
+    <h2>Contact press</h2>
+    <p>Pentru interviuri, comentarii pe teme economice/operaționale sau colaborări media:</p>
+
+    <div class="press-contact">
+      <div class="pc-avatar">EB</div>
+      <div class="pc-info">
+        <div class="pc-name">Evgheni Bratu</div>
+        <div class="pc-role">CEO · Co-fondator</div>
+        <div class="pc-contact">
+          <a href="mailto:b4b@gmail.com">b4b@gmail.com</a>
+          <a href="tel:+37378000019">+373 78 000 019</a>
+          <a href="https://linkedin.com/company/b4b-md" target="_blank" rel="noopener">LinkedIn B4B Moldova</a>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:2rem;font-size:0.85rem;color:var(--gray2);font-style:italic;font-family:var(--serif)">
+      Răspundem solicitărilor media în maximum 4 ore în zilele lucrătoare. Pentru declarații oficiale sau interviuri filmate, oferim disponibilitate în max. 48h.
+    </p>
+  </section>
+
+</main>
+
+<footer class="f">© 2026 B4B Moldova · Business for Business · Chișinău</footer>
+
+</body>
+</html>

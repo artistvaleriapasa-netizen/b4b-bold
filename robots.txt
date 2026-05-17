@@ -1,0 +1,21 @@
+# robots.txt for b4biz.md
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+Sitemap: https://b4biz.md/sitemap.xml
