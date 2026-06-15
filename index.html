@@ -1912,13 +1912,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
   <ul class="nav-links">
     <li></li>
-    <li><a href="#calculator" data-i18n="nav.calc">Calculator</a></li>
     <li><a href="#concepts" data-i18n="nav.concepts">Glosar</a></li><li><a href="#services" data-i18n="nav.services">Servicii</a></li>
     <li><a href="#cases" data-i18n="nav.cases">Proiecte</a></li>
     <li><a href="#pricing" data-i18n="nav.pricing">Prețuri</a></li>
     <li><a href="#resources" data-i18n="nav.resources">Ghid</a></li>
-    <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
-  </ul>
+    </ul>
 
   <div class="nav-right">
     <div class="lang-switcher">
@@ -1942,13 +1940,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   <div class="mobile-menu-inner">
     <ul class="mobile-nav-links">
       <li></li>
-      <li><a href="#calculator" data-i18n="nav.calc">Calculator</a></li>
       <li><a href="#concepts" data-i18n="nav.concepts">Glosar</a></li><li><a href="#services" data-i18n="nav.services">Servicii</a></li>
       <li><a href="#cases" data-i18n="nav.cases">Proiecte</a></li>
       <li><a href="#pricing" data-i18n="nav.pricing">Prețuri</a></li>
       <li><a href="#resources" data-i18n="nav.resources">Ghid</a></li>
-      <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
-    </ul>
+      </ul>
     <div class="mobile-menu-footer">
       <a href="#contact" class="btn-primary" data-i18n="nav.cta">Discută cu noi</a>
       <div class="mobile-lang-switcher">
@@ -2171,7 +2167,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 <!-- ═══════════════════════════════════════════════════════════════════
      CALCULATOR - ROI estimator interactiv (Bold modern style)
      ═══════════════════════════════════════════════════════════════════ -->
-<section style="padding:100px 32px;background:#fff;position:relative;overflow:hidden" id="calculator">
+<section style="display:none;padding:100px 32px;background:#fff;position:relative;overflow:hidden" id="calculator">
   <div style="position:absolute;bottom:-200px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(236,72,153,0.05) 0%,transparent 70%);border-radius:50%;pointer-events:none"></div>
   <div class="section-inner" style="position:relative;z-index:1">
     <div class="section-header-center">
@@ -3645,7 +3641,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 <!-- ═══════════════════════════════════════════════════════════════════
      PROCESS
      ═══════════════════════════════════════════════════════════════════ -->
-<section class="process" id="process">
+<section class="process" id="process" style="display:none" data-hidden-sales="true">
   <div class="section-inner">
     <div class="section-header-center">
       <div class="section-eyebrow" data-i18n="process.eyebrow">Cum lucrăm</div>
@@ -4009,7 +4005,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 <!-- ═══════════════════════════════════════════════════════════════════
      FAQ
      ═══════════════════════════════════════════════════════════════════ -->
-<section class="faq" id="faq">
+<section class="faq" id="faq" style="display:none" data-hidden-sales="true">
   <div class="section-inner">
     <div class="section-header-center">
       <div class="section-eyebrow" data-i18n="faq.eyebrow">Întrebări frecvente</div>
@@ -4231,7 +4227,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
      ═══════════════════════════════════════════════════════════════════ -->
 
 <!-- ─────────────────────── LOCAȚIE & HARTĂ ─────────────────────── -->
-<section style="background:#fff;padding:80px 32px;border-top:1px solid #E5E5EA" id="location">
+<section style="display:none;background:#fff;padding:80px 32px;border-top:1px solid #E5E5EA" id="location">
   <div style="max-width:1280px;margin:0 auto">
     <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center" class="loc-grid">
       
@@ -4433,7 +4429,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       <div class="footer-col">
         <h4 data-i18n="footer.col3">Resurse</h4>
         <ul class="footer-links">
-          <li><a href="#faq" data-i18n="footer.l3_1">FAQ</a></li>
           <li><a href="#pricing" data-i18n="footer.l3_2">Prețuri</a></li>
           <li><a href="/press" data-i18n="footer.l3_3">Press kit</a></li>
           <li><a href="/B4B_Ghid_7_Procese_2026.pdf" data-i18n="footer.l3_4">Ghid gratuit</a></li>
