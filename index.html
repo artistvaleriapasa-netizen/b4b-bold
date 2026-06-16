@@ -3458,19 +3458,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     <div class="section-header-center">
       <div class="section-eyebrow" data-i18n="cases.eyebrow">Proiecte recente</div>
       <h2 class="section-h">
-        <span data-i18n="cases.h1">Rezultate documentate,</span>
-        <span class="gradient-text" data-i18n="cases.h2">clienți reali.</span>
+        <span data-i18n="cases.h1">Portofoliul nostru,</span>
+        <span class="gradient-text" data-i18n="cases.h2">pe industrii.</span>
       </h2>
-      <p class="section-sub" data-i18n="cases.sub">
-        Zece exemple — patru clienți reali și șase produse interne B4B per vertical industrie. Toate cu mockup-uri, stack tehnic și data realistă.
-      </p>
+      <p class="section-sub" data-i18n="cases.sub">Zece proiecte din portofoliul B4B — sisteme verticale construite pentru industrii diferite. Fiecare cu mockup-uri și funcționalități reale. Click pe orice card pentru detalii.</p>
     </div>
 
-    <!-- Tab toggle: Clienti reali vs Produse interne -->
-    <div class="cases-tabs" style="display:flex;justify-content:center;gap:8px;margin:0 auto 48px;background:#FAFAFC;border:1px solid #E5E5EA;border-radius:14px;padding:6px;max-width:520px;width:fit-content">
-      <button id="tab-real" onclick="showCases('real')" style="flex:1;padding:12px 24px;border:0;background:#5046E5;color:#fff;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;transition:all 0.2s;font-family:inherit">Clienți reali · 4</button>
-      <button id="tab-internal" onclick="showCases('internal')" style="flex:1;padding:12px 24px;border:0;background:transparent;color:#6B6B7B;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;transition:all 0.2s;font-family:inherit">Produse interne B4B · 6</button>
-    </div>
+    
 
     <div class="cases-grid" id="cases-real">
       <a href="/cases/artist-by-valeria/" class="case-card" style="text-decoration:none;color:inherit;display:block">
@@ -3567,7 +3561,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     </div>
 
     <!-- Internal B4B products (6) -->
-    <div class="cases-grid" id="cases-internal" style="display:none">
+    <div class="cases-grid" id="cases-internal">
       <a href="/cases/bistro/" class="case-card" style="text-decoration:none;color:inherit;display:block">
         <div style="display:inline-block;padding:4px 10px;background:rgba(80,70,229,0.1);color:#5046E5;border-radius:6px;font-size:10px;font-weight:700;letter-spacing:1px;margin-bottom:12px">PRODUS INTERN B4B</div>
         <div class="case-client">Bistro</div>
@@ -3713,29 +3707,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       </a>
     </div>
 
-    <script>
-      function showCases(type) {
-        const real = document.getElementById('cases-real');
-        const internal = document.getElementById('cases-internal');
-        const tabReal = document.getElementById('tab-real');
-        const tabInternal = document.getElementById('tab-internal');
-        if (type === 'real') {
-          real.style.display = 'grid';
-          internal.style.display = 'none';
-          tabReal.style.background = '#5046E5';
-          tabReal.style.color = '#fff';
-          tabInternal.style.background = 'transparent';
-          tabInternal.style.color = '#6B6B7B';
-        } else {
-          real.style.display = 'none';
-          internal.style.display = 'grid';
-          tabInternal.style.background = '#5046E5';
-          tabInternal.style.color = '#fff';
-          tabReal.style.background = 'transparent';
-          tabReal.style.color = '#6B6B7B';
-        }
-      }
-    </script>
+    
   </div>
 </section>
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -5474,17 +5446,17 @@ const translations = {
     "ru": "Реальные кейсы"
   },
   "cases.h1": {
-    "ro": "Rezultate documentate,",
-    "en": "Documented results,",
-    "ru": "Задокументированные результаты,"
+    "ro": "Portofoliul nostru,",
+    "en": "Our portfolio,",
+    "ru": "Наше портфолио,"
   },
   "cases.h2": {
-    "ro": "clienți reali.",
-    "en": "real clients.",
-    "ru": "реальные клиенты."
+    "ro": "pe industrii.",
+    "en": "by industry.",
+    "ru": "по отраслям."
   },
   "cases.sub": {
-    "ro": "Patru clienți care ne-au dat acces să le construim sistemele și șase soluții verticale dezvoltate intern — toate cu mockup-uri, stack tehnic și data reală. Click pe orice card să intri în detalii.",
+    "ro": "Zece proiecte din portofoliul B4B — sisteme verticale construite pentru industrii diferite. Fiecare cu mockup-uri și funcționalități reale. Click pe orice card pentru detalii.",
     "en": "Four clients who gave us access to build their systems and six internally developed vertical solutions — all with mockups, tech stack and real data. Click any card for details.",
     "ru": "Четыре клиента, доверивших нам построить их системы, и шесть внутренних вертикальных решений — со скриншотами, стеком и реальными данными. Кликни любую карточку."
   },
