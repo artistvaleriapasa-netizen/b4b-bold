@@ -1906,6 +1906,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   ]
 }
 </script>
+
+<style id="b4b-collapse-css">
+.b4b-more-wrap{text-align:center;margin-top:40px}
+.b4b-more-btn{font-family:inherit;font-size:15px;font-weight:600;color:#5046E5;background:#fff;border:1.5px solid #5046E5;border-radius:999px;padding:13px 30px;cursor:pointer;transition:background .2s,color .2s;letter-spacing:.01em}
+.b4b-more-btn:hover{background:#5046E5;color:#fff}
+.b4b-more-btn:focus-visible{outline:2px solid #5046E5;outline-offset:3px}
+</style>
+
 </head>
 <body>
 
@@ -6913,6 +6921,56 @@ if('serviceWorker' in navigator && location.protocol === 'https:'){
     navigator.serviceWorker.register('/sw.js').catch(()=>{});
   });
 }
+})();
+</script>
+
+
+<script>
+/* B4B progressive disclosure — built at runtime, no markup changes */
+(function(){
+  var GROUPS = [
+    {sel:'.concepts-grid', visible:3, ro:'Vezi toți cei 6 termeni', en:'See all 6 terms', ru:'Показать все 6 терминов', mode:'children'},
+    {sel:'.industries-grid', visible:6, ro:'Vezi toate cele 12 industrii', en:'See all 12 industries', ru:'Показать все 12 отраслей', mode:'children'},
+    {sel:'#cases-internal', visible:0, ro:'Vezi toate proiectele B4B (6)', en:'See all B4B projects (6)', ru:'Все проекты B4B (6)', mode:'whole'},
+    {sel:'.team-grid', visible:3, ro:'Vezi toată echipa (5)', en:'See full team (5)', ru:'Вся команда (5)', mode:'children'}
+  ];
+  var LESS = {ro:'Arată mai puțin', en:'Show less', ru:'Свернуть'};
+  function lang(){
+    var a=document.querySelector('[data-lang].active');
+    if(a&&a.getAttribute('data-lang')) return a.getAttribute('data-lang');
+    var h=(document.documentElement.lang||'ro').slice(0,2).toLowerCase();
+    return ['ro','en','ru'].indexOf(h)>=0?h:'ro';
+  }
+  var items=[];
+  function elKids(el){return Array.prototype.filter.call(el.childNodes,function(n){return n.nodeType===1;});}
+  GROUPS.forEach(function(g){
+    var el=document.querySelector(g.sel); if(!el) return;
+    var kids=g.mode==='children'?elKids(el):[];
+    if(g.mode==='children' && kids.length<=g.visible) return; /* nothing to hide */
+    var btn=document.createElement('button');
+    btn.type='button'; btn.className='b4b-more-btn';
+    btn.setAttribute('data-ro',g.ro); btn.setAttribute('data-en',g.en); btn.setAttribute('data-ru',g.ru);
+    var wrap=document.createElement('div'); wrap.className='b4b-more-wrap'; wrap.appendChild(btn);
+    el.insertAdjacentElement('afterend',wrap);
+    var it={btn:btn,el:el,g:g,kids:kids,open:false};
+    function apply(){
+      if(g.mode==='whole'){ el.style.display = it.open?'' : 'none'; }
+      else { it.kids.forEach(function(k,i){ k.style.display=(it.open||i<g.visible)?'':'none'; }); }
+    }
+    apply();
+    btn.addEventListener('click',function(){
+      it.open=!it.open; apply(); label(it);
+      if(!it.open) wrap.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+    items.push(it);
+  });
+  function label(it){
+    var l=lang();
+    it.btn.textContent = it.open ? (LESS[l]||LESS.ro) : (it.btn.getAttribute('data-'+l)||it.btn.getAttribute('data-ro'));
+  }
+  function refresh(){ items.forEach(label); }
+  refresh();
+  document.querySelectorAll('[data-lang]').forEach(function(x){ x.addEventListener('click',function(){ setTimeout(refresh,60); }); });
 })();
 </script>
 
