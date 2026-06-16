@@ -1719,6 +1719,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   outline:2px solid var(--primary);
   outline-offset:2px;
 }
+
+@media(max-width:1100px){.concepts-grid-responsive{grid-template-columns:repeat(2,1fr) !important}}
+@media(max-width:700px){.concepts-grid-responsive{grid-template-columns:1fr !important}}
 </style>
 
 <script type="application/ld+json">
@@ -1984,20 +1987,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
     <div class="hero-kpis reveal">
       <div class="hero-kpi">
-        <div class="num">1.6×</div>
-        <div class="lbl" data-i18n="hero.kpi1">ROI mediu țintit</div>
+        <div class="num">14</div>
+        <div class="lbl" data-i18n="hero.kpi1">Verticale specializate</div>
       </div>
       <div class="hero-kpi">
-        <div class="num" style="background:linear-gradient(135deg,#EC4899,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">−22%</div>
-        <div class="lbl" data-i18n="hero.kpi2">Costuri optimizate</div>
+        <div class="num" style="background:linear-gradient(135deg,#EC4899,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">10</div>
+        <div class="lbl" data-i18n="hero.kpi2">Produse livrate</div>
       </div>
       <div class="hero-kpi">
-        <div class="num">12h</div>
-        <div class="lbl" data-i18n="hero.kpi3">Economisite/lună</div>
+        <div class="num">4 săpt.</div>
+        <div class="lbl" data-i18n="hero.kpi3">De la idee la lansare</div>
       </div>
       <div class="hero-kpi">
-        <div class="num" style="background:linear-gradient(135deg,#10B981,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">2h</div>
-        <div class="lbl" data-i18n="hero.kpi4">Răspuns rapid</div>
+        <div class="num" style="background:linear-gradient(135deg,#10B981,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">100%</div>
+        <div class="lbl" data-i18n="hero.kpi4">MPay · SFS · GDPR</div>
       </div>
     </div>
   </div>
@@ -2417,7 +2420,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     </div>
     
     <!-- Concepts grid -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:24px" class="concepts-grid">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px" class="concepts-grid">
       
       <!-- 1. ERP -->
       <div style="background:#fff;border:1px solid #E5E5EA;border-radius:20px;padding:28px;transition:all 0.3s" onmouseover="this.style.borderColor='#5046E5';this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 40px rgba(80,70,229,0.12)'" onmouseout="this.style.borderColor='#E5E5EA';this.style.transform='translateY(0)';this.style.boxShadow='none'">
@@ -2688,7 +2691,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         </div>
         <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;color:#0A0A1A;margin:0 0 12px;line-height:1.2">Software pe abonament, fără bătăi de cap</h3>
         <p style="font-size:14px;color:#4B5563;line-height:1.65;margin:0 0 16px">
-          În loc să cumperi software cu €10,000 upfront, plătești <strong>€200-500/lună</strong>. 
+          În loc să cumperi software cu €10,000 upfront, plătești <strong>€50-500/lună</strong>. 
           Zero servere de cumpărat, zero IT-iști de angajat, zero update-uri manuale. Logini cu user și parolă, totul e pe cloud, accesibil din orice browser.
         </p>
         <div style="display:flex;flex-wrap:wrap;gap:6px">
@@ -2764,9 +2767,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       </div>
       
       <!-- 5. Automation (full width) -->
-      <div style="background:#fff;border:1px solid #E5E5EA;border-radius:20px;padding:28px;grid-column:1/-1;transition:all 0.3s" onmouseover="this.style.borderColor='#F59E0B';this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 40px rgba(245,158,11,0.12)'" onmouseout="this.style.borderColor='#E5E5EA';this.style.transform='translateY(0)';this.style.boxShadow='none'">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center" class="auto-grid">
-          <div style="margin:0;border-radius:12px;overflow:hidden;border:1px solid #F3F4F6">
+      <div style="background:#fff;border:1px solid #E5E5EA;border-radius:20px;padding:28px;transition:all 0.3s" onmouseover="this.style.borderColor='#F59E0B';this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 40px rgba(245,158,11,0.12)'" onmouseout="this.style.borderColor='#E5E5EA';this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div>
+          <div style="margin-bottom:20px;border-radius:12px;overflow:hidden;border:1px solid #F3F4F6">
             <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
   <defs>
     <linearGradient id="auto-amber" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -2865,7 +2868,59 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       
     
       
+      
+      
+      <div style="background:#fff;border:1px solid #E5E5EA;border-radius:20px;padding:28px;transition:all 0.3s" onmouseover="this.style.borderColor='#0891B2';this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 40px rgba(8,145,178,0.12)'" onmouseout="this.style.borderColor='#E5E5EA';this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="margin-bottom:20px;border-radius:12px;overflow:hidden;border:1px solid #F3F4F6">
+          <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <linearGradient id="bi-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0891B2"/><stop offset="100%" stop-color="#22D3EE"/></linearGradient>
+    <linearGradient id="bi-bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ECFEFF"/><stop offset="100%" stop-color="#CFFAFE"/></linearGradient>
+  </defs>
+  <rect width="320" height="200" rx="12" fill="url(#bi-bg)"/>
+  <rect x="0" y="0" width="320" height="24" rx="12" fill="#FFFFFF"/><rect x="0" y="12" width="320" height="12" fill="#FFFFFF"/>
+  <circle cx="14" cy="12" r="3" fill="#EF4444"/><circle cx="24" cy="12" r="3" fill="#F59E0B"/><circle cx="34" cy="12" r="3" fill="#10B981"/>
+  <text x="160" y="16" font-family="Arial" font-size="8" fill="#6B7280" text-anchor="middle" font-weight="600">BI · Analytics Dashboard</text>
+  <!-- KPI cards -->
+  <rect x="14" y="34" width="90" height="44" rx="6" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="0.5"/>
+  <text x="22" y="46" font-family="Arial" font-size="6" fill="#9CA3AF" font-weight="500">VÂNZĂRI AZI</text>
+  <text x="22" y="62" font-family="Arial" font-size="13" fill="#0A0A1A" font-weight="800">€12,4K</text>
+  <text x="22" y="72" font-family="Arial" font-size="5" fill="#10B981" font-weight="600">↑ 18% vs ieri</text>
+  <rect x="114" y="34" width="90" height="44" rx="6" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="0.5"/>
+  <text x="122" y="46" font-family="Arial" font-size="6" fill="#9CA3AF" font-weight="500">CLIENȚI NOI</text>
+  <text x="122" y="62" font-family="Arial" font-size="13" fill="#0A0A1A" font-weight="800">47</text>
+  <text x="122" y="72" font-family="Arial" font-size="5" fill="#10B981" font-weight="600">↑ 9 această săpt.</text>
+  <rect x="214" y="34" width="92" height="44" rx="6" fill="url(#bi-grad)"/>
+  <text x="222" y="46" font-family="Arial" font-size="6" fill="rgba(255,255,255,0.8)" font-weight="500">PROFIT LUNĂ</text>
+  <text x="222" y="62" font-family="Arial" font-size="13" fill="#FFF" font-weight="800">€38K</text>
+  <text x="222" y="72" font-family="Arial" font-size="5" fill="rgba(255,255,255,0.9)" font-weight="600">țintă: 92% ✓</text>
+  <!-- Donut chart -->
+  <circle cx="55" cy="135" r="32" fill="none" stroke="#E5E7EB" stroke-width="10"/>
+  <circle cx="55" cy="135" r="32" fill="none" stroke="url(#bi-grad)" stroke-width="10" stroke-dasharray="140 201" stroke-linecap="round" transform="rotate(-90 55 135)"/>
+  <text x="55" y="133" font-family="Arial" font-size="11" fill="#0A0A1A" text-anchor="middle" font-weight="800">70%</text>
+  <text x="55" y="143" font-family="Arial" font-size="5" fill="#9CA3AF" text-anchor="middle">recurenți</text>
+  <!-- Trend line -->
+  <rect x="105" y="92" width="201" height="92" rx="6" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="0.5"/>
+  <text x="113" y="104" font-family="Arial" font-size="6" fill="#0A0A1A" font-weight="700">Tendință venituri · 6 luni</text>
+  <polyline points="115,165 145,155 175,158 205,140 235,128 265,115 295,105" fill="none" stroke="url(#bi-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="295" cy="105" r="3" fill="#0891B2"/>
+  <polyline points="115,165 145,155 175,158 205,140 235,128 265,115 295,105 295,178 115,178" fill="url(#bi-grad)" opacity="0.1" stroke="none"/>
+</svg>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="background:linear-gradient(135deg,#0891B2,#22D3EE);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:6px;letter-spacing:0.08em">BI</div>
+          <div style="font-size:12px;color:#9CA3AF;font-weight:600">Business Intelligence & Analytics</div>
+        </div>
+        <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;color:#0A0A1A;margin:0 0 12px;line-height:1.2">Decizii pe baza cifrelor, nu pe ghicite</h3>
+        <p style="font-size:14px;color:#4B5563;line-height:1.65;margin:0 0 16px">
+          Vezi instant ce produs vinde, ce zi e cea mai bună, ce client aduce cel mai mult profit. Grafice clare, rapoarte automate, tendințe la zi. <strong>Iei decizii cu date</strong>, nu din burtă.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          <span style="background:rgba(8,145,178,0.08);color:#0891B2;font-size:11px;font-weight:600;padding:5px 10px;border-radius:6px">Pentru tine: vezi ce merge și ce nu, în timp real</span>
+        </div>
       </div>
+      
+    </div>
     
     <!-- Bottom CTA -->
     <div style="text-align:center;margin-top:48px">
@@ -2893,6 +2948,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:12px 18px">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <div><div style="font-size:13px;font-weight:700;color:#0A0A1A">Securitate</div><div style="font-size:11px;color:#9CA3AF">GDPR + criptare</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:12px 18px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20" stroke-linecap="round"/></svg>
+          <div><div style="font-size:13px;font-weight:700;color:#0A0A1A">MPay</div><div style="font-size:11px;color:#9CA3AF">Plăți naționale integrate</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:12px 18px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6" stroke-linecap="round"/></svg>
+          <div><div style="font-size:13px;font-weight:700;color:#0A0A1A">SFS · e-Factura</div><div style="font-size:11px;color:#9CA3AF">Facturare fiscală automată</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #E5E5EA;border-radius:12px;padding:12px 18px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke-linecap="round"/></svg>
+          <div><div style="font-size:13px;font-weight:700;color:#0A0A1A">RO · RU · EN</div><div style="font-size:11px;color:#9CA3AF">Multilingv complet</div></div>
         </div>
       </div>
     </div>
@@ -2945,7 +3012,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       <div class="service-card">
         <div class="service-card-num">03 · CUSTOM SOFTWARE</div>
         <h3 data-i18n="services.s3_title">Software custom</h3>
-        <p data-i18n="services.s3_desc">Dacă afacerea ta nu se încadrează în cele 6 verticale, construim soluție custom cu același stack modern (React + Node + Postgres + AI). Discovery, MVP, iterații, deploy.</p>
+        <p data-i18n="services.s3_desc">Dacă afacerea ta nu se încadrează în cele 14 verticale, construim soluție custom cu același stack modern (React + Node + Postgres + AI). Discovery, MVP, iterații, deploy.</p>
         <div class="tags">
           <span class="tag" data-i18n="services.s3_t1">8-16 săptămâni</span>
           <span class="tag" data-i18n="services.s3_t2">Source code owned</span>
@@ -2974,7 +3041,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     <div class="section-header-center">
       <div class="section-eyebrow" data-i18n="industries.eyebrow">Industrii deservite</div>
       <h2 class="section-h">
-        <span data-i18n="industries.h1">10 verticale specializate.</span>
+        <span data-i18n="industries.h1">14 verticale specializate.</span>
         <span class="gradient-text" data-i18n="industries.h2">Plus orice altceva, custom.</span>
       </h2>
       <p class="section-sub" data-i18n="industries.sub">
@@ -3024,15 +3091,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       </div>
       <div class="ind-card">
         <div class="ind-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 22V10l9-7 9 7v12M9 22v-8h6v8M3 22h18"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-3M9 9v.01M9 12v.01M9 15v.01M9 18v.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <div class="ind-name" data-i18n="ind.construction.name">Construcții</div>
+        <div class="ind-name" data-i18n="ind.construction.name">Construcții & Antrepriză</div>
         <div class="ind-status" data-i18n="ind.construction.status">Client activ</div>
-        <p data-i18n="ind.construction.desc">Firme construcții și acoperișuri. Gestiune proiecte, ofertare, urmărire stadii lucrare, raportare costuri.</p>
+        <p data-i18n="ind.construction.desc">Firme de construcții, antreprize, instalatori, amenajări. Gestiune proiecte și șantiere, devize și ofertare, urmărire materiale și stocuri, echipe și pontaj, raportare costuri în timp real.</p>
         <div class="ind-tags">
-          <span data-i18n="ind.construction.t1">Project mgmt</span>
-          <span data-i18n="ind.construction.t2">Ofertare</span>
-          <span data-i18n="ind.construction.t3">Costuri</span>
+          <span data-i18n="ind.construction.t1">Devize & ofertare</span>
+          <span data-i18n="ind.construction.t2">Materiale & stocuri</span>
+          <span data-i18n="ind.construction.t3">Echipe & șantier</span>
+          <span data-i18n="ind.construction.t4">Costuri live</span>
         </div>
       </div>
       
@@ -3040,7 +3108,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <div class="ind-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20" stroke-linecap="round"/><rect x="4" y="4" width="16" height="16" rx="3"/></svg>
         </div>
-        <div class="ind-name">MedClinic OS</div>
+        <div class="ind-name">Clinici & Stomatologii</div>
         <div class="ind-status">Deschis pentru clienți</div>
         <p>Clinici private, cabinete stomatologice, centre medicale. Programări pacienți, fișe medicale, rețete, integrare SFS.</p>
         <div class="ind-tags">
@@ -3054,7 +3122,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <div class="ind-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.5 3 6 3s6-2 6-3v-5"/></svg>
         </div>
-        <div class="ind-name">EduSchool OS</div>
+        <div class="ind-name">Școli & Educație</div>
         <div class="ind-status">Deschis pentru clienți</div>
         <p>Școli private, grădinițe, centre de meditații, școli de limbi. Taxe, prezență, orare, comunicare cu părinții.</p>
         <div class="ind-tags">
@@ -3068,7 +3136,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <div class="ind-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5h11M6.5 17.5h11M4 9v6M20 9v6M2 11v2M22 11v2" stroke-linecap="round"/></svg>
         </div>
-        <div class="ind-name">FitGym OS</div>
+        <div class="ind-name">Săli de Fitness</div>
         <div class="ind-status">Deschis pentru clienți</div>
         <p>Săli de fitness, studiouri yoga, dans, arte marțiale. Abonamente, check-in QR, rezervări clase, antrenori.</p>
         <div class="ind-tags">
@@ -3082,13 +3150,70 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <div class="ind-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="6" rx="2"/><path d="M5 11l2-5h10l2 5M7 17v2M17 17v2" stroke-linecap="round"/></svg>
         </div>
-        <div class="ind-name">RentFlow OS</div>
+        <div class="ind-name">Închirieri & Rezervări</div>
         <div class="ind-status">Deschis pentru clienți</div>
         <p>Companii rent-a-car, agenții imobiliare, închirieri echipamente. Calendar rezervări, contracte, plăți, flotă.</p>
         <div class="ind-tags">
           <span>Rezervări</span>
           <span>Contracte</span>
           <span>Plăți</span>
+        </div>
+      </div>
+      
+      <div class="ind-card">
+        <div class="ind-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v8M12 10c-3 0-5-2-5-5M12 10c3 0 5-2 5-5" stroke-linecap="round"/><path d="M5 22h14l-2-10H7z"/></svg>
+        </div>
+        <div class="ind-name">Agricultură & Ferme</div>
+        <div class="ind-status">Deschis pentru clienți</div>
+        <p>Ferme, viticultori, producători agro. Evidența recoltelor, trasabilitate, stocuri input-uri, gestiune subvenții APIA, contracte.</p>
+        <div class="ind-tags">
+          <span>Stocuri</span>
+          <span>SFS</span>
+          <span>Rapoarte</span>
+        </div>
+      </div>
+      
+      <div class="ind-card">
+        <div class="ind-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l2-5h14l2 5M3 9h18v11H3zM3 9v11" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 13h6"/></svg>
+        </div>
+        <div class="ind-name">Magazine & Retail</div>
+        <div class="ind-status">Deschis pentru clienți</div>
+        <p>Magazine, boutique-uri, mini-marketuri. Casă de marcat, stocuri în timp real, fidelizare clienți, integrare e-commerce, SFS.</p>
+        <div class="ind-tags">
+          <span>Stocuri</span>
+          <span>SFS</span>
+          <span>Rapoarte</span>
+        </div>
+      </div>
+      
+      <div class="ind-card">
+        <div class="ind-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="8" width="16" height="13" rx="2"/><path d="M8 8V5a4 4 0 0 1 8 0v3M9 13h6" stroke-linecap="round"/></svg>
+        </div>
+        <div class="ind-name">Producție Alimentară</div>
+        <div class="ind-status">Deschis pentru clienți</div>
+        <p>Procesatori alimente, brutării, lactate. Gestiune loturi, HACCP, termene expirare, rețete-producție, facturare SFS.</p>
+        <div class="ind-tags">
+          <span>Stocuri</span>
+          <span>SFS</span>
+          <span>Rapoarte</span>
+        </div>
+      </div>
+      
+      <div class="ind-card">
+        <div class="ind-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 7h14M7 7l-3 7h6zM17 7l3 7h-6z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="ind-name">Cabinete Juridice</div>
+        <div class="ind-status">Deschis pentru clienți</div>
+        <p>Avocați, juriști, cabinete de avocatură, executori judecătorești. Gestiune dosare și clienți, termene și ședințe, documente și contracte, facturare onorarii.</p>
+        <div class="ind-tags">
+          <span>Dosare</span>
+          <span>Termene</span>
+          <span>Documente</span>
+          <span>Onorarii</span>
         </div>
       </div>
       <div class="ind-card open">
@@ -3445,7 +3570,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     <div class="cases-grid" id="cases-internal" style="display:none">
       <a href="/cases/bistro/" class="case-card" style="text-decoration:none;color:inherit;display:block">
         <div style="display:inline-block;padding:4px 10px;background:rgba(80,70,229,0.1);color:#5046E5;border-radius:6px;font-size:10px;font-weight:700;letter-spacing:1px;margin-bottom:12px">PRODUS INTERN B4B</div>
-        <div class="case-client">Bistro OS</div>
+        <div class="case-client">Bistro</div>
         <div class="case-sector">HoReCa · coffee shop · soluție verticală</div>
         <h3>Sistem complet pentru cafenele small-format</h3>
         <div class="case-results">
@@ -3469,7 +3594,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
       <a href="/cases/eli-beauty/" class="case-card" style="text-decoration:none;color:inherit;display:block">
         <div style="display:inline-block;padding:4px 10px;background:rgba(80,70,229,0.1);color:#5046E5;border-radius:6px;font-size:10px;font-weight:700;letter-spacing:1px;margin-bottom:12px">PRODUS INTERN B4B</div>
-        <div class="case-client">Eli Beauty OS</div>
+        <div class="case-client">Eli Beauty</div>
         <div class="case-sector">Beauty + booking · soluție verticală</div>
         <h3>Saloane de înfrumusețare cu booking online</h3>
         <div class="case-results">
@@ -3493,7 +3618,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
       <a href="/cases/carmen-notar/" class="case-card" style="text-decoration:none;color:inherit;display:block">
         <div style="display:inline-block;padding:4px 10px;background:rgba(80,70,229,0.1);color:#5046E5;border-radius:6px;font-size:10px;font-weight:700;letter-spacing:1px;margin-bottom:12px">PRODUS INTERN B4B</div>
-        <div class="case-client">Carmen Notar OS</div>
+        <div class="case-client">Carmen Notar</div>
         <div class="case-sector">Legal · notariat · MSign · soluție verticală</div>
         <h3>Birou notarial cu acte electronice</h3>
         <div class="case-results">
@@ -3517,7 +3642,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
       <a href="/cases/codru/" class="case-card" style="text-decoration:none;color:inherit;display:block">
         <div style="display:inline-block;padding:4px 10px;background:rgba(80,70,229,0.1);color:#5046E5;border-radius:6px;font-size:10px;font-weight:700;letter-spacing:1px;margin-bottom:12px">PRODUS INTERN B4B</div>
-        <div class="case-client">Domeniile Codru OS</div>
+        <div class="case-client">Domeniile Codru</div>
         <div class="case-sector">Winery · export bilingv · soluție verticală</div>
         <h3>Crame cu shop bilingv + export</h3>
         <div class="case-results">
@@ -3541,7 +3666,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
       <a href="/cases/autofix/" class="case-card" style="text-decoration:none;color:inherit;display:block">
         <div style="display:inline-block;padding:4px 10px;background:rgba(80,70,229,0.1);color:#5046E5;border-radius:6px;font-size:10px;font-weight:700;letter-spacing:1px;margin-bottom:12px">PRODUS INTERN B4B</div>
-        <div class="case-client">AutoFix Service OS</div>
+        <div class="case-client">AutoFix Service</div>
         <div class="case-sector">Automotive · service auto · soluție verticală</div>
         <h3>Service-uri auto multi-bay cu OBD2</h3>
         <div class="case-results">
@@ -3565,7 +3690,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
       <a href="/cases/express/" class="case-card" style="text-decoration:none;color:inherit;display:block">
         <div style="display:inline-block;padding:4px 10px;background:rgba(80,70,229,0.1);color:#5046E5;border-radius:6px;font-size:10px;font-weight:700;letter-spacing:1px;margin-bottom:12px">PRODUS INTERN B4B</div>
-        <div class="case-client">Express Curier MD OS</div>
+        <div class="case-client">Express Curier MD</div>
         <div class="case-sector">Logistică · last-mile · soluție verticală</div>
         <h3>Curierat last-mile cu dispatch live</h3>
         <div class="case-results">
@@ -4800,24 +4925,24 @@ const translations = {
     "ru": "Как мы работаем"
   },
   "hero.kpi1": {
-    "ro": "Cazuri documentate",
-    "en": "Documented cases",
-    "ru": "Задокументированных кейсов"
-  },
-  "hero.kpi2": {
-    "ro": "Deploy mediu",
-    "en": "Average deploy",
-    "ru": "Среднее время"
-  },
-  "hero.kpi3": {
     "ro": "Verticale specializate",
     "en": "Specialized verticals",
     "ru": "Специализированных вертикалей"
   },
+  "hero.kpi2": {
+    "ro": "Produse livrate",
+    "en": "Products delivered",
+    "ru": "Продуктов запущено"
+  },
+  "hero.kpi3": {
+    "ro": "De la idee la lansare",
+    "en": "From idea to launch",
+    "ru": "От идеи до запуска"
+  },
   "hero.kpi4": {
-    "ro": "Local · Chișinău",
-    "en": "Local · Chișinău",
-    "ru": "Локально · Кишинёв"
+    "ro": "MPay · SFS · GDPR",
+    "en": "Local · Moldova",
+    "ru": "Локально · Молдова"
   },
   "about.eyebrow": {
     "ro": "Cum lucrăm",
@@ -5045,9 +5170,9 @@ const translations = {
     "ru": "Заказное ПО"
   },
   "services.s3_desc": {
-    "ro": "Dacă afacerea ta nu se încadrează în cele 6 verticale, construim soluție custom cu același stack modern (React + Node + Postgres + AI). Discovery, MVP, iterații, deploy.",
-    "en": "If your business doesn't fit our 6 verticals, we build custom with same modern stack. Discovery, MVP, iterations, deploy.",
-    "ru": "Если бизнес не вписывается в 6 вертикалей — строим под заказ. Discovery, MVP, итерации."
+    "ro": "Dacă afacerea ta nu se încadrează în cele 14 verticale, construim soluție custom cu același stack modern (React + Node + Postgres + AI). Discovery, MVP, iterații, deploy.",
+    "en": "If your business doesn't fit our 14 verticals, we build custom with same modern stack. Discovery, MVP, iterations, deploy.",
+    "ru": "Если бизнес не вписывается в 14 вертикалей — строим под заказ. Discovery, MVP, итерации."
   },
   "services.s3_t1": {
     "ro": "8-16 săptămâni",
@@ -5095,9 +5220,9 @@ const translations = {
     "ru": "Для кого мы работаем"
   },
   "industries.h1": {
-    "ro": "6 verticale specializate.",
-    "en": "6 specialized verticals.",
-    "ru": "6 специализированных вертикалей."
+    "ro": "14 verticale specializate.",
+    "en": "14 specialized verticals.",
+    "ru": "14 специализированных вертикалей."
   },
   "industries.h2": {
     "ro": "Plus orice altceva, custom.",
@@ -5200,8 +5325,8 @@ const translations = {
     "ru": "Мониторинг"
   },
   "ind.construction.name": {
-    "ro": "Construcții",
-    "en": "Construction",
+    "ro": "Construcții & Antrepriză",
+    "en": "Construction & Contracting",
     "ru": "Строительство"
   },
   "ind.construction.status": {
@@ -5210,23 +5335,28 @@ const translations = {
     "ru": "Активный клиент"
   },
   "ind.construction.desc": {
-    "ro": "Firme construcții și acoperișuri. Gestiune proiecte, ofertare, urmărire stadii lucrare, raportare costuri.",
-    "en": "Construction and roofing companies. Project management, quoting, work stage tracking.",
-    "ru": "Строительные компании. Управление проектами, расчёт, отслеживание этапов."
+    "ro": "Firme de construcții, antreprize, instalatori, amenajări. Gestiune proiecte și șantiere, devize și ofertare, urmărire materiale și stocuri, echipe și pontaj, raportare costuri în timp real.",
+    "en": "Construction firms, contractors, installers, fit-outs. Project & site management, estimates & quoting, material & stock tracking, teams & timesheets, real-time cost reporting.",
+    "ru": "Строительные фирмы, подрядчики, монтажники, отделка. Управление проектами и объектами, сметы и КП, учёт материалов, бригады и табель, отчётность по затратам."
   },
   "ind.construction.t1": {
-    "ro": "Project mgmt",
-    "en": "Project mgmt",
-    "ru": "Управление"
+    "ro": "Devize & ofertare",
+    "en": "Estimates & quotes",
+    "ru": "Сметы"
   },
   "ind.construction.t2": {
-    "ro": "Ofertare",
-    "en": "Quoting",
-    "ru": "Расчёт"
+    "ro": "Materiale & stocuri",
+    "en": "Materials & stock",
+    "ru": "Материалы"
   },
   "ind.construction.t3": {
-    "ro": "Costuri",
-    "en": "Costs",
+    "ro": "Echipe & șantier",
+    "en": "Teams & site",
+    "ru": "Бригады"
+  },
+  "ind.construction.t4": {
+    "ro": "Costuri live",
+    "en": "Live costs",
     "ru": "Затраты"
   },
   "ind.prof.name": {
