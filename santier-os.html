@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Șantier OS · Magistral Construct — B4B Moldova</title>
+<meta name="description" content="Șantier OS — sistem operațional pentru companii de construcții: obiecte în lucru, inventar materiale, angajați pe teren. Produs vertical B4B Moldova.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141B26;--ink2:#1C2632;--ink3:#28323F;
+  --surface:#EDF0F4;--card:#FFFFFF;--line:#E3E7ED;--line2:#EEF1F5;
+  --text:#16202C;--muted:#697585;--muted2:#9AA4B2;
+  --amber:#F59E0B;--amber-d:#C9760A;--amber-bg:#FEF4E2;
+  --blue:#2563EB;--blue-bg:#E8F0FE;
+  --green:#15A34A;--green-bg:#E6F6EC;
+  --red:#DC2626;--red-bg:#FCEAEA;
+  --slate:#475569;--slate-bg:#EEF1F5;
+  --radius:12px;--shadow:0 1px 2px rgba(20,27,38,.06),0 8px 24px rgba(20,27,38,.05);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:'IBM Plex Sans',system-ui,sans-serif;background:var(--surface);color:var(--text);
+  -webkit-font-smoothing:antialiased;font-size:14px;line-height:1.45;display:flex;min-height:100vh}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar{width:248px;background:var(--ink);color:#C9D2DD;flex-shrink:0;display:flex;flex-direction:column;
+  position:sticky;top:0;height:100vh;border-right:1px solid #0C1219}
+.brand{padding:22px 22px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #232E3B}
+.brand-mark{width:34px;height:34px;border-radius:8px;background:var(--amber);color:#141B26;display:grid;place-items:center;
+  font-weight:700;font-size:17px;flex-shrink:0;position:relative;overflow:hidden}
+.brand-mark::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(20,27,38,.18) 4px,rgba(20,27,38,.18) 6px)}
+.brand-name{font-weight:600;color:#fff;font-size:15px;letter-spacing:-.01em;line-height:1.1}
+.brand-sub{font-size:11px;color:#7C8898;letter-spacing:.02em}
+.nav{padding:14px 12px;flex:1;overflow-y:auto}
+.nav-label{font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;color:#5E6B7B;padding:10px 12px 6px;font-weight:600}
+.nav-item{display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:9px;color:#AEB9C6;cursor:pointer;
+  font-size:13.5px;font-weight:500;border:none;background:none;width:100%;text-align:left;transition:background .14s,color .14s}
+.nav-item svg{width:18px;height:18px;flex-shrink:0;stroke-width:1.7}
+.nav-item:hover{background:#1E2935;color:#E6EBF1}
+.nav-item.active{background:var(--amber);color:#141B26;font-weight:600}
+.nav-item.active svg{stroke:#141B26}
+.nav-badge{margin-left:auto;background:var(--red);color:#fff;font-size:10.5px;font-weight:600;border-radius:20px;
+  padding:1px 7px;min-width:18px;text-align:center}
+.nav-item.active .nav-badge{background:#141B26;color:var(--amber)}
+.side-foot{padding:14px 18px;border-top:1px solid #232E3B;font-size:11.5px;color:#6E7A8A}
+.side-foot b{color:#AEB9C6;font-weight:600}
+
+/* ---------- MAIN ---------- */
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+.topbar{background:var(--card);border-bottom:1px solid var(--line);padding:0 28px;height:64px;
+  display:flex;align-items:center;gap:18px;position:sticky;top:0;z-index:20}
+.topbar h1{font-size:18px;font-weight:600;letter-spacing:-.015em}
+.topbar h1 span{color:var(--muted2);font-weight:500}
+.search{margin-left:auto;position:relative;width:280px;max-width:38vw}
+.search input{width:100%;border:1px solid var(--line);border-radius:9px;padding:8px 12px 8px 34px;font:inherit;font-size:13px;
+  background:var(--surface);color:var(--text)}
+.search input:focus{outline:none;border-color:var(--amber);background:#fff}
+.search svg{position:absolute;left:10px;top:9px;width:16px;height:16px;stroke:var(--muted2)}
+.user{display:flex;align-items:center;gap:9px}
+.avatar{width:34px;height:34px;border-radius:50%;background:var(--ink2);color:#fff;display:grid;place-items:center;font-weight:600;font-size:13px}
+.user-meta{font-size:12px;line-height:1.2}.user-meta b{font-weight:600}.user-meta span{color:var(--muted)}
+
+.content{padding:26px 28px 60px;overflow-y:auto;flex:1}
+.view{display:none;animation:fade .25s ease}
+.view.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion){.view.active{animation:none}}
+
+/* ---------- KPI ---------- */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:22px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 18px 16px;box-shadow:var(--shadow);position:relative}
+.kpi::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:3px;background:var(--amber)}
+.kpi.b::before{background:var(--blue)}.kpi.g::before{background:var(--green)}.kpi.r::before{background:var(--red)}
+.kpi-l{font-size:12px;color:var(--muted);font-weight:500;margin-bottom:8px;padding-left:8px}
+.kpi-v{font-size:27px;font-weight:600;letter-spacing:-.02em;padding-left:8px}
+.kpi-v small{font-size:14px;color:var(--muted);font-weight:500}
+.kpi-sub{font-size:11.5px;color:var(--muted);padding-left:8px;margin-top:5px}
+.kpi-sub b{color:var(--green)}.kpi-sub .dn{color:var(--red)}
+
+.grid2{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.panel-h{padding:15px 18px;border-bottom:1px solid var(--line2);display:flex;align-items:center;gap:10px}
+.panel-h h2{font-size:14px;font-weight:600}
+.panel-h .pill-count{font-size:11px;color:var(--muted);background:var(--surface);border-radius:20px;padding:2px 9px;font-weight:600}
+.panel-h a{margin-left:auto;font-size:12px;color:var(--amber-d);text-decoration:none;font-weight:600;cursor:pointer}
+.panel-b{padding:8px 8px 12px}
+
+/* progress site row */
+.site-row{display:grid;grid-template-columns:1fr auto;gap:6px 14px;padding:12px 10px;border-radius:9px;cursor:pointer;transition:background .12s}
+.site-row:hover{background:var(--surface)}
+.site-name{font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:9px}
+.site-loc{font-size:11.5px;color:var(--muted);margin-top:2px}
+.site-right{text-align:right}
+.site-pct{font-weight:600;font-size:14px}
+.bar{grid-column:1/-1;height:7px;background:var(--line);border-radius:6px;overflow:hidden;margin-top:3px}
+.bar i{display:block;height:100%;border-radius:6px;background:var(--amber)}
+.bar i.g{background:var(--green)}.bar i.b{background:var(--blue)}.bar i.r{background:var(--red)}
+
+/* status pill */
+.st{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;white-space:nowrap}
+.st::before{content:"";width:6px;height:6px;border-radius:50%}
+.st.lucru{background:var(--amber-bg);color:var(--amber-d)}.st.lucru::before{background:var(--amber)}
+.st.plan{background:var(--blue-bg);color:var(--blue)}.st.plan::before{background:var(--blue)}
+.st.gata{background:var(--green-bg);color:var(--green)}.st.gata::before{background:var(--green)}
+.st.intarz{background:var(--red-bg);color:var(--red)}.st.intarz::before{background:var(--red)}
+.st.teren{background:var(--green-bg);color:var(--green)}.st.teren::before{background:var(--green)}
+.st.dispon{background:var(--slate-bg);color:var(--slate)}.st.dispon::before{background:var(--slate)}
+.st.conced{background:var(--amber-bg);color:var(--amber-d)}.st.conced::before{background:var(--amber)}
+
+/* alerts list */
+.alert-row{display:flex;align-items:center;gap:11px;padding:11px 10px;border-radius:9px}
+.alert-row:hover{background:var(--surface)}
+.alert-ic{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;flex-shrink:0;background:var(--red-bg)}
+.alert-ic svg{width:16px;height:16px;stroke:var(--red)}
+.alert-tx{font-size:13px;font-weight:600;line-height:1.25}
+.alert-tx span{display:block;font-size:11.5px;color:var(--muted);font-weight:400}
+.alert-row .mono{margin-left:auto;font-size:12px;color:var(--red);font-weight:600}
+
+/* ---------- TOOLBAR + TABLE ---------- */
+.toolbar{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:20px;padding:6px 14px;font-size:12.5px;font-weight:500;
+  cursor:pointer;color:var(--muted);transition:all .12s}
+.chip:hover{border-color:var(--muted2)}
+.chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.toolbar .search{margin-left:auto}
+.toggle{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);cursor:pointer;user-select:none;font-weight:500}
+.toggle input{appearance:none;width:34px;height:19px;background:var(--line);border-radius:20px;position:relative;cursor:pointer;transition:.15s;flex-shrink:0}
+.toggle input::after{content:"";position:absolute;width:15px;height:15px;border-radius:50%;background:#fff;top:2px;left:2px;transition:.15s;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.toggle input:checked{background:var(--amber)}.toggle input:checked::after{left:17px}
+
+.tablewrap{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+table{width:100%;border-collapse:collapse}
+thead th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;
+  padding:12px 16px;border-bottom:1px solid var(--line);background:#FAFBFC;white-space:nowrap}
+thead th.num,td.num{text-align:right}
+tbody td{padding:13px 16px;border-bottom:1px solid var(--line2);font-size:13px;vertical-align:middle}
+tbody tr:last-child td{border-bottom:none}
+tbody tr{transition:background .1s}
+tbody tr:hover{background:var(--surface)}
+tr.low td{background:#FEF7F2}
+tr.low:hover td{background:#FDEFE6}
+.sku{color:var(--muted);font-size:11.5px}
+.matname{font-weight:600}
+.stock-cell{display:flex;align-items:center;gap:8px;justify-content:flex-end}
+.minibar{width:54px;height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+.minibar i{display:block;height:100%;background:var(--green)}
+.minibar i.warn{background:var(--amber)}.minibar i.crit{background:var(--red)}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 12px;font:inherit;font-size:12.5px;font-weight:600;
+  cursor:pointer;color:var(--text);transition:.12s;white-space:nowrap}
+.btn:hover{border-color:var(--muted2)}
+.btn.amber{background:var(--amber);border-color:var(--amber);color:#141B26}
+.btn.amber:hover{background:var(--amber-d);border-color:var(--amber-d)}
+.btn.sm{padding:4px 10px;font-size:11.5px}
+.who{display:flex;align-items:center;gap:10px}
+.who .av{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:600;color:#fff;flex-shrink:0}
+.who b{font-weight:600;font-size:13px}.who span{display:block;font-size:11.5px;color:var(--muted)}
+.empty{padding:46px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--text);font-size:14px;margin-bottom:4px}
+
+/* obiecte cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+.ocard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);cursor:pointer;transition:transform .12s,box-shadow .12s}
+.ocard:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(20,27,38,.09),0 14px 32px rgba(20,27,38,.07)}
+.ocard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:13px}
+.ocard h3{font-size:15px;font-weight:600;letter-spacing:-.01em}
+.ocard .loc{font-size:12px;color:var(--muted);margin-top:2px}
+.ocard-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px;margin:14px 0 12px}
+.mlabel{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted2);font-weight:600}
+.mval{font-size:13.5px;font-weight:600;margin-top:1px}
+.ocard .bar{margin-top:4px}
+.ocard-foot{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:12px;color:var(--muted)}
+
+/* detail drawer */
+.drawer-bg{position:fixed;inset:0;background:rgba(15,20,28,.45);opacity:0;pointer-events:none;transition:.2s;z-index:50}
+.drawer-bg.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100vh;width:440px;max-width:92vw;background:var(--card);box-shadow:-12px 0 40px rgba(0,0,0,.18);
+  transform:translateX(100%);transition:transform .26s cubic-bezier(.4,0,.2,1);z-index:51;display:flex;flex-direction:column}
+.drawer.open{transform:none}
+.drawer-h{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.drawer-h h2{font-size:18px;font-weight:600;letter-spacing:-.01em}
+.drawer-h .loc{font-size:12.5px;color:var(--muted);margin-top:3px}
+.x{border:none;background:var(--surface);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:18px;color:var(--muted);flex-shrink:0}
+.x:hover{background:var(--line)}
+.drawer-b{padding:20px 22px;overflow-y:auto}
+.dstat{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
+.dstat>div{background:var(--surface);border-radius:10px;padding:12px 14px}
+.dstat .mlabel{margin-bottom:3px}.dstat .v{font-size:17px;font-weight:600}
+.dsec{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600;margin:18px 0 9px}
+.dteam{display:flex;flex-direction:column;gap:8px}
+.duse{display:flex;justify-content:space-between;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line2)}
+.duse:last-child{border:none}.duse span{color:var(--muted)}
+
+/* AI strip + module */
+.ai-strip{background:linear-gradient(105deg,#211C4D,#3A2E7E 60%,#4F2D6B);border-radius:var(--radius);padding:15px 18px;margin-bottom:22px;
+  color:#EBE8FF;display:flex;gap:18px;align-items:center;flex-wrap:wrap;box-shadow:var(--shadow)}
+.ai-tag{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#C9B8FF;flex-shrink:0}
+.ai-tag svg{width:16px;height:16px;stroke:#C9B8FF;fill:none}
+.ai-items{display:flex;gap:26px;flex:1;flex-wrap:wrap;min-width:200px}
+.ai-it{font-size:13px;line-height:1.4}.ai-it b{color:#fff;font-weight:600}
+.ai-strip a{margin-left:auto;color:#fff;font-size:12.5px;font-weight:600;cursor:pointer;white-space:nowrap;border-bottom:1px solid rgba(255,255,255,.4)}
+.ai-intro{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow);margin-bottom:18px;display:flex;gap:16px;align-items:flex-start}
+.ai-orb{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#7C3AED,#4F2D6B);display:grid;place-items:center;flex-shrink:0}
+.ai-orb svg{width:22px;height:22px;stroke:#fff;fill:none}
+.ai-intro h2{font-size:16px;font-weight:600;margin-bottom:3px}
+.ai-intro p{font-size:13px;color:var(--muted);max-width:62ch}
+.ai-ask{display:flex;gap:9px;margin-bottom:8px}
+.ai-ask input{flex:1;border:1px solid var(--line);border-radius:10px;padding:11px 14px;font:inherit;font-size:13.5px;background:var(--card)}
+.ai-ask input:focus{outline:none;border-color:#7C3AED}
+.ai-suggest{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}
+.ai-sug{font-size:12px;color:#6D28D9;background:#F3EEFE;border:1px solid #E5D9FB;border-radius:20px;padding:5px 12px;cursor:pointer}
+.ai-sug:hover{background:#E9DEFC}
+.ai-answer{background:#F7F4FE;border:1px solid #E5D9FB;border-radius:11px;padding:15px 17px;margin-bottom:20px;font-size:13.5px;line-height:1.6;display:none}
+.ai-answer.show{display:block}
+.ai-answer .who{font-size:11px;font-weight:600;color:#6D28D9;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.dsec.ai{color:#6D28D9}
+.ai-card{background:var(--card);border:1px solid var(--line);border-left:3px solid #7C3AED;border-radius:10px;padding:14px 16px;margin-bottom:11px;display:flex;gap:13px;align-items:flex-start}
+.ai-card .ic{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;flex-shrink:0;font-size:15px}
+.ai-card .bd{flex:1}.ai-card .bd b{font-size:13.5px;font-weight:600;display:block;margin-bottom:3px}
+.ai-card .bd p{font-size:12.5px;color:var(--muted);line-height:1.5}
+.ai-card .btn{align-self:center}
+/* CRM pipeline */
+.pipeline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:start}
+.pcol{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:10px}
+.pcol-h{display:flex;align-items:center;gap:8px;padding:6px 8px 10px;font-size:12.5px;font-weight:600}
+.pcol-h .dot{width:8px;height:8px;border-radius:50%}
+.pcol-h .n{margin-left:auto;color:var(--muted);font-size:11.5px;background:var(--card);border-radius:20px;padding:1px 8px}
+.deal{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:11px 12px;margin-bottom:9px;cursor:pointer;transition:.12s}
+.deal:hover{border-color:var(--muted2);transform:translateY(-1px)}
+.deal b{font-size:13px;font-weight:600;display:block;line-height:1.3}
+.deal .cl{font-size:11.5px;color:var(--muted);margin:3px 0 8px}
+.deal .row{display:flex;justify-content:space-between;align-items:center}
+.deal .val{font-size:13px;font-weight:600}
+.deal .days{font-size:11px;color:var(--muted2)}
+@media(max-width:1080px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.pipeline{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){
+  .sidebar{position:fixed;left:0;z-index:60;transform:translateX(-100%);transition:.25s}
+  .sidebar.open{transform:none}
+  .menu-btn{display:grid!important}
+  .content{padding:18px 16px 50px}.kpis{grid-template-columns:1fr 1fr;gap:12px}
+  .topbar{padding:0 16px}.search{display:none}
+}
+.menu-btn{display:none;border:1px solid var(--line);background:var(--card);width:38px;height:38px;border-radius:9px;place-items:center;cursor:pointer}
+.menu-btn svg{width:20px;height:20px;stroke:var(--text)}
+</style>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="brand-mark">Ș</div>
+    <div>
+      <div class="brand-name">Șantier OS</div>
+      <div class="brand-sub">Magistral Construct SRL</div>
+    </div>
+  </div>
+  <nav class="nav" id="nav">
+    <div class="nav-label">Operațional</div>
+    <button class="nav-item active" data-view="dashboard">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+      Panou de bord</button>
+    <button class="nav-item" data-view="obiecte">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+      Obiecte în lucru<span class="nav-badge">6</span></button>
+    <button class="nav-item" data-view="inventar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 8l9-5 9 5v8l-9 5-9-5V8z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>
+      Inventar materiale<span class="nav-badge" id="navLow">2</span></button>
+    <button class="nav-item" data-view="angajati">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0111 0M16 5.5a3 3 0 010 6M20.5 20a5 5 0 00-4-4.9"/></svg>
+      Angajați</button>
+    <button class="nav-item" data-view="crm">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg>
+      CRM &amp; ofertare</button>
+    <button class="nav-item" data-view="pontaj">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4.5" width="18" height="16.5" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M8.5 14.5l2 2 4-4"/></svg>
+      Pontaj teren</button>
+    <div class="nav-label">Inteligență</div>
+    <button class="nav-item" data-view="ai">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l1.7 4.6L18 9l-4.3 1.4L12 15l-1.7-4.6L6 9l4.3-1.4z"/><path d="M18 14l.8 2.2L21 17l-2.2.8L18 20l-.8-2.2L15 17l2.2-.8z"/></svg>
+      Asistent AI<span class="nav-badge" style="background:#7C3AED" id="navAI">4</span></button>
+    <button class="nav-item" data-view="rapoarte">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 20V4M20 20H4M8 16v-4M12 16V8M16 16v-7"/></svg>
+      Rapoarte</button>
+  </nav>
+  <div class="side-foot">Produs vertical <b>B4B Moldova</b><br>Demo · date fictive</div>
+</aside>
+
+<div class="main">
+  <header class="topbar">
+    <button class="menu-btn" id="menuBtn" aria-label="Meniu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <h1 id="pageTitle">Panou de bord <span id="pageSub"></span></h1>
+    <div class="search" id="globalSearchWrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+      <input id="globalSearch" placeholder="Caută obiect, material, angajat…" autocomplete="off">
+    </div>
+    <div class="user">
+      <div class="avatar">VR</div>
+      <div class="user-meta"><b>Vasile Roșca</b><br><span>Inginer-șef</span></div>
+    </div>
+  </header>
+
+  <div class="content">
+    <!-- DASHBOARD -->
+    <section class="view active" id="view-dashboard">
+      <div class="kpis">
+        <div class="kpi"><div class="kpi-l">Obiecte active</div><div class="kpi-v" id="kActive">4</div><div class="kpi-sub">din 6 în portofoliu</div></div>
+        <div class="kpi b"><div class="kpi-l">Valoare contracte active</div><div class="kpi-v" id="kValue">50.8 <small>M MDL</small></div><div class="kpi-sub"><b>+12%</b> față de trim. trecut</div></div>
+        <div class="kpi g"><div class="kpi-l">Angajați pe teren</div><div class="kpi-v" id="kStaff">29 <small>/ 41</small></div><div class="kpi-sub">9 disponibili · 3 în concediu</div></div>
+        <div class="kpi r"><div class="kpi-l">Materiale sub minim</div><div class="kpi-v" id="kLow">2</div><div class="kpi-sub"><span class="dn">necesită comandă</span></div></div>
+      </div>
+      <div class="ai-strip" id="aiStrip"></div>
+      <div class="grid2">
+        <div class="panel">
+          <div class="panel-h"><h2>Progres obiecte în lucru</h2><span class="pill-count" id="dProgCount"></span><a data-goto="obiecte">Vezi toate →</a></div>
+          <div class="panel-b" id="dProgress"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-h"><h2>Alerte stoc</h2><a data-goto="inventar">Inventar →</a></div>
+          <div class="panel-b" id="dAlerts"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OBIECTE -->
+    <section class="view" id="view-obiecte">
+      <div class="toolbar">
+        <div class="chips" id="obFilters">
+          <button class="chip active" data-f="toate">Toate</button>
+          <button class="chip" data-f="lucru">În lucru</button>
+          <button class="chip" data-f="plan">Planificat</button>
+          <button class="chip" data-f="intarz">Întârziat</button>
+          <button class="chip" data-f="gata">Finalizat</button>
+        </div>
+        <button class="btn amber">+ Obiect nou</button>
+      </div>
+      <div class="cards" id="obCards"></div>
+    </section>
+
+    <!-- INVENTAR -->
+    <section class="view" id="view-inventar">
+      <div class="toolbar">
+        <div class="chips" id="invFilters">
+          <button class="chip active" data-f="toate">Toate</button>
+          <button class="chip" data-f="central">Depozit central</button>
+          <button class="chip" data-f="riscani">Depozit Râșcani</button>
+        </div>
+        <label class="toggle"><input type="checkbox" id="invLowOnly">Doar sub minim</label>
+        <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><input id="invSearch" placeholder="Caută material sau cod…"></div>
+      </div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Material</th><th>Cod</th><th>Depozit</th><th>Furnizor</th><th class="num">Stoc</th><th class="num">Min.</th><th></th></tr></thead>
+          <tbody id="invBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ANGAJATI -->
+    <section class="view" id="view-angajati">
+      <div class="toolbar">
+        <div class="chips" id="empFilters">
+          <button class="chip active" data-f="toate">Toți</button>
+          <button class="chip" data-f="teren">Pe teren</button>
+          <button class="chip" data-f="dispon">Disponibili</button>
+          <button class="chip" data-f="conced">În concediu</button>
+        </div>
+        <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><input id="empSearch" placeholder="Caută angajat sau funcție…"></div>
+      </div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Angajat</th><th>Funcție</th><th>Obiect curent</th><th>Status</th><th>Contact</th></tr></thead>
+          <tbody id="empBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- CRM -->
+    <section class="view" id="view-crm">
+      <div class="toolbar">
+        <div class="chips"><button class="chip active">Pipeline oportunități</button></div>
+        <button class="btn amber">+ Oportunitate</button>
+      </div>
+      <div class="pipeline" id="pipeline"></div>
+    </section>
+
+    <!-- PONTAJ -->
+    <section class="view" id="view-pontaj">
+      <div class="toolbar">
+        <div class="chips" id="ponFilters">
+          <button class="chip active" data-f="toate">Toate obiectele</button>
+          <button class="chip" data-f="teren">Doar prezenți</button>
+        </div>
+        <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><input id="ponSearch" placeholder="Caută angajat…"></div>
+      </div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Angajat</th><th>Obiect</th><th>Check-in</th><th class="num">Ore azi</th><th>Status</th></tr></thead>
+          <tbody id="ponBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- AI -->
+    <section class="view" id="view-ai">
+      <div class="ai-intro">
+        <div class="ai-orb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l1.7 4.6L18 9l-4.3 1.4L12 15l-1.7-4.6L6 9l4.3-1.4z"/></svg></div>
+        <div><h2>Asistent AI Șantier OS</h2><p>Analizează automat obiectele, stocul și echipa, apoi propune acțiuni concrete. Întreabă-l orice despre operațiunile tale — răspunde pe baza datelor reale din sistem.</p></div>
+      </div>
+      <div class="ai-ask"><input id="aiInput" placeholder="Ex: ce materiale trebuie comandate săptămâna asta?" autocomplete="off"><button class="btn amber" id="aiSend">Întreabă</button></div>
+      <div class="ai-suggest" id="aiSuggest"></div>
+      <div class="ai-answer" id="aiAnswer"></div>
+      <div class="dsec ai">Acțiuni propuse de AI</div>
+      <div id="aiInsights"></div>
+    </section>
+
+    <!-- RAPOARTE -->
+    <section class="view" id="view-rapoarte">
+      <div class="panel" style="max-width:760px">
+        <div class="panel-h"><h2>Buget consumat pe obiect</h2></div>
+        <div class="panel-b" id="repBody" style="padding:16px"></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- DRAWER -->
+<div class="drawer-bg" id="drawerBg"></div>
+<aside class="drawer" id="drawer"><div id="drawerContent"></div></aside>
+
+<script>
+const fmt = n => n.toLocaleString('ro-RO');
+const money = n => (n>=1000000? (n/1000000).toFixed(1).replace('.0','')+' M' : fmt(n)) + ' MDL';
+
+const OBIECTE = [
+  {id:1,name:'Bloc locativ „Râșcani Park”',loc:'Chișinău · sect. Râșcani',status:'lucru',pct:64,buget:18500000,consumat:11200000,termen:'Oct 2026',echipa:12,
+    team:['Ion Cebotari · maistru','Sergiu Pană · zidar','+10 muncitori'],use:[['Ciment M400','1 240 saci'],['Armătură Ø12','62 t'],['BCA blocuri','340 m³']]},
+  {id:2,name:'Centru comercial „Aurora”',loc:'Bălți · str. Ștefan cel Mare',status:'plan',pct:0,buget:24000000,consumat:0,termen:'Start Aug 2026',echipa:0,
+    team:['Neasignat'],use:[['—','contract semnat'],['Proiectare','în avizare']]},
+  {id:3,name:'Casă privată P+1',loc:'Stăuceni · str. Livezilor 14',status:'lucru',pct:88,buget:2100000,consumat:1840000,termen:'Iul 2026',echipa:5,
+    team:['Andrei Lungu · maistru','+4 muncitori'],use:[['Cărămidă','38 mii buc'],['Vopsea fațadă','24 gal']]},
+  {id:4,name:'Reabilitare școala nr. 12',loc:'Ialoveni · str. Alexandru cel Bun',status:'lucru',pct:41,buget:6800000,consumat:2790000,termen:'Sep 2026',echipa:8,
+    team:['Mihai Țurcan · maistru','+7 muncitori'],use:[['Ciment M400','410 saci'],['Profile metalice','85 buc']]},
+  {id:5,name:'Depozit logistic „Ciocana”',loc:'Chișinău · sect. Ciocana',status:'gata',pct:100,buget:9200000,consumat:9050000,termen:'Predat Mai 2026',echipa:0,
+    team:['Predat clientului'],use:[['Total materiale','livrat 100%']]},
+  {id:6,name:'Drum acces + parcare',loc:'Anenii Noi · zona industrială',status:'intarz',pct:33,buget:3400000,consumat:1980000,termen:'Termen depășit',echipa:4,
+    team:['Andrei Lungu · coordonare','+3 muncitori'],use:[['Pietriș','120 t'],['Nisip','60 t']]},
+];
+const STAT = {lucru:['În lucru','lucru'],plan:['Planificat','plan'],gata:['Finalizat','gata'],intarz:['Întârziat','intarz']};
+
+const INVENTAR = [
+  {name:'Ciment M400',sku:'CIM-400',unit:'saci',stock:420,min:200,dep:'central',depN:'Depozit central',sup:'CimentSA'},
+  {name:'Armătură Ø12 mm',sku:'ARM-012',unit:'t',stock:8.5,min:10,dep:'central',depN:'Depozit central',sup:'MetalRom'},
+  {name:'Cărămidă plină',sku:'CAR-STD',unit:'mii buc',stock:64,min:20,dep:'riscani',depN:'Depozit Râșcani',sup:'Macon'},
+  {name:'BCA blocuri 20cm',sku:'BCA-200',unit:'m³',stock:12,min:30,dep:'riscani',depN:'Depozit Râșcani',sup:'Macon'},
+  {name:'Nisip de râu',sku:'NIS-RAU',unit:'t',stock:140,min:50,dep:'central',depN:'Depozit central',sup:'Carieră Cosăuți'},
+  {name:'Pietriș 5–20 mm',sku:'PIE-520',unit:'t',stock:95,min:50,dep:'central',depN:'Depozit central',sup:'Carieră Cosăuți'},
+  {name:'Vopsea fațadă',sku:'VOP-FAT',unit:'gal',stock:38,min:20,dep:'riscani',depN:'Depozit Râșcani',sup:'Supraten'},
+  {name:'Profile metalice',sku:'PRF-MET',unit:'buc',stock:210,min:80,dep:'central',depN:'Depozit central',sup:'MetalRom'},
+  {name:'Plăci gips-carton',sku:'GIP-125',unit:'buc',stock:96,min:60,dep:'riscani',depN:'Depozit Râșcani',sup:'Knauf MD'},
+  {name:'Membrană hidroizolație',sku:'HID-MBR',unit:'rulou',stock:18,min:25,dep:'central',depN:'Depozit central',sup:'Supraten'},
+];
+
+const ANGAJATI = [
+  {name:'Ion Cebotari',role:'Maistru',site:'Râșcani Park',status:'teren',tel:'079 11 22 33',c:'#F59E0B'},
+  {name:'Vasile Roșca',role:'Inginer-șef',site:'Coordonare generală',status:'teren',tel:'069 44 55 66',c:'#2563EB'},
+  {name:'Andrei Lungu',role:'Maistru / operator',site:'Drum Anenii Noi',status:'teren',tel:'078 77 88 99',c:'#15A34A'},
+  {name:'Mihai Țurcan',role:'Maistru',site:'Școala nr. 12',status:'teren',tel:'060 12 34 56',c:'#7C3AED'},
+  {name:'Sergiu Pană',role:'Zidar',site:'Râșcani Park',status:'teren',tel:'079 98 76 54',c:'#DC2626'},
+  {name:'Elena Cazacu',role:'Devize / contabilitate',site:'Birou Chișinău',status:'dispon',tel:'068 23 45 67',c:'#0891B2'},
+  {name:'Dorin Russu',role:'Operator excavator',site:'Râșcani Park',status:'teren',tel:'079 33 22 11',c:'#475569'},
+  {name:'Veronica Bîrsa',role:'Achiziții materiale',site:'Depozit central',status:'dispon',tel:'069 87 65 43',c:'#DB2777'},
+  {name:'Pavel Morari',role:'Șofer betonieră',site:'—',status:'conced',tel:'060 55 44 33',c:'#CA8A04'},
+  {name:'Radu Ciobanu',role:'Electrician',site:'Casă Stăuceni',status:'teren',tel:'078 19 28 37',c:'#16A34A'},
+];
+
+const DEALS=[
+  {name:'Bloc 3 etaje – Durlești',client:'Asoc. Locatari Durlești',stage:'lead',value:14000000,days:'nou'},
+  {name:'Hală producție',client:'Lactis Prod SRL',stage:'lead',value:8500000,days:'2 zile'},
+  {name:'Renovare birou',client:'IT Park Moldova',stage:'oferta',value:1200000,days:'ofertă trimisă'},
+  {name:'Parcare supraetajată',client:'Primăria Chișinău',stage:'oferta',value:31000000,days:'licitație'},
+  {name:'Centru comercial „Aurora”',client:'Aurora Invest',stage:'negociere',value:24000000,days:'contract în lucru'},
+  {name:'Casă privată – Tohatin',client:'Fam. Ungureanu',stage:'negociere',value:2400000,days:'negociere preț'},
+  {name:'Depozit logistic „Ciocana”',client:'TransExpres',stage:'castigat',value:9200000,days:'semnat'},
+  {name:'Bloc „Râșcani Park”',client:'Râșcani Dev SRL',stage:'castigat',value:18500000,days:'în execuție'},
+];
+const STAGES=[['lead','Lead','#94A3B8'],['oferta','Ofertă trimisă','#2563EB'],['negociere','Negociere','#F59E0B'],['castigat','Câștigat','#15A34A']];
+
+const AIINSIGHTS=[
+  {ic:'⚠️',bg:'#FCEAEA',title:'Risc de stoc — BCA blocuri',text:'Stoc 12 m³ (min. 30). La ritmul de la „Râșcani Park”, se epuizează în ~5 zile. Comandă 25 m³ de la Macon acum ca să nu blochezi zidăria.',btn:'Creează comandă'},
+  {ic:'⏱️',bg:'#FEF4E2',title:'Întârziere — Drum Anenii Noi',text:'Obiectul (33%) a depășit termenul. „Casă Stăuceni” e la 88% și eliberează 2 muncitori săptămâna viitoare — realocă-i ca să recuperezi ~9 zile.',btn:'Vezi realocare'},
+  {ic:'💰',bg:'#E8F0FE',title:'Ofertă de pregătit — Aurora',text:'„Centru comercial Aurora” (24M) intră în execuție în august. Prețul la armătură e prognozat +8% — blochează cantitatea acum la furnizor și economisești ~140 mii MDL.',btn:'Notează în plan'},
+  {ic:'📊',bg:'#E6F6EC',title:'Buget sănătos',text:'„Casă privată P+1” a consumat 88% din buget la 88% progres — perfect pe țintă. Niciun risc de depășire.',btn:''},
+];
+const AIQA={
+  'ce materiale trebuie comandate':'Pe baza stocului curent, 3 materiale sunt sub minim și trebuie comandate: BCA blocuri (12/30 m³, urgent — 5 zile rămase), Armătură Ø12 (8.5/10 t) și Membrană hidroizolație (18/25 rulou). Estimare comandă: ~210 mii MDL. Pot genera comenzile către Macon, MetalRom și Supraten.',
+  'care obiect e in intarziere':'Un singur obiect e întârziat: „Drum acces + parcare” – Anenii Noi (33%, termen depășit), cu echipă de 4. Recomand realocarea a 2 muncitori de la „Casă Stăuceni” (88%, aproape gata) — recuperezi ~9 zile.',
+  'cum sta bugetul':'Pe obiectele active, ai consumat 17.8M din 31.2M buget alocat (57%), aliniat cu progresul mediu de 56%. Singurul de urmărit e „Drum Anenii Noi” — 58% buget la 33% progres, risc de depășire din cauza întârzierii.',
+  'cati angajati sunt liberi':'Acum: 7 angajați pe teren, 2 disponibili (Elena Cazacu – devize, Veronica Bîrsa – achiziții) și 1 în concediu (Pavel Morari). Pentru noul obiect „Aurora” vei avea nevoie să recrutezi sau să eliberezi echipa de la obiectele aproape gata.',
+};
+const AISUG=['Ce materiale trebuie comandate?','Care obiect e în întârziere?','Cum stă bugetul?','Câți angajați sunt liberi?'];
+
+/* ---------- RENDER ---------- */
+function siteBarClass(o){return o.status==='gata'?'g':o.status==='plan'?'b':o.status==='intarz'?'r':''}
+
+function renderDashboard(){
+  const active = OBIECTE.filter(o=>o.status==='lucru'||o.status==='intarz');
+  document.getElementById('dProgCount').textContent = active.length+' active';
+  document.getElementById('dProgress').innerHTML = OBIECTE.filter(o=>o.status!=='plan').map(o=>`
+    <div class="site-row" data-obid="${o.id}">
+      <div><div class="site-name">${o.name}</div><div class="site-loc">${o.loc} · ${o.echipa} pe teren</div></div>
+      <div class="site-right"><span class="st ${o.status}">${STAT[o.status][0]}</span><div class="site-pct mono">${o.pct}%</div></div>
+      <div class="bar"><i class="${siteBarClass(o)}" style="width:${o.pct}%"></i></div>
+    </div>`).join('');
+  const low = INVENTAR.filter(m=>m.stock<m.min);
+  document.getElementById('dAlerts').innerHTML = low.length ? low.map(m=>`
+    <div class="alert-row">
+      <div class="alert-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 9v4M12 17h.01M10.3 3.9l-8 14A2 2 0 004 21h16a2 2 0 001.7-3l-8-14a2 2 0 00-3.4 0z"/></svg></div>
+      <div class="alert-tx">${m.name}<span>${m.depN} · ${m.sup}</span></div>
+      <div class="mono">${m.stock} / ${m.min} ${m.unit}</div>
+    </div>`).join('') : '<div class="empty">Toate materialele sunt peste pragul minim.</div>';
+  renderAIStrip();
+}
+
+function renderObiecte(f='toate'){
+  const list = f==='toate'?OBIECTE:OBIECTE.filter(o=>o.status===f);
+  const el = document.getElementById('obCards');
+  el.innerHTML = list.length? list.map(o=>`
+    <div class="ocard" data-obid="${o.id}">
+      <div class="ocard-top"><div><h3>${o.name}</h3><div class="loc">${o.loc}</div></div><span class="st ${o.status}">${STAT[o.status][0]}</span></div>
+      <div class="bar"><i class="${siteBarClass(o)}" style="width:${o.pct}%"></i></div>
+      <div class="ocard-meta">
+        <div><div class="mlabel">Progres</div><div class="mval mono">${o.pct}%</div></div>
+        <div><div class="mlabel">Buget</div><div class="mval mono">${money(o.buget)}</div></div>
+        <div><div class="mlabel">Termen</div><div class="mval">${o.termen}</div></div>
+        <div><div class="mlabel">Echipă</div><div class="mval">${o.echipa} pers.</div></div>
+      </div>
+      <div class="ocard-foot"><span>Consumat: <b class="mono" style="color:var(--text)">${money(o.consumat)}</b></span><span>Detalii →</span></div>
+    </div>`).join('') : '<div class="empty"><b>Niciun obiect</b>Nu există obiecte cu acest status.</div>';
+}
+
+function renderInventar(){
+  const f = document.querySelector('#invFilters .chip.active').dataset.f;
+  const q = document.getElementById('invSearch').value.trim().toLowerCase();
+  const lowOnly = document.getElementById('invLowOnly').checked;
+  let list = INVENTAR.filter(m=>{
+    if(f!=='toate' && m.dep!==f) return false;
+    if(lowOnly && m.stock>=m.min) return false;
+    if(q && !(m.name.toLowerCase().includes(q)||m.sku.toLowerCase().includes(q))) return false;
+    return true;
+  });
+  document.getElementById('invBody').innerHTML = list.length? list.map(m=>{
+    const ratio=Math.min(100,Math.round(m.stock/m.min*100));
+    const cls = m.stock<m.min?'crit':(m.stock<m.min*1.3?'warn':'');
+    return `<tr class="${m.stock<m.min?'low':''}">
+      <td><span class="matname">${m.name}</span></td>
+      <td><span class="mono sku">${m.sku}</span></td>
+      <td>${m.depN}</td><td>${m.sup}</td>
+      <td class="num"><div class="stock-cell"><div class="minibar"><i class="${cls}" style="width:${ratio}%"></i></div><span class="mono">${m.stock} ${m.unit}</span></div></td>
+      <td class="num mono" style="color:var(--muted)">${m.min}</td>
+      <td class="num">${m.stock<m.min?'<button class="btn amber sm">Comandă</button>':'<button class="btn sm">Mișcare</button>'}</td>
+    </tr>`;}).join('') : '<tr><td colspan="7"><div class="empty"><b>Niciun rezultat</b>Modifică filtrul sau căutarea.</div></td></tr>';
+}
+
+function renderAngajati(){
+  const f = document.querySelector('#empFilters .chip.active').dataset.f;
+  const q = document.getElementById('empSearch').value.trim().toLowerCase();
+  const SM={teren:'Pe teren',dispon:'Disponibil',conced:'În concediu'};
+  let list = ANGAJATI.filter(e=>{
+    if(f!=='toate' && e.status!==f) return false;
+    if(q && !(e.name.toLowerCase().includes(q)||e.role.toLowerCase().includes(q))) return false;
+    return true;
+  });
+  document.getElementById('empBody').innerHTML = list.length? list.map(e=>{
+    const ini=e.name.split(' ').map(x=>x[0]).join('').slice(0,2);
+    return `<tr>
+      <td><div class="who"><div class="av" style="background:${e.c}">${ini}</div><div><b>${e.name}</b></div></div></td>
+      <td>${e.role}</td><td>${e.site}</td>
+      <td><span class="st ${e.status}">${SM[e.status]}</span></td>
+      <td><span class="mono" style="color:var(--muted)">${e.tel}</span></td>
+    </tr>`;}).join('') : '<tr><td colspan="5"><div class="empty"><b>Niciun angajat</b>Modifică filtrul.</div></td></tr>';
+}
+
+function renderRapoarte(){
+  const max=Math.max(...OBIECTE.map(o=>o.buget));
+  document.getElementById('repBody').innerHTML = OBIECTE.map(o=>{
+    const pc=Math.round(o.consumat/o.buget*100||0);
+    return `<div style="margin-bottom:16px">
+      <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px"><b>${o.name}</b><span class="mono" style="color:var(--muted)">${money(o.consumat)} / ${money(o.buget)}</span></div>
+      <div class="bar" style="height:10px"><i class="${pc>95?'r':pc>70?'':'g'}" style="width:${pc}%"></i></div>
+    </div>`;}).join('');
+}
+
+function renderAIStrip(){
+  document.getElementById('aiStrip').innerHTML=`
+    <span class="ai-tag"><svg viewBox="0 0 24 24"><path d="M12 3l1.7 4.6L18 9l-4.3 1.4L12 15l-1.7-4.6L6 9l4.3-1.4z"/></svg>Asistent AI</span>
+    <div class="ai-items">
+      <div class="ai-it">⚠️ <b>BCA blocuri</b> se epuizează în ~5 zile — comandă 25 m³.</div>
+      <div class="ai-it">⏱️ <b>Drum Anenii Noi</b> întârziat — realocă 2 muncitori.</div>
+    </div>
+    <a data-goto="ai">Vezi toate (4) →</a>`;
+  document.querySelector('#aiStrip a').addEventListener('click',()=>switchView('ai'));
+}
+
+function renderCRM(){
+  document.getElementById('pipeline').innerHTML = STAGES.map(([key,label,color])=>{
+    const items=DEALS.filter(d=>d.stage===key);
+    return `<div class="pcol">
+      <div class="pcol-h"><span class="dot" style="background:${color}"></span>${label}<span class="n">${items.length}</span></div>
+      ${items.map(d=>`<div class="deal"><b>${d.name}</b><div class="cl">${d.client}</div><div class="row"><span class="val mono">${money(d.value)}</span><span class="days">${d.days}</span></div></div>`).join('')}
+    </div>`;
+  }).join('');
+}
+
+function renderPontaj(){
+  const f=document.querySelector('#ponFilters .chip.active').dataset.f;
+  const q=document.getElementById('ponSearch').value.trim().toLowerCase();
+  const hrs={teren:'8.0',dispon:'—',conced:'—'};
+  let list=ANGAJATI.filter(e=>{
+    if(f==='teren' && e.status!=='teren')return false;
+    if(q && !e.name.toLowerCase().includes(q))return false;
+    return true;
+  });
+  const SM={teren:'Prezent',dispon:'Disponibil',conced:'Concediu'};
+  const SC={teren:'teren',dispon:'dispon',conced:'conced'};
+  document.getElementById('ponBody').innerHTML=list.length?list.map(e=>{
+    const ini=e.name.split(' ').map(x=>x[0]).join('').slice(0,2);
+    return `<tr>
+      <td><div class="who"><div class="av" style="background:${e.c}">${ini}</div><b>${e.name}</b></div></td>
+      <td>${e.site}</td>
+      <td class="mono" style="color:var(--muted)">${e.status==='teren'?'07:'+(Math.floor(Math.random()*4)*15).toString().padStart(2,'0'):'—'}</td>
+      <td class="num mono">${hrs[e.status]}</td>
+      <td><span class="st ${SC[e.status]}">${SM[e.status]}</span></td>
+    </tr>`;}).join(''):'<tr><td colspan="5"><div class="empty"><b>Niciun rezultat</b>Modifică filtrul.</div></td></tr>';
+}
+
+function renderAI(){
+  document.getElementById('aiSuggest').innerHTML=AISUG.map(s=>`<button class="ai-sug">${s}</button>`).join('');
+  document.getElementById('aiInsights').innerHTML=AIINSIGHTS.map(i=>`
+    <div class="ai-card"><div class="ic" style="background:${i.bg}">${i.ic}</div>
+      <div class="bd"><b>${i.title}</b><p>${i.text}</p></div>
+      ${i.btn?`<button class="btn sm">${i.btn}</button>`:''}</div>`).join('');
+  document.querySelectorAll('#aiSuggest .ai-sug').forEach(b=>b.addEventListener('click',()=>{document.getElementById('aiInput').value=b.textContent;aiAsk();}));
+}
+function aiAsk(){
+  const q=document.getElementById('aiInput').value.trim().toLowerCase().replace(/[?ăâîșț]/g,m=>({'ă':'a','â':'a','î':'i','ș':'s','ț':'t','?':''})[m]||m);
+  let ans='Pot răspunde despre obiecte, stoc, buget și echipă. Încearcă una dintre sugestiile de mai jos.';
+  for(const k in AIQA){ if(q.includes(k.split(' ')[0]) && k.split(' ').some(w=>q.includes(w))){ans=AIQA[k];break;} }
+  // simpler match
+  for(const k in AIQA){ const kk=k.normalize('NFD').replace(/[\u0300-\u036f]/g,''); if(q.includes('material')&&kk.includes('material')){ans=AIQA[k];break;} if(q.includes('intarzi')&&kk.includes('intarzi')){ans=AIQA[k];break;} if(q.includes('buget')&&kk.includes('buget')){ans=AIQA[k];break;} if((q.includes('liber')||q.includes('angajat')||q.includes('disponibil'))&&kk.includes('liberi')){ans=AIQA[k];break;} }
+  const el=document.getElementById('aiAnswer');
+  el.innerHTML=`<div class="who">Asistent AI · Șantier OS</div>${ans}`;el.classList.add('show');
+}
+
+/* ---------- DRAWER ---------- */
+function openDrawer(id){
+  const o=OBIECTE.find(x=>x.id===id); if(!o)return;
+  document.getElementById('drawerContent').innerHTML=`
+    <div class="drawer-h"><div><h2>${o.name}</h2><div class="loc">${o.loc}</div></div><button class="x" id="drawerX">×</button></div>
+    <div class="drawer-b">
+      <div style="margin-bottom:18px"><span class="st ${o.status}">${STAT[o.status][0]}</span></div>
+      <div class="dstat">
+        <div><div class="mlabel">Progres lucrări</div><div class="v mono">${o.pct}%</div></div>
+        <div><div class="mlabel">Termen</div><div class="v" style="font-size:15px">${o.termen}</div></div>
+        <div><div class="mlabel">Buget total</div><div class="v mono">${money(o.buget)}</div></div>
+        <div><div class="mlabel">Consumat</div><div class="v mono">${money(o.consumat)}</div></div>
+      </div>
+      <div class="bar" style="height:9px"><i class="${siteBarClass(o)}" style="width:${o.pct}%"></i></div>
+      <div class="dsec">Echipă alocată (${o.echipa})</div>
+      <div class="dteam">${o.team.map(t=>`<div class="duse"><span style="color:var(--text)">${t}</span></div>`).join('')}</div>
+      <div class="dsec">Materiale consumate</div>
+      ${o.use.map(u=>`<div class="duse"><span>${u[0]}</span><b class="mono">${u[1]}</b></div>`).join('')}
+      <div style="margin-top:22px;display:flex;gap:10px"><button class="btn amber" style="flex:1">Actualizează progres</button><button class="btn" style="flex:1">Raport obiect</button></div>
+    </div>`;
+  document.getElementById('drawerX').onclick=closeDrawer;
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('drawerBg').classList.add('open');
+}
+function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('drawerBg').classList.remove('open');}
+document.getElementById('drawerBg').onclick=closeDrawer;
+
+/* ---------- NAV / EVENTS ---------- */
+const TITLES={dashboard:['Panou de bord',''],obiecte:['Obiecte în lucru','· 6 obiecte'],inventar:['Inventar materiale','· depozite'],angajati:['Angajați','· 10 în echipă'],crm:['CRM & ofertare','· pipeline'],pontaj:['Pontaj teren','· azi'],ai:['Asistent AI','· Șantier OS'],rapoarte:['Rapoarte','· financiar']};
+function switchView(v){
+  document.querySelectorAll('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.view===v));
+  document.querySelectorAll('.view').forEach(s=>s.classList.toggle('active',s.id==='view-'+v));
+  document.getElementById('pageTitle').firstChild.textContent=TITLES[v][0]+' ';
+  document.getElementById('pageSub').textContent=TITLES[v][1];
+  if(v==='dashboard')renderDashboard();
+  if(v==='obiecte')renderObiecte(document.querySelector('#obFilters .chip.active').dataset.f);
+  if(v==='inventar')renderInventar();
+  if(v==='angajati')renderAngajati();
+  if(v==='crm')renderCRM();
+  if(v==='pontaj')renderPontaj();
+  if(v==='ai')renderAI();
+  if(v==='rapoarte')renderRapoarte();
+  document.getElementById('sidebar').classList.remove('open');
+  window.scrollTo(0,0);
+}
+document.getElementById('nav').addEventListener('click',e=>{const b=e.target.closest('.nav-item');if(b)switchView(b.dataset.view);});
+document.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',()=>switchView(a.dataset.goto)));
+document.getElementById('menuBtn').onclick=()=>document.getElementById('sidebar').classList.toggle('open');
+
+document.getElementById('obFilters').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;
+  document.querySelectorAll('#obFilters .chip').forEach(x=>x.classList.remove('active'));c.classList.add('active');renderObiecte(c.dataset.f);});
+document.getElementById('invFilters').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;
+  document.querySelectorAll('#invFilters .chip').forEach(x=>x.classList.remove('active'));c.classList.add('active');renderInventar();});
+document.getElementById('empFilters').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;
+  document.querySelectorAll('#empFilters .chip').forEach(x=>x.classList.remove('active'));c.classList.add('active');renderAngajati();});
+document.getElementById('invSearch').addEventListener('input',renderInventar);
+document.getElementById('invLowOnly').addEventListener('change',renderInventar);
+document.getElementById('empSearch').addEventListener('input',renderAngajati);
+document.getElementById('ponFilters').addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;
+  document.querySelectorAll('#ponFilters .chip').forEach(x=>x.classList.remove('active'));c.classList.add('active');renderPontaj();});
+document.getElementById('ponSearch').addEventListener('input',renderPontaj);
+document.getElementById('aiSend').addEventListener('click',aiAsk);
+document.getElementById('aiInput').addEventListener('keydown',e=>{if(e.key==='Enter')aiAsk();});
+
+document.body.addEventListener('click',e=>{const r=e.target.closest('[data-obid]');if(r)openDrawer(+r.dataset.obid);});
+
+// global search -> jump to a view based on match
+document.getElementById('globalSearch').addEventListener('keydown',e=>{
+  if(e.key!=='Enter')return; const q=e.target.value.trim().toLowerCase(); if(!q)return;
+  if(INVENTAR.some(m=>m.name.toLowerCase().includes(q)||m.sku.toLowerCase().includes(q))){switchView('inventar');document.getElementById('invSearch').value=q;renderInventar();}
+  else if(ANGAJATI.some(x=>x.name.toLowerCase().includes(q)||x.role.toLowerCase().includes(q))){switchView('angajati');document.getElementById('empSearch').value=q;renderAngajati();}
+  else switchView('obiecte');
+});
+
+renderDashboard();
+</script>
+</body>
+</html>
