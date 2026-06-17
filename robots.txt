@@ -1,15 +1,4 @@
-# B4B Moldova — robots.txt
-# Actualizat: Mai 2026
-
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /admin/
-Disallow: /_next/
-Disallow: /*.json$
 
-# Sitemap location
-Sitemap: https://b4biz.md/sitemap.xml
-
-# Crawl optimization
-Crawl-delay: 1
+Sitemap: https://b4b.md/sitemap.xml
