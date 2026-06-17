@@ -1,0 +1,4397 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Politică Cookies | B4B Moldova</title>
+<meta name="description" content="Studio software & consulting în Chișinău. Construim sisteme verticale pentru HoReCa, beauty, legal, winery, automotive și logistică. Deploy în 4 săptămâni.">
+<meta name="keywords" content="consultanță Moldova, transformare digitală Chișinău, optimizare procese, CRM Moldova, ERP IMM, automatizare business">
+<meta name="author" content="B4B Moldova">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#5046E5">
+
+<link rel="canonical" href="https://b4b.md/cookies">
+<link rel="alternate" hreflang="ro" href="https://b4b.md/cookies">
+<link rel="alternate" hreflang="en" href="https://b4b.md/?lang=en">
+<link rel="alternate" hreflang="ru" href="https://b4b.md/?lang=ru">
+<link rel="alternate" hreflang="x-default" href="https://b4b.md/cookies">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="B4B Moldova">
+<meta property="og:title" content="B4B Moldova — Software vertical pentru afaceri care nu mai vor să piardă timp">
+<meta property="og:description" content="Construim software vertical pentru cafenele, saloane, notari, crame, service-uri auto și firme de curierat. Deploy în 4 săptămâni.">
+<meta property="og:url" content="https://b4b.md/cookies">
+<meta property="og:image" content="https://b4b.md/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ro_RO">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="B4B Moldova — Software vertical pentru IMM-uri">
+<meta name="twitter:description" content="Consultanță operațională + transformare digitală pentru IMM-uri.">
+<meta name="twitter:image" content="https://b4b.md/og-image.jpg">
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%235046E5' rx='14'/%3E%3Ctext x='32' y='44' font-family='Inter,sans-serif' font-size='34' font-weight='700' fill='%23fff' text-anchor='middle'%3EB4B%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' fill='%235046E5' rx='40'/%3E%3Ctext x='90' y='120' font-family='Inter,sans-serif' font-size='90' font-weight='700' fill='%23fff' text-anchor='middle'%3EB4B%3C/text%3E%3C/svg%3E">
+
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="B4B">
+
+<!-- JSON-LD -->
+<!-- Fonts: Inter (modern sans) + JetBrains Mono (accents) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   B4B MOLDOVA · BOLD MODERN TECH DESIGN
+   Inspired by: Stripe, Linear, Notion, Vercel
+   ═══════════════════════════════════════════════════════════════════ */
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  /* Primary brand - Electric violet */
+  --primary:#5046E5;
+  --primary-dark:#3D35B8;
+  --primary-light:#7B68EE;
+
+  /* Accent gradients */
+  --gradient-primary:linear-gradient(135deg,#5046E5 0%,#7B68EE 100%);
+  --gradient-bold:linear-gradient(135deg,#5046E5 0%,#EC4899 100%);
+  --gradient-soft:linear-gradient(135deg,#F0F0FF 0%,#FFE4F0 100%);
+  --gradient-dark:linear-gradient(135deg,#0F0F1E 0%,#1A1A2E 100%);
+
+  /* Neutrals */
+  --black:#0A0A1A;
+  --gray-900:#1A1A2E;
+  --gray-700:#3D3D4E;
+  --gray-500:#6B6B7B;
+  --gray-400:#9999A8;
+  --gray-300:#C5C5CE;
+  --gray-200:#E5E5EA;
+  --gray-100:#F2F2F7;
+  --gray-50:#FAFAFC;
+  --white:#FFFFFF;
+
+  /* Semantic */
+  --success:#10B981;
+  --warning:#F59E0B;
+  --error:#EF4444;
+
+  /* Typography */
+  --font-sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+
+  /* Spacing scale */
+  --space-xs:4px;
+  --space-sm:8px;
+  --space-md:16px;
+  --space-lg:24px;
+  --space-xl:48px;
+  --space-2xl:96px;
+
+  /* Border radius */
+  --radius-sm:8px;
+  --radius-md:12px;
+  --radius-lg:16px;
+  --radius-xl:24px;
+  --radius-full:9999px;
+
+  /* Shadows */
+  --shadow-sm:0 1px 2px 0 rgba(10,10,26,0.05);
+  --shadow-md:0 4px 12px -2px rgba(10,10,26,0.08);
+  --shadow-lg:0 12px 32px -4px rgba(10,10,26,0.12);
+  --shadow-xl:0 24px 48px -8px rgba(10,10,26,0.18);
+  --shadow-primary:0 12px 32px -8px rgba(80,70,229,0.35);
+  --shadow-primary-lg:0 20px 40px -8px rgba(80,70,229,0.45);
+}
+
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.6;
+  color:var(--gray-900);
+  background:var(--white);
+  overflow-x:hidden;
+}
+
+/* Skip to content */
+.skip-to-content{
+  position:absolute;
+  top:-40px;
+  left:0;
+  background:var(--black);
+  color:#fff;
+  padding:12px 20px;
+  font-size:14px;
+  font-weight:500;
+  text-decoration:none;
+  z-index:10000;
+  transition:top 0.2s;
+}
+.skip-to-content:focus{top:0}
+
+/* ═══════════════════════════════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════════════════════════════ */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(20px) saturate(180%);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  border-bottom:1px solid rgba(229,229,234,0.5);
+  padding:14px 32px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  transition:padding 0.3s, background 0.3s;
+}
+nav.scrolled{padding:10px 32px;background:rgba(255,255,255,0.95)}
+
+.logo{
+  font-family:var(--font-sans);
+  font-size:22px;
+  font-weight:800;
+  color:var(--black);
+  text-decoration:none;
+  letter-spacing:-0.04em;
+  display:flex;
+  align-items:center;
+  gap:2px;
+}
+.logo .dot{color:var(--primary);font-weight:800}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  list-style:none;
+}
+.nav-links a{
+  font-size:14px;
+  font-weight:500;
+  color:var(--gray-700);
+  text-decoration:none;
+  padding:8px 14px;
+  border-radius:var(--radius-sm);
+  transition:all 0.2s;
+}
+.nav-links a:hover{color:var(--primary);background:rgba(80,70,229,0.06)}
+
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.lang-switcher{
+  display:flex;
+  align-items:center;
+  gap:0;
+  padding:4px;
+  background:var(--gray-100);
+  border-radius:var(--radius-full);
+}
+.lang-btn{
+  background:none;
+  border:none;
+  font-family:inherit;
+  font-size:12px;
+  font-weight:600;
+  color:var(--gray-500);
+  padding:6px 12px;
+  border-radius:var(--radius-full);
+  cursor:pointer;
+  transition:all 0.2s;
+  letter-spacing:0.02em;
+}
+.lang-btn.active{background:var(--white);color:var(--primary);box-shadow:var(--shadow-sm)}
+
+.btn-primary{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:var(--primary);
+  color:#fff;
+  padding:10px 20px;
+  border-radius:var(--radius-full);
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+  transition:all 0.2s;
+  border:none;
+  cursor:pointer;
+  font-family:inherit;
+  letter-spacing:-0.01em;
+  box-shadow:var(--shadow-primary);
+}
+.btn-primary:hover{
+  background:var(--primary-dark);
+  transform:translateY(-1px);
+  box-shadow:var(--shadow-primary-lg);
+}
+.btn-primary:active{transform:translateY(0)}
+
+.btn-secondary{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:transparent;
+  color:var(--gray-900);
+  padding:10px 20px;
+  border-radius:var(--radius-full);
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+  transition:all 0.2s;
+  border:1px solid var(--gray-200);
+  font-family:inherit;
+  cursor:pointer;
+}
+.btn-secondary:hover{background:var(--gray-100);border-color:var(--gray-300)}
+
+.btn-large{padding:14px 28px;font-size:15px}
+
+/* Burger button */
+.burger{
+  display:none;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:8px;
+  width:40px;
+  height:40px;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  z-index:101;
+}
+.burger span{
+  display:block;
+  width:22px;
+  height:2px;
+  background:var(--black);
+  border-radius:2px;
+  transition:transform 0.3s ease, opacity 0.25s ease;
+  transform-origin:center;
+}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ═══════════════════════════════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════════════════════════════ */
+.hero{
+  position:relative;
+  padding:140px 32px 100px;
+  overflow:hidden;
+  background:linear-gradient(180deg, #FAFAFC 0%, #FFFFFF 100%);
+}
+
+/* Decorative mesh gradient */
+.hero::before{
+  content:'';
+  position:absolute;
+  top:-100px;
+  right:-100px;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle, rgba(80,70,229,0.12) 0%, transparent 70%);
+  border-radius:50%;
+  pointer-events:none;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  bottom:-200px;
+  left:-100px;
+  width:500px;
+  height:500px;
+  background:radial-gradient(circle, rgba(236,72,153,0.08) 0%, transparent 70%);
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.hero-inner{
+  max-width:1200px;
+  margin:0 auto;
+  position:relative;
+  z-index:1;
+  text-align:center;
+}
+
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(80,70,229,0.08);
+  border:1px solid rgba(80,70,229,0.15);
+  padding:8px 16px;
+  border-radius:var(--radius-full);
+  font-size:13px;
+  font-weight:500;
+  color:var(--primary);
+  margin-bottom:24px;
+}
+.hero-badge .pulse{
+  width:6px;
+  height:6px;
+  background:var(--success);
+  border-radius:50%;
+  position:relative;
+}
+.hero-badge .pulse::after{
+  content:'';
+  position:absolute;
+  inset:-3px;
+  border:2px solid var(--success);
+  border-radius:50%;
+  opacity:0.5;
+  animation:pulse 2s ease-out infinite;
+}
+@keyframes pulse{
+  0%{transform:scale(1);opacity:0.5}
+  100%{transform:scale(2);opacity:0}
+}
+
+h1.hero-h{
+  font-size:clamp(40px, 7vw, 80px);
+  font-weight:800;
+  line-height:1.05;
+  letter-spacing:-0.04em;
+  color:var(--black);
+  margin-bottom:24px;
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+}
+h1.hero-h .gradient-text{
+  background:var(--gradient-bold);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+.hero-sub{
+  font-size:clamp(17px, 1.8vw, 21px);
+  color:var(--gray-500);
+  line-height:1.6;
+  max-width:680px;
+  margin:0 auto 40px;
+  font-weight:400;
+}
+
+.hero-cta-group{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:64px;
+}
+
+/* Hero KPI strip */
+.hero-kpis{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:24px;
+  max-width:900px;
+  margin:0 auto;
+  padding:32px;
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(229,229,234,0.5);
+  border-radius:var(--radius-xl);
+  box-shadow:var(--shadow-lg);
+}
+.hero-kpi{text-align:left}
+.hero-kpi .num{
+  font-size:clamp(28px, 3.5vw, 40px);
+  font-weight:800;
+  color:var(--black);
+  letter-spacing:-0.03em;
+  line-height:1;
+  margin-bottom:6px;
+  background:var(--gradient-primary);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-kpi .lbl{
+  font-size:13px;
+  color:var(--gray-500);
+  font-weight:500;
+  line-height:1.4;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTIONS COMMON
+   ═══════════════════════════════════════════════════════════════════ */
+section{
+  padding:100px 32px;
+  position:relative;
+}
+.section-inner{max-width:1200px;margin:0 auto}
+
+.section-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:13px;
+  font-weight:600;
+  color:var(--primary);
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  margin-bottom:16px;
+}
+.section-eyebrow::before{
+  content:'';
+  width:32px;
+  height:2px;
+  background:var(--gradient-primary);
+  border-radius:2px;
+}
+
+.section-h{
+  font-size:clamp(32px, 4.5vw, 52px);
+  font-weight:800;
+  line-height:1.1;
+  letter-spacing:-0.03em;
+  color:var(--black);
+  margin-bottom:20px;
+  max-width:720px;
+}
+.section-h .gradient-text{
+  background:var(--gradient-bold);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+.section-sub{
+  font-size:18px;
+  color:var(--gray-500);
+  line-height:1.65;
+  max-width:640px;
+  margin-bottom:60px;
+}
+
+.section-header-center{text-align:center;margin:0 auto 60px;max-width:760px}
+.section-header-center .section-eyebrow{justify-content:center}
+.section-header-center .section-h{margin-left:auto;margin-right:auto}
+.section-header-center .section-sub{margin-left:auto;margin-right:auto}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ABOUT SECTION
+   ═══════════════════════════════════════════════════════════════════ */
+.about{background:var(--white)}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:start;
+}
+.about-features{display:flex;flex-direction:column;gap:16px;margin-top:32px}
+.about-feature{
+  display:flex;
+  gap:16px;
+  padding:20px;
+  background:var(--gray-50);
+  border-radius:var(--radius-lg);
+  transition:all 0.2s;
+}
+.about-feature:hover{background:rgba(80,70,229,0.04);transform:translateX(4px)}
+.about-feature-icon{
+  flex-shrink:0;
+  width:44px;
+  height:44px;
+  background:var(--gradient-primary);
+  border-radius:var(--radius-md);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+}
+.about-feature-content h4{
+  font-size:16px;
+  font-weight:600;
+  color:var(--black);
+  margin-bottom:4px;
+}
+.about-feature-content p{
+  font-size:14px;
+  color:var(--gray-500);
+  line-height:1.5;
+}
+
+.about-stat-card{
+  background:var(--gradient-dark);
+  color:#fff;
+  padding:40px;
+  border-radius:var(--radius-xl);
+  position:relative;
+  overflow:hidden;
+}
+.about-stat-card::before{
+  content:'';
+  position:absolute;
+  top:-50px;
+  right:-50px;
+  width:200px;
+  height:200px;
+  background:radial-gradient(circle, rgba(123,104,238,0.3) 0%, transparent 70%);
+  border-radius:50%;
+}
+.about-stat-card-inner{position:relative;z-index:1}
+.about-stat-card .label{
+  font-size:13px;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  color:rgba(255,255,255,0.6);
+  margin-bottom:12px;
+}
+.about-stat-card .big-num{
+  font-size:80px;
+  font-weight:800;
+  line-height:0.9;
+  letter-spacing:-0.04em;
+  margin-bottom:8px;
+  background:linear-gradient(135deg, #fff 0%, #C5C5CE 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.about-stat-card .desc{
+  font-size:15px;
+  color:rgba(255,255,255,0.7);
+  line-height:1.6;
+  margin-bottom:32px;
+}
+.about-stat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  padding-top:32px;
+  border-top:1px solid rgba(255,255,255,0.1);
+}
+.about-stat-grid div{}
+.about-stat-grid .v{
+  font-size:32px;
+  font-weight:700;
+  letter-spacing:-0.03em;
+  color:#fff;
+  margin-bottom:4px;
+}
+.about-stat-grid .l{font-size:12px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PROBLEMS SECTION (Identify)
+   ═══════════════════════════════════════════════════════════════════ */
+.problems{background:var(--gray-50)}
+.problems-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+}
+.problem-card{
+  background:var(--white);
+  border:1px solid var(--gray-200);
+  border-radius:var(--radius-lg);
+  padding:32px;
+  transition:all 0.3s cubic-bezier(0.2,0.8,0.2,1);
+  position:relative;
+  overflow:hidden;
+}
+.problem-card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:3px;
+  background:var(--gradient-primary);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.4s;
+}
+.problem-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-lg);
+  border-color:transparent;
+}
+.problem-card:hover::before{transform:scaleX(1)}
+.problem-icon{
+  width:48px;
+  height:48px;
+  background:rgba(80,70,229,0.08);
+  border-radius:var(--radius-md);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--primary);
+  margin-bottom:20px;
+  transition:all 0.3s;
+}
+.problem-card:hover .problem-icon{
+  background:var(--primary);
+  color:#fff;
+  transform:rotate(-5deg) scale(1.05);
+}
+.problem-card h3{
+  font-size:19px;
+  font-weight:700;
+  color:var(--black);
+  margin-bottom:10px;
+  letter-spacing:-0.01em;
+}
+.problem-card p{
+  font-size:14px;
+  color:var(--gray-500);
+  line-height:1.6;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SERVICES SECTION
+   ═══════════════════════════════════════════════════════════════════ */
+.services{background:var(--white)}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:24px;
+}
+.service-card{
+  background:var(--gradient-soft);
+  border-radius:var(--radius-xl);
+  padding:40px;
+  position:relative;
+  overflow:hidden;
+  transition:all 0.3s;
+}
+.service-card:nth-child(even){background:linear-gradient(135deg,#F0FFF4 0%, #FFFAE6 100%)}
+.service-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.service-card-num{
+  font-family:var(--font-mono);
+  font-size:13px;
+  color:var(--gray-500);
+  margin-bottom:12px;
+}
+.service-card h3{
+  font-size:24px;
+  font-weight:700;
+  color:var(--black);
+  margin-bottom:12px;
+  letter-spacing:-0.02em;
+}
+.service-card p{
+  font-size:15px;
+  color:var(--gray-700);
+  line-height:1.6;
+  margin-bottom:24px;
+}
+.service-card .tags{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.service-card .tag{
+  background:rgba(255,255,255,0.7);
+  color:var(--primary-dark);
+  font-size:12px;
+  font-weight:600;
+  padding:6px 12px;
+  border-radius:var(--radius-full);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   INDUSTRIES SECTION
+   ═══════════════════════════════════════════════════════════════════ */
+.industries{background:var(--gray-50)}
+.industries-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+}
+.ind-card{
+  background:var(--white);
+  border:1px solid var(--gray-200);
+  border-radius:var(--radius-lg);
+  padding:28px;
+  transition:all 0.3s;
+}
+.ind-card:hover{
+  border-color:var(--primary);
+  box-shadow:var(--shadow-md);
+  transform:translateY(-2px);
+}
+.ind-card.open{
+  background:repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(229,229,234,0.3) 10px, rgba(229,229,234,0.3) 11px);
+  border-style:dashed;
+}
+.ind-icon{
+  width:48px;
+  height:48px;
+  background:var(--gradient-primary);
+  border-radius:var(--radius-md);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  margin-bottom:16px;
+}
+.ind-card.open .ind-icon{background:var(--gray-300);color:var(--gray-700)}
+.ind-name{
+  font-size:18px;
+  font-weight:700;
+  color:var(--black);
+  margin-bottom:8px;
+  letter-spacing:-0.01em;
+}
+.ind-status{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:rgba(16,185,129,0.1);
+  color:var(--success);
+  font-size:11px;
+  font-weight:600;
+  padding:4px 10px;
+  border-radius:var(--radius-full);
+  margin-bottom:14px;
+}
+.ind-card.open .ind-status{background:rgba(245,158,11,0.1);color:#D97706}
+.ind-status::before{
+  content:'';
+  width:6px;
+  height:6px;
+  background:currentColor;
+  border-radius:50%;
+}
+.ind-card p{
+  font-size:14px;
+  color:var(--gray-500);
+  line-height:1.6;
+  margin-bottom:16px;
+}
+.ind-tags{display:flex;gap:6px;flex-wrap:wrap}
+.ind-tags span{
+  font-size:11px;
+  font-weight:500;
+  color:var(--gray-700);
+  background:var(--gray-100);
+  padding:4px 10px;
+  border-radius:var(--radius-full);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TEAM SECTION
+   ═══════════════════════════════════════════════════════════════════ */
+.team{background:var(--white)}
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:18px;
+}
+@media(max-width:1280px){.team-grid{grid-template-columns:repeat(3, 1fr) !important}}
+@media(max-width:800px){.team-grid{grid-template-columns:repeat(2, 1fr) !important}}
+@media(max-width:480px){.team-grid{grid-template-columns:1fr !important}}
+.team-card{
+  background:var(--white);
+  border:1px solid var(--gray-200);
+  border-radius:var(--radius-xl);
+  overflow:hidden;
+  transition:all 0.3s;
+}
+.team-card:hover{
+  border-color:var(--primary);
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-lg);
+}
+.team-avatar{
+  aspect-ratio:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.team-avatar.avatar-1{background:linear-gradient(135deg,#5046E5 0%,#7B68EE 50%,#9333EA 100%)}
+/* TEAM PHOTOS — for real photos */
+.team-photo{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:2;
+  display:block;
+}
+.team-photo-wrap{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  overflow:hidden;
+}
+.team-avatar.has-photo::before{display:none}
+.team-avatar.has-photo .avatar-corner{
+  position:absolute;
+  z-index:3;
+  background:rgba(0,0,0,0.55);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  color:rgba(255,255,255,0.95);
+  padding:4px 10px;
+  border-radius:6px;
+}
+.team-avatar.has-photo .avatar-pattern,
+.team-avatar.has-photo .avatar-decor{
+  z-index:3
+}
+
+.team-avatar.avatar-2{background:linear-gradient(135deg,#EC4899 0%,#F472B6 50%,#FB923C 100%)}
+.team-avatar.avatar-3{background:linear-gradient(135deg,#0EA5E9 0%,#06B6D4 50%,#10B981 100%)}
+.team-avatar.avatar-4{background:linear-gradient(135deg,#0D9488 0%,#14B8A6 50%,#06B6D4 100%)}
+.team-avatar.avatar-5{background:linear-gradient(135deg,#7C3AED 0%,#A78BFA 50%,#F59E0B 100%)}
+.team-avatar::before{
+  content:'';
+  position:absolute;
+  top:-50%;
+  left:-50%;
+  width:200%;
+  height:200%;
+  background:radial-gradient(circle at 30% 20%, rgba(255,255,255,0.4) 0%, transparent 50%);
+  pointer-events:none;
+}
+.team-avatar::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.15) 0%, transparent 40%),
+    radial-gradient(circle at 20% 90%, rgba(0,0,0,0.1) 0%, transparent 50%);
+  pointer-events:none;
+}
+.team-card:hover .team-avatar{transform:scale(1.02)}
+.team-card:hover .team-avatar::before{transform:translateY(-5px) translateX(5px);transition:transform 0.6s ease}
+.avatar-pattern{
+  position:absolute;
+  inset:0;
+  opacity:0.08;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-size:24px 24px;
+  pointer-events:none;
+}
+.avatar-corner{
+  position:absolute;
+  top:1.25rem;
+  left:1.25rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  font-weight:600;
+  color:rgba(255,255,255,0.6);
+  letter-spacing:0.08em;
+  z-index:2;
+}
+.avatar-decor{
+  position:absolute;
+  bottom:1.25rem;
+  right:1.25rem;
+  width:32px;
+  height:32px;
+  border:1px solid rgba(255,255,255,0.25);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+}
+.avatar-decor::after{
+  content:'';
+  width:6px;
+  height:6px;
+  background:rgba(255,255,255,0.6);
+  border-radius:50%;
+}
+.team-avatar::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2) 0%, transparent 50%);
+}
+.team-card:nth-child(2) .team-avatar{background:linear-gradient(135deg, #EC4899 0%, #F59E0B 100%)}
+.team-card:nth-child(3) .team-avatar{background:linear-gradient(135deg, #10B981 0%, #06B6D4 100%)}
+.team-initials{
+  font-size:clamp(56px, 7.5vw, 88px);
+  font-weight:900;
+  color:#fff;
+  letter-spacing:-0.06em;
+  z-index:2;
+  position:relative;
+  text-shadow:0 4px 16px rgba(0,0,0,0.15);
+  font-feature-settings:"ss01" on;
+  display:flex;
+  align-items:baseline;
+  gap:2px;
+}
+.team-initials .dot{
+  display:inline-block;
+  width:8px;
+  height:8px;
+  background:rgba(255,255,255,0.6);
+  border-radius:50%;
+  margin:0 6px;
+  align-self:center;
+  margin-bottom:8px;
+}
+.team-info{padding:24px}
+.team-role{
+  font-size:12px;
+  font-weight:600;
+  color:var(--primary);
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  margin-bottom:8px;
+}
+.team-info h3{
+  font-size:22px;
+  font-weight:700;
+  color:var(--black);
+  letter-spacing:-0.02em;
+  margin-bottom:12px;
+}
+.team-info p{
+  font-size:14px;
+  color:var(--gray-500);
+  line-height:1.6;
+  margin-bottom:20px;
+}
+.team-tags{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  padding-top:20px;
+  border-top:1px solid var(--gray-200);
+}
+.team-tags span{
+  font-size:11px;
+  font-weight:600;
+  color:var(--gray-700);
+  background:var(--gray-100);
+  padding:4px 10px;
+  border-radius:var(--radius-full);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CASES SECTION
+   ═══════════════════════════════════════════════════════════════════ */
+.cases{background:var(--gradient-dark);color:#fff;padding:120px 32px}
+.cases .section-eyebrow{color:var(--primary-light)}
+.cases .section-h{color:#fff}
+.cases .section-sub{color:rgba(255,255,255,0.6)}
+
+.cases-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:24px;
+}
+.case-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:var(--radius-xl);
+  padding:40px;
+  transition:all 0.3s;
+  position:relative;
+  overflow:hidden;
+}
+.case-card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:4px;
+  height:0;
+  background:var(--gradient-bold);
+  transition:height 0.4s;
+}
+.case-card:hover{
+  background:rgba(255,255,255,0.08);
+  border-color:rgba(255,255,255,0.15);
+  transform:translateY(-2px);
+}
+.case-card:hover::before{height:100%}
+.case-client{
+  font-size:13px;
+  font-weight:600;
+  color:var(--primary-light);
+  margin-bottom:6px;
+  letter-spacing:-0.01em;
+}
+.case-sector{
+  display:inline-block;
+  font-size:11px;
+  font-weight:600;
+  color:#7B68EE;
+  background:rgba(123,104,238,0.12);
+  padding:4px 10px;
+  border-radius:9999px;
+  letter-spacing:0.04em;
+  margin-bottom:24px;
+}
+.case-card h3{
+  font-size:22px;
+  font-weight:700;
+  color:#fff;
+  letter-spacing:-0.02em;
+  margin-bottom:20px;
+  line-height:1.3;
+}
+.case-results{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:16px;
+  padding:24px 0;
+  border-top:1px solid rgba(255,255,255,0.1);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  margin-bottom:24px;
+}
+.case-result .v{
+  font-size:28px;
+  font-weight:800;
+  background:var(--gradient-bold);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  letter-spacing:-0.03em;
+  line-height:1;
+  margin-bottom:4px;
+}
+.case-result .l{font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.06em}
+.case-desc{
+  font-size:14px;
+  color:rgba(255,255,255,0.7);
+  line-height:1.7;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PROCESS SECTION
+   ═══════════════════════════════════════════════════════════════════ */
+.process{background:var(--white)}
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:24px;
+  margin-top:60px;
+}
+.process-step{
+  position:relative;
+  padding:32px 24px;
+  background:var(--gray-50);
+  border-radius:var(--radius-lg);
+  transition:all 0.3s;
+}
+.process-step:hover{background:rgba(80,70,229,0.04);transform:translateY(-4px)}
+.process-num{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  background:var(--gradient-primary);
+  color:#fff;
+  border-radius:var(--radius-md);
+  font-size:16px;
+  font-weight:700;
+  margin-bottom:20px;
+}
+.process-step h3{
+  font-size:18px;
+  font-weight:700;
+  color:var(--black);
+  margin-bottom:8px;
+  letter-spacing:-0.01em;
+}
+.process-step p{font-size:14px;color:var(--gray-500);line-height:1.6}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PRICING SECTION
+   ═══════════════════════════════════════════════════════════════════ */
+.pricing{background:var(--gray-50)}
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:18px;
+  align-items:stretch;
+}
+.pricing-card{
+  background:var(--white);
+  border:1px solid var(--gray-200);
+  border-radius:var(--radius-xl);
+  padding:32px 28px;
+  transition:all 0.3s;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
+.pricing-card.featured{
+  background:var(--gradient-dark);
+  color:#fff;
+  border-color:transparent;
+  transform:translateY(-8px);
+  box-shadow:var(--shadow-xl);
+}
+.pricing-card.featured::before{
+  content:'Popular';
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--gradient-bold);
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  padding:6px 16px;
+  border-radius:var(--radius-full);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+}
+.pricing-card:not(.featured):hover{
+  border-color:var(--primary);
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-md);
+}
+.pricing-tier{
+  font-size:13px;
+  font-weight:700;
+  color:var(--primary);
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  margin-bottom:12px;
+}
+.pricing-card.featured .pricing-tier{color:var(--primary-light)}
+.pricing-name{
+  font-size:22px;
+  font-weight:700;
+  color:var(--black);
+  margin-bottom:8px;
+  letter-spacing:-0.02em;
+}
+.pricing-card.featured .pricing-name{color:#fff}
+.pricing-desc{
+  font-size:13px;
+  color:var(--gray-500);
+  line-height:1.5;
+  margin-bottom:24px;
+  min-height:40px;
+}
+.pricing-card.featured .pricing-desc{color:rgba(255,255,255,0.6)}
+.pricing-price{
+  font-size:28px;
+  font-weight:800;
+  color:var(--black);
+  letter-spacing:-0.03em;
+  margin-bottom:6px;
+  font-family:var(--font-mono);
+}
+.pricing-card.featured .pricing-price{color:#fff}
+.pricing-duration{
+  font-size:13px;
+  color:var(--gray-500);
+  margin-bottom:24px;
+}
+.pricing-card.featured .pricing-duration{color:rgba(255,255,255,0.6)}
+.pricing-features{
+  flex:1 0 auto;
+  list-style:none;
+  padding:24px 0;
+  border-top:1px solid var(--gray-200);
+  margin-bottom:24px;
+}
+.pricing-card.featured .pricing-features{border-color:rgba(255,255,255,0.1)}
+.pricing-features li{
+  font-size:13px;
+  color:var(--gray-700);
+  padding:8px 0;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+.pricing-card.featured .pricing-features li{color:rgba(255,255,255,0.85)}
+.pricing-features li::before{
+  content:'';
+  flex-shrink:0;
+  width:18px;
+  height:18px;
+  background:var(--gradient-primary);
+  border-radius:50%;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E") center/12px no-repeat;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E") center/12px no-repeat;
+  margin-top:2px;
+}
+.pricing-btn{
+  display:block;
+  width:100%;
+  text-align:center;
+  background:var(--gray-100);
+  color:var(--black);
+  padding:12px;
+  border-radius:var(--radius-full);
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+  transition:all 0.2s;
+  border:none;
+  cursor:pointer;
+  font-family:inherit;
+}
+.pricing-btn:hover{background:var(--primary);color:#fff}
+.pricing-card.featured .pricing-btn{background:var(--white);color:var(--black)}
+.pricing-card.featured .pricing-btn:hover{background:var(--primary-light);color:#fff}
+
+/* ═══════════════════════════════════════════════════════════════════
+   FAQ SECTION
+   ═══════════════════════════════════════════════════════════════════ */
+.faq{background:var(--white)}
+.faq-list{
+  max-width:760px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.faq-item{
+  background:var(--gray-50);
+  border:1px solid var(--gray-200);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  transition:all 0.2s;
+}
+.faq-item[open]{background:rgba(80,70,229,0.04);border-color:var(--primary)}
+.faq-q{
+  padding:20px 24px;
+  font-size:16px;
+  font-weight:600;
+  color:var(--black);
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  list-style:none;
+  letter-spacing:-0.01em;
+}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q::after{
+  content:'';
+  flex-shrink:0;
+  width:24px;
+  height:24px;
+  background:var(--gray-200);
+  border-radius:50%;
+  position:relative;
+  transition:all 0.3s;
+}
+.faq-item[open] .faq-q::after{background:var(--primary);transform:rotate(45deg)}
+.faq-q::before{
+  content:'+';
+  position:absolute;
+  right:32px;
+  color:var(--gray-700);
+  font-size:18px;
+  font-weight:400;
+  transition:all 0.3s;
+  z-index:1;
+  margin-top:2px;
+}
+.faq-item[open] .faq-q::before{color:#fff;transform:rotate(-45deg)}
+.faq-a{
+  padding:0 24px 24px;
+  font-size:15px;
+  color:var(--gray-700);
+  line-height:1.7;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CONTACT SECTION
+   ═══════════════════════════════════════════════════════════════════ */
+.contact{background:var(--gray-50);padding:120px 32px}
+.contact-card{
+  max-width:980px;
+  margin:0 auto;
+  background:var(--white);
+  border-radius:var(--radius-xl);
+  padding:60px;
+  box-shadow:var(--shadow-lg);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:start;
+}
+.contact-left h2{
+  font-size:36px;
+  font-weight:800;
+  color:var(--black);
+  letter-spacing:-0.03em;
+  line-height:1.1;
+  margin-bottom:16px;
+}
+.contact-left p{
+  font-size:16px;
+  color:var(--gray-500);
+  line-height:1.65;
+  margin-bottom:32px;
+}
+.contact-methods{display:flex;flex-direction:column;gap:16px}
+.contact-method{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px 16px;
+  background:var(--gray-50);
+  border-radius:var(--radius-md);
+  text-decoration:none;
+  color:var(--gray-900);
+  transition:all 0.2s;
+}
+.contact-method:hover{background:rgba(80,70,229,0.06);transform:translateX(4px)}
+.contact-method-icon{
+  width:36px;
+  height:36px;
+  background:var(--gradient-primary);
+  border-radius:var(--radius-sm);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  flex-shrink:0;
+}
+.contact-method-label{font-size:11px;color:var(--gray-500);font-weight:500;text-transform:uppercase;letter-spacing:0.06em}
+.contact-method-val{font-size:15px;font-weight:600;color:var(--black)}
+
+.contact-form{display:flex;flex-direction:column;gap:14px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:13px;font-weight:600;color:var(--gray-700)}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  font-family:inherit;
+  font-size:15px;
+  padding:12px 16px;
+  border:1.5px solid var(--gray-200);
+  border-radius:var(--radius-md);
+  background:var(--white);
+  color:var(--black);
+  transition:all 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(80,70,229,0.1)}
+.contact-form button{
+  background:var(--gradient-primary);
+  color:#fff;
+  padding:14px;
+  border:none;
+  border-radius:var(--radius-full);
+  font-size:15px;
+  font-weight:600;
+  font-family:inherit;
+  cursor:pointer;
+  transition:all 0.2s;
+  box-shadow:var(--shadow-primary);
+}
+.contact-form button:hover{transform:translateY(-1px);box-shadow:var(--shadow-primary-lg)}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CTA BANNER
+   ═══════════════════════════════════════════════════════════════════ */
+.cta-banner{
+  background:var(--gradient-dark);
+  color:#fff;
+  padding:80px 32px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.cta-banner::before{
+  content:'';
+  position:absolute;
+  top:-100px;
+  left:50%;
+  transform:translateX(-50%);
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle, rgba(80,70,229,0.3) 0%, transparent 60%);
+  border-radius:50%;
+}
+.cta-banner-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+.cta-banner h2{
+  font-size:clamp(32px, 4.5vw, 48px);
+  font-weight:800;
+  letter-spacing:-0.03em;
+  line-height:1.1;
+  margin-bottom:16px;
+}
+.cta-banner h2 .gradient-text{
+  background:var(--gradient-bold);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.cta-banner p{
+  font-size:18px;
+  color:rgba(255,255,255,0.7);
+  margin-bottom:32px;
+}
+.cta-banner .btn-primary{
+  background:#fff;
+  color:var(--primary);
+  box-shadow:none;
+}
+.cta-banner .btn-primary:hover{background:var(--gray-100);transform:translateY(-2px)}
+
+/* ═══════════════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════════════ */
+footer{
+  background:var(--black);
+  color:#fff;
+  padding:80px 32px 32px;
+}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;
+  gap:60px;
+  margin-bottom:60px;
+}
+.footer-brand .logo{color:#fff;margin-bottom:16px;display:flex}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:24px}
+.footer-social{display:flex;gap:8px}
+.footer-social a{
+  width:36px;
+  height:36px;
+  background:rgba(255,255,255,0.06);
+  border-radius:var(--radius-sm);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(255,255,255,0.7);
+  transition:all 0.2s;
+}
+.footer-social a:hover{background:var(--primary);color:#fff;transform:translateY(-2px)}
+.footer-col h4{
+  font-size:13px;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:20px;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{
+  font-size:14px;
+  color:rgba(255,255,255,0.6);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.footer-links a:hover{color:#fff}
+.footer-bottom{
+  padding-top:32px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.footer-legal{display:flex;gap:24px;font-size:13px;color:rgba(255,255,255,0.4)}
+.footer-legal a{color:rgba(255,255,255,0.6);text-decoration:none;transition:color 0.2s}
+.footer-legal a:hover{color:#fff}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.4)}
+
+/* ═══════════════════════════════════════════════════════════════════
+   FLOATING ELEMENTS
+   ═══════════════════════════════════════════════════════════════════ */
+.whatsapp-float{
+  position:fixed;
+  bottom:28px;
+  right:28px;
+  width:60px;
+  height:60px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  box-shadow:0 12px 32px rgba(37,211,102,0.4);
+  z-index:99;
+  transition:all 0.25s;
+  opacity:0;
+  transform:scale(0.5);
+  pointer-events:none;
+}
+.whatsapp-float.visible{opacity:1;transform:scale(1);pointer-events:auto}
+.whatsapp-float:hover{transform:scale(1.08);box-shadow:0 16px 40px rgba(37,211,102,0.5)}
+
+.scroll-top{
+  position:fixed;
+  bottom:104px;
+  right:28px;
+  width:44px;
+  height:44px;
+  background:var(--white);
+  border:1px solid var(--gray-200);
+  border-radius:50%;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--gray-700);
+  opacity:0;
+  transform:translateY(10px);
+  pointer-events:none;
+  transition:all 0.25s;
+  z-index:98;
+  box-shadow:var(--shadow-md);
+}
+.scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.scroll-top:hover{background:var(--primary);color:#fff;border-color:var(--primary);transform:translateY(-2px)}
+
+/* Cookie banner */
+.cookie-consent{
+  position:fixed;
+  bottom:24px;
+  left:24px;
+  right:24px;
+  max-width:920px;
+  margin:0 auto;
+  background:var(--white);
+  border:1px solid var(--gray-200);
+  box-shadow:var(--shadow-xl);
+  padding:24px 28px;
+  border-radius:var(--radius-xl);
+  z-index:200;
+  transform:translateY(150%);
+  transition:transform 0.5s cubic-bezier(0.2,0.8,0.2,1);
+  display:flex;
+  gap:24px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.cookie-consent.visible{transform:translateY(0)}
+.cookie-text{flex:1;min-width:280px}
+.cookie-title{font-size:16px;font-weight:700;color:var(--black);margin-bottom:6px;letter-spacing:-0.01em}
+.cookie-desc{font-size:13px;color:var(--gray-500);line-height:1.6}
+.cookie-desc a{color:var(--primary);text-decoration:underline}
+.cookie-actions{display:flex;gap:10px}
+.cookie-btn{
+  background:none;
+  border:1px solid var(--gray-200);
+  padding:10px 20px;
+  font-size:13px;
+  font-weight:600;
+  cursor:pointer;
+  font-family:inherit;
+  border-radius:var(--radius-full);
+  transition:all 0.2s;
+}
+.cookie-reject{color:var(--gray-700)}
+.cookie-reject:hover{background:var(--gray-100)}
+.cookie-accept{background:var(--primary);color:#fff;border-color:var(--primary)}
+.cookie-accept:hover{background:var(--primary-dark)}
+
+/* Mobile menu */
+.mobile-menu{
+  position:fixed;
+  inset:0;
+  background:#fff;
+  z-index:100;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity 0.3s, visibility 0s linear 0.3s;
+  overflow-y:auto;
+  padding-top:80px;
+}
+.mobile-menu.open{opacity:1;visibility:visible;transition:opacity 0.3s, visibility 0s linear 0s}
+.mobile-menu-inner{padding:24px 32px 48px;max-width:600px}
+.mobile-nav-links{list-style:none;display:flex;flex-direction:column}
+.mobile-nav-links li{
+  border-bottom:1px solid var(--gray-200);
+  opacity:0;
+  transform:translateY(10px);
+  transition:opacity 0.3s, transform 0.3s;
+}
+.mobile-menu.open .mobile-nav-links li{opacity:1;transform:translateY(0)}
+.mobile-menu.open .mobile-nav-links li:nth-child(1){transition-delay:0.05s}
+.mobile-menu.open .mobile-nav-links li:nth-child(2){transition-delay:0.1s}
+.mobile-menu.open .mobile-nav-links li:nth-child(3){transition-delay:0.15s}
+.mobile-menu.open .mobile-nav-links li:nth-child(4){transition-delay:0.2s}
+.mobile-menu.open .mobile-nav-links li:nth-child(5){transition-delay:0.25s}
+.mobile-menu.open .mobile-nav-links li:nth-child(6){transition-delay:0.3s}
+.mobile-menu.open .mobile-nav-links li:nth-child(7){transition-delay:0.35s}
+.mobile-nav-links a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:20px 0;
+  font-size:20px;
+  font-weight:600;
+  color:var(--black);
+  text-decoration:none;
+  letter-spacing:-0.01em;
+}
+.mobile-nav-links a::after{content:'→';color:var(--primary);font-weight:400}
+.mobile-menu-footer{margin-top:40px;display:flex;flex-direction:column;gap:24px}
+.mobile-menu-footer .btn-primary{width:100%;justify-content:center}
+.mobile-lang-switcher{display:flex;gap:0;background:var(--gray-100);padding:4px;border-radius:var(--radius-full);align-self:center}
+.mlang-btn{
+  background:none;
+  border:none;
+  font-family:inherit;
+  font-size:13px;
+  font-weight:600;
+  color:var(--gray-500);
+  padding:8px 16px;
+  border-radius:var(--radius-full);
+  cursor:pointer;
+}
+.mlang-btn.active{background:#fff;color:var(--primary);box-shadow:var(--shadow-sm)}
+body.menu-open{overflow:hidden}
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════ */
+@media(max-width:1024px){
+  .footer-grid{grid-template-columns:1fr 1fr 1fr;gap:40px}
+  .footer-brand{grid-column:1/-1}
+  .industries-grid{grid-template-columns:repeat(2, 1fr)}
+  .problems-grid{grid-template-columns:repeat(2, 1fr)}
+  .pricing-grid{grid-template-columns:repeat(2, 1fr)}
+  .process-grid{grid-template-columns:repeat(2, 1fr)}
+  .team-grid{grid-template-columns:repeat(2, 1fr)}
+  .about-grid{grid-template-columns:1fr;gap:48px}
+  .contact-card{grid-template-columns:1fr;gap:40px}
+}
+@media(max-width:900px){
+  .nav-links,.nav-right{display:none !important}
+  .burger{display:flex}
+}
+@media(max-width:768px){
+  nav{padding:12px 20px}
+  .hero{padding:120px 20px 80px}
+  section{padding:80px 20px}
+  .hero-kpis{grid-template-columns:1fr 1fr;padding:24px}
+  .services-grid{grid-template-columns:1fr}
+  .cases-grid{grid-template-columns:1fr}
+  .hero-cta-group{flex-direction:column;width:100%}
+  .hero-cta-group .btn-primary,
+  .hero-cta-group .btn-secondary{justify-content:center;width:100%}
+}
+@media(max-width:600px){
+  .industries-grid,.problems-grid,.pricing-grid,.process-grid,.team-grid{grid-template-columns:1fr}
+  .contact-card{padding:32px 24px}
+  .case-results{grid-template-columns:1fr}
+  .about-stat-grid{grid-template-columns:1fr}
+}
+
+/* Animations */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease, transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* Focus accessibility */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+  outline:2px solid var(--primary);
+  outline-offset:2px;
+}
+
+@media(max-width:1100px){.concepts-grid-responsive{grid-template-columns:repeat(2,1fr) !important}}
+@media(max-width:700px){.concepts-grid-responsive{grid-template-columns:1fr !important}}
+@media(max-width:1024px) and (min-width:601px){.pricing-grid{grid-template-columns:repeat(2,1fr) !important}}</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "Organization",
+    "LocalBusiness"
+  ],
+  "@id": "https://b4b.md/#organization",
+  "name": "B4B Moldova",
+  "alternateName": "B4B",
+  "url": "https://b4b.md/cookies",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://b4b.md/og-image.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "description": "Studio software & consulting în Chișinău. Construim sisteme verticale pentru HoReCa, beauty, legal, winery, automotive și logistică. Deploy în 4 săptămâni.",
+  "foundingDate": "2026",
+  "founder": [
+    {
+      "@type": "Person",
+      "name": "Evgheni Bratu",
+      "jobTitle": "CEO · Co-founder",
+      "description": "15+ ani experiență antreprenorială. Conduce strategia B4B și relațiile cu clienții."
+    },
+    {
+      "@type": "Person",
+      "name": "Alexandru Cucer",
+      "jobTitle": "CTO · Co-founder",
+      "description": "Head of Technology Syndika · ex-CTO IX Swap & InvestaX (Singapore-licensed fintech). Arhitectura tehnică B4B."
+    },
+    {
+      "@type": "Person",
+      "name": "Alexandru Chircu",
+      "jobTitle": "CFO · Co-founder",
+      "description": "15+ ani experiență financiară. Construiește sistemele financiare ale clienților B4B."
+    }
+  ],
+  "employee": [
+    {
+      "@type": "Person",
+      "name": "Ana Caruceru",
+      "jobTitle": "QA Engineer · Quality Assurance Lead",
+      "description": "12 ani experiență QA Engineer în industrii reglementate (e-health, fintech, telecom, asigurări). Specialist în testare manuală și automation."
+    }
+  ,
+    {
+      "@type": "Person",
+      "name": "Maria Caruceru",
+      "jobTitle": "Chief Accountant · Financial Lead",
+      "description": "Chief Accountant cu experiență în contabilitate și fiscalitate moldovenească. Coordonează operațiunile financiare ale B4B și clienților."
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Chișinău",
+    "addressCountry": "MD",
+    "addressRegion": "Chișinău"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "47.0105",
+    "longitude": "28.8638"
+  },
+  "telephone": "+37378000019",
+  "email": "contact@b4b.md",
+  "priceRange": "$$",
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Moldova"
+    },
+    {
+      "@type": "Country",
+      "name": "Romania"
+    },
+    {
+      "@type": "Country",
+      "name": "European Union"
+    }
+  ],
+  "knowsLanguage": [
+    "ro",
+    "en",
+    "ru"
+  ],
+  "knowsAbout": [
+    "Software development",
+    "Business consulting",
+    "Digital transformation",
+    "Vertical SaaS",
+    "Restaurant POS systems",
+    "Beauty salon booking",
+    "Legal practice management",
+    "Winery management",
+    "Auto service software",
+    "Last-mile delivery logistics"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "Vertical Deploy",
+      "description": "Soluție verticală personalizată pe brandul tău. Deploy în 4 săptămâni.",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "EUR",
+        "valueAddedTaxIncluded": false,
+        "description": "Ofertă personalizată la cerere"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "SaaS Subscription",
+      "description": "Acces lunar la soluțiile verticale B4B fără setup."
+    },
+    {
+      "@type": "Offer",
+      "name": "Custom Software",
+      "description": "Software construit de la zero pentru verticale neacoperite."
+    },
+    {
+      "@type": "Offer",
+      "name": "Consulting",
+      "description": "Audit operațional și roadmap digitalizare. Pachet fix 2-4 săptămâni."
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Cât durează cu adevărat un proiect B4B?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pentru o soluție verticală personalizată — 4 săptămâni calendaristice de la kickoff la go-live, inclusiv migrarea datelor și training. Pentru custom software — 8-16 săptămâni în funcție de complexitate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pot să încep cu SaaS și să trec mai târziu la deploy custom?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da, asta e cel mai des recomandat path pentru afaceri mici. Începi cu abonament, folosești soluția 3-6 luni, vezi ce funcționează. Apoi facem deploy custom cu datele migrate automat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lucrați doar în Moldova sau și internațional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lucrăm cu clienți din Moldova, România și UE. Pentru clienți internaționali, facturăm fără TVA (reverse charge). Integrările locale (MPay, SFS, MSign) le configurăm doar pentru clienți MD."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cine deține codul după ce proiectul e gata?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pentru pachetele Vertical Deploy și Custom Software — clientul. Primești source code-ul complet, documentație tehnică și acces la repository."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ce stack tehnic folosiți și de ce?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Frontend: React + Vite. Backend: Node 24 + Express 5. Database: PostgreSQL + Drizzle ORM. AI: API Anthropic Claude pentru asistenți. Deploy: Vercel + edge functions."
+      }
+    }
+  ]
+}
+</script>
+
+<style id="b4b-collapse-css">
+.b4b-more-wrap{text-align:center;margin-top:40px}
+.b4b-more-btn{font-family:inherit;font-size:15px;font-weight:600;color:#5046E5;background:#fff;border:1.5px solid #5046E5;border-radius:999px;padding:13px 30px;cursor:pointer;transition:background .2s,color .2s;letter-spacing:.01em}
+.b4b-more-btn:hover{background:#5046E5;color:#fff}
+.b4b-more-btn:focus-visible{outline:2px solid #5046E5;outline-offset:3px}
+.team-photo{object-position:center 20%!important;filter:grayscale(100%) contrast(1.03);transition:filter .45s ease}
+.team-card:hover .team-photo{filter:grayscale(0%) contrast(1)}
+.team-avatar.has-photo{filter:none}
+</style>
+
+<style id="b4b-legal-css">
+.legal-wrap{max-width:860px;margin:0 auto;padding:150px 32px 110px;font-family:'Inter','Golos Text',sans-serif}
+.legal-eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5046E5;margin-bottom:14px}
+.legal-wrap h1{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.025em;line-height:1.1;color:#0A0A1A;margin:0 0 16px}
+.legal-lead{font-size:18px;line-height:1.6;color:#3A3A4A;margin:0 0 14px}
+.legal-updated{font-size:13px;color:#9999A8;margin:0 0 52px}
+.legal-wrap h2{font-size:22px;font-weight:700;color:#0A0A1A;margin:42px 0 12px;letter-spacing:-.01em}
+.legal-wrap p,.legal-wrap li{font-size:16px;line-height:1.75;color:#3A3A4A}
+.legal-wrap p{margin:0 0 14px}
+.legal-wrap ul{padding-left:20px;margin:10px 0 18px}
+.legal-wrap li{margin-bottom:7px}
+.legal-wrap a{color:#5046E5;text-decoration:none;border-bottom:1px solid rgba(80,70,229,.3)}
+.legal-wrap a:hover{border-color:#5046E5}
+.legal-wrap strong{color:#0A0A1A;font-weight:700}
+.legal-wrap h3{font-size:16px;font-weight:700;color:#0A0A1A;margin:22px 0 8px}
+.legal-wrap table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:14px}
+.legal-wrap th{text-align:left;background:#F4F3FB;color:#0A0A1A;font-weight:700;padding:10px 12px;border:1px solid #E5E5EA}
+.legal-wrap td{padding:10px 12px;border:1px solid #E5E5EA;color:#3A3A4A;vertical-align:top}
+
+</style>
+<style>.footer-social{display:none!important}</style>
+</head>
+<body>
+
+<a href="/#main" class="skip-to-content">Sari la conținut</a>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════════════════ -->
+<nav id="nav" role="navigation" aria-label="Navigare principală">
+  <a href="/" class="logo" aria-label="B4B Moldova">B4B<span class="dot">.</span></a>
+
+  <ul class="nav-links">
+    <li><a href="/#concepts" data-i18n="nav.concepts">Glosar</a></li><li><a href="/#industries" data-i18n="nav.industries">Industrii</a></li><li><a href="/#services" data-i18n="nav.services">Servicii</a></li>
+    <li><a href="/#cases" data-i18n="nav.cases">Proiecte</a></li><li><a href="/#team" data-i18n="nav.team">Echipa</a></li>
+    <li><a href="/#pricing" data-i18n="nav.pricing">Prețuri</a></li>
+    </ul>
+
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ro">RO</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ru">RU</button>
+    </div>
+    <a href="https://wa.me/37378000019" target="_blank" rel="noopener" class="nav-whatsapp" aria-label="WhatsApp" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:#25D366;margin-right:10px;transition:transform 0.2s" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z"/></svg></a><a href="/#contact" class="btn-primary" data-i18n="nav.cta">
+      Discută cu noi
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <button class="burger" id="burger" aria-label="Meniu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <ul class="mobile-nav-links">
+      <li></li>
+      <li><a href="/#concepts" data-i18n="nav.concepts">Glosar</a></li><li><a href="/#services" data-i18n="nav.services">Servicii</a></li>
+      <li><a href="/#cases" data-i18n="nav.cases">Proiecte</a></li>
+      <li><a href="/#pricing" data-i18n="nav.pricing">Prețuri</a></li>
+      </ul>
+    <div class="mobile-menu-footer">
+      <a href="/#contact" class="btn-primary" data-i18n="nav.cta">Discută cu noi</a>
+      <div class="mobile-lang-switcher">
+        <button class="mlang-btn active" data-lang="ro">RO</button>
+        <button class="mlang-btn" data-lang="en">EN</button>
+        <button class="mlang-btn" data-lang="ru">RU</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+<section class="legal-wrap">
+<div class="legal-eyebrow">Document legal</div>
+<h1>Politică privind cookie-urile</h1>
+<p class="legal-lead">Ce sunt cookies, de ce le folosim, ce informații colectează și cum poți controla preferințele tale — totul explicat pe înțelesul tuturor.</p>
+<div class="legal-updated">Ultima actualizare: 16 mai 2026</div>
+
+<h2>Ce sunt cookies?</h2>
+<p><strong>Cookies sunt fișiere mici de text</strong> pe care site-urile le salvează pe dispozitivul tău (calculator, telefon, tabletă) când le vizitezi. Aceste fișiere conțin informații simple — de exemplu, ce limbă preferi sau dacă ești logat.</p>
+<p>Cookies fac internetul mai prietenos: site-urile își amintesc preferințele tale, formularele nu se golesc când refresh-uiești pagina și conținutul devine mai relevant.</p>
+<h2>Ce cookies folosim noi?</h2>
+<p>B4B Moldova folosește un număr minim de cookies, împărțite în trei categorii.</p>
+<h3>1. Cookies esențiale (obligatorii)</h3>
+<p>Necesare pentru funcționarea site-ului. Fără ele, anumite funcționalități ar dispărea (de exemplu, switcher-ul de limbă nu ar mai memora alegerea ta).</p>
+<table><thead><tr><th>Nume</th><th>Scop</th><th>Durată</th></tr></thead><tbody>
+<tr><td>b4b-lang</td><td>Memorează preferința de limbă (RO, EN, RU)</td><td>12 luni</td></tr>
+<tr><td>b4b-cookie-consent</td><td>Memorează alegerea ta privind cookies</td><td>12 luni</td></tr>
+<tr><td>b4b-cookie-date</td><td>Data exactă a consimțământului (conformitate GDPR)</td><td>12 luni</td></tr>
+</tbody></table>
+<p><strong>Aceste cookies nu pot fi dezactivate</strong> deoarece sunt strict necesare. Sunt salvate în <code>localStorage</code> și nu sunt transmise către niciun server extern.</p>
+<h3>2. Cookies analitice (opționale)</h3>
+<p>Dacă alegi să accepți toate cookies, putem activa analytics anonim. <strong>Niciodată nu colectăm IP-uri</strong> sau date care te-ar putea identifica personal.</p>
+<table><thead><tr><th>Furnizor</th><th>Scop</th><th>Durată</th></tr></thead><tbody>
+<tr><td>Plausible Analytics</td><td>Statistici trafic anonime (pagini, durată, sursă)</td><td>Sesiune</td></tr>
+<tr><td>Google Analytics 4</td><td>Comportament agregat, conversii (IP anonimizat)</td><td>14 luni max</td></tr>
+</tbody></table>
+<h3>3. Cookies funcționale (opționale)</h3>
+<p>Pentru îmbunătățirea experienței — memorarea poziției scroll-ului sau a stării formularelor parțial completate. Nu sunt activate în prezent.</p>
+<h2>Cookies de la terți</h2>
+<ul><li><strong>Google Fonts</strong> — folosit pentru fonturile site-ului. Nu setează cookies de tracking.</li><li><strong>WhatsApp / Telegram / LinkedIn</strong> — doar dacă faci click pe link-urile sociale.</li><li><strong>Vercel</strong> (hosting) — analytics infrastructură, fără date personale.</li></ul>
+<h2>Cum controlezi cookies?</h2>
+<p>La prima vizită ți se afișează un banner cu două opțiuni clare: <strong>„Doar esențiale”</strong> sau <strong>„Acceptă toate”</strong>. Poți modifica oricând alegerea ta.</p>
+<p>În browser, toate browserele moderne îți permit să blochezi sau ștergi cookies:</p>
+<ul><li><strong>Chrome:</strong> Setări → Confidențialitate și securitate → Cookies</li><li><strong>Firefox:</strong> Setări → Confidențialitate → Cookies și date site-uri</li><li><strong>Safari:</strong> Preferințe → Confidențialitate → Gestionează date site web</li><li><strong>Edge:</strong> Setări → Confidențialitate → Cookies</li></ul>
+<p><strong>Notă:</strong> Dacă blochezi toate cookies, anumite funcționalități nu vor mai funcționa (de exemplu, switcher-ul de limbă nu va mai memora alegerea ta între vizite).</p>
+<h2>Modificări ale politicii</h2>
+<p>Putem actualiza această politică pentru a reflecta schimbări în tehnologiile pe care le folosim sau în legislație. Modificările importante vor fi anunțate prin re-afișarea banner-ului de consimțământ.</p>
+<h2>Contact</h2>
+<ul><li><strong>Email:</strong> <a href="mailto:contact@b4b.md">contact@b4b.md</a></li><li><strong>Politică completă date:</strong> <a href="/privacy">Politică Confidențialitate</a></li></ul>
+
+</section>
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">B4B<span class="dot">.</span></a>
+        <p data-i18n="footer.about">Firmă de consultanță din Moldova specializată în optimizarea proceselor operaționale și transformare digitală pentru IMM-uri.</p>
+        <div class="footer-social">
+          <a href="https://linkedin.com/company/b4b-md" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://facebook.com/b4bmd" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+          </a>
+          <a href="https://instagram.com/b4b.md" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://t.me/b4bmd" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.372-12 12 0 6.627 5.374 12 12 12 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12zm3.224 17.871c.188.133.43.166.646.085.215-.082.374-.267.413-.493.42-1.974 1.36-6.566 1.741-8.34.029-.135-.012-.272-.106-.366-.094-.094-.235-.137-.371-.118-2.137.323-12.124 4.04-13.673 4.667-.087.035-.144.117-.144.21 0 .093.057.175.144.21.733.292 3.094 1.21 4.043 1.563.236.088.502.046.7-.111.999-.812 3.067-2.494 3.929-3.196.06-.049.142-.038.187.022.046.061.039.144-.023.197-1.066.913-2.918 2.5-3.526 3.019-.135.116-.213.286-.213.464v3.273c0 .115.099.213.214.213.07 0 .136-.034.176-.091.243-.347.794-1.132 1.024-1.461.137-.196.388-.27.612-.181.685.274 1.829.732 2.227.892z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.col1">Servicii</h4>
+        <ul class="footer-links">
+          <li><a href="#services" data-i18n="footer.l1_1">Audit</a></li>
+          <li><a href="#services" data-i18n="footer.l1_2">CRM/ERP</a></li>
+          <li><a href="#services" data-i18n="footer.l1_3">Transformare</a></li>
+          <li><a href="#services" data-i18n="footer.l1_4">Advisory</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.col2">Companie</h4>
+        <ul class="footer-links">
+          <li><a href="#team" data-i18n="footer.l2_2">Echipa</a></li>
+          <li><a href="#cases" data-i18n="footer.l2_3">Proiecte</a></li>
+          <li><a href="#industries" data-i18n="footer.l2_4">Industrii</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.col3">Resurse</h4>
+        <ul class="footer-links">
+          <li><a href="#pricing" data-i18n="footer.l3_2">Prețuri</a></li>
+          <li><a href="/press" data-i18n="footer.l3_3">Press kit</a></li>
+          <li><a href="#concepts" data-i18n="footer.l3_4">Glosar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.col4">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="tel:+37378000019">+373 78 000 019</a></li>
+          <li><a href="mailto:contact@b4b.md">contact@b4b.md</a></li>
+          <li><a href="https://wa.me/37378000019" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><span style="color:rgba(255,255,255,0.4);font-size:14px" data-i18n="footer.l4_4">Chișinău, Moldova</span></li>
+          <li><span style="color:rgba(255,255,255,0.4);font-size:14px" data-i18n="footer.l4_5">Lun-Vin · 09:00–18:00</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy" data-i18n="footer.copy">© 2026 B4B Moldova · Toate drepturile rezervate</div>
+      <div class="footer-legal">
+        <a href="/privacy" data-i18n="footer.legal1">Confidențialitate</a>
+        <a href="/terms" data-i18n="footer.legal2">Termeni</a>
+        <a href="/cookies" data-i18n="footer.legal3">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     FLOATING ELEMENTS
+     ═══════════════════════════════════════════════════════════════════ -->
+<a href="https://wa.me/37378000019?text=Salut!" class="whatsapp-float" target="_blank" rel="noopener" id="whatsapp-float" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 32 32" fill="#fff"><path d="M16 0C7.2 0 0 7.2 0 16c0 2.8.7 5.5 2.1 7.9L0 32l8.4-2.2c2.3 1.3 5 2 7.6 2 8.8 0 16-7.2 16-16S24.8 0 16 0zm0 29.3c-2.5 0-4.9-.7-7-1.9l-.5-.3-5 1.3 1.3-4.9-.3-.5C3.2 20.9 2.5 18.5 2.5 16c0-7.4 6-13.5 13.5-13.5s13.5 6 13.5 13.5-6.1 13.3-13.5 13.3zm7.4-10.1c-.4-.2-2.4-1.2-2.8-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.7.1-.3 0-.5-.1-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7H10.5c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.4 3.9 1.6 4.2c.2.3 2.8 4.3 6.8 6 1 .4 1.7.7 2.3.9.9.3 1.8.2 2.5.1.7-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.4-.3-.7-.4z"/></svg>
+</a>
+
+<button class="scroll-top" id="scroll-top" aria-label="Înapoi sus">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- COOKIE CONSENT -->
+<div id="cookie-consent" class="cookie-consent" role="dialog" aria-label="Cookies">
+  <div class="cookie-text">
+    <div class="cookie-title" data-i18n="cookie.title">Folosim cookies</div>
+    <div class="cookie-desc" data-i18n="cookie.desc">
+      Site-ul folosește cookies pentru o experiență mai bună. <a href="/cookies">Detalii</a>
+    </div>
+  </div>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-reject" id="cookie-reject" data-i18n="cookie.reject">Doar esențiale</button>
+    <button class="cookie-btn cookie-accept" id="cookie-accept" data-i18n="cookie.accept">Acceptă toate</button>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// MOBILE NAV
+// ═══════════════════════════════════════════════════════════════════
+(function(){
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if(!burger || !mobileMenu) return;
+
+  let isOpen = false;
+  function toggle(){
+    isOpen = !isOpen;
+    burger.classList.toggle('open', isOpen);
+    mobileMenu.classList.toggle('open', isOpen);
+    document.body.classList.toggle('menu-open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+  }
+
+  burger.addEventListener('click', toggle);
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setTimeout(toggle, 150)));
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && isOpen) toggle(); });
+})();
+
+// NAV SCROLL EFFECT
+(function(){
+  const nav = document.getElementById('nav');
+  if(!nav) return;
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, {passive:true});
+})();
+
+// COOKIE CONSENT
+(function(){
+  const banner = document.getElementById('cookie-consent');
+  if(!banner) return;
+  if(!localStorage.getItem('b4b-cookie-consent')){
+    setTimeout(() => banner.classList.add('visible'), 1500);
+  }
+  function setConsent(v){
+    localStorage.setItem('b4b-cookie-consent', v);
+    banner.classList.remove('visible');
+    setTimeout(() => banner.style.display = 'none', 500);
+  }
+  document.getElementById('cookie-accept').addEventListener('click', () => setConsent('all'));
+  document.getElementById('cookie-reject').addEventListener('click', () => setConsent('essential'));
+})();
+
+// FLOATING BUTTONS VISIBILITY
+(function(){
+  const wa = document.getElementById('whatsapp-float');
+  const scrollTop = document.getElementById('scroll-top');
+  let ticking = false;
+  function update(){
+    const y = window.scrollY;
+    if(wa) wa.classList.toggle('visible', y > 200);
+    if(scrollTop) scrollTop.classList.toggle('visible', y > 600);
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if(!ticking){ requestAnimationFrame(update); ticking = true; }
+  }, {passive:true});
+  if(scrollTop) scrollTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+})();
+
+// SCROLL REVEAL
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    return;
+  }
+  // Auto-tag sections
+  document.querySelectorAll('section .section-eyebrow, section .section-h, section .section-sub, .problem-card, .service-card, .ind-card, .team-card, .case-card, .process-step, .pricing-card, .faq-item, .about-feature').forEach(el => {
+    if(!el.classList.contains('reveal')) el.classList.add('reveal');
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.1, rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+})();
+
+// CONTACT FORM
+(function(){
+  const form = document.getElementById('contact-form');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = new FormData(form);
+    const subject = encodeURIComponent('Cerere de la ' + data.get('company'));
+    const body = encodeURIComponent(
+      'Nume: ' + data.get('name') + '\n' +
+      'Email: ' + data.get('email') + '\n' +
+      'Companie: ' + data.get('company') + '\n' +
+      'Dimensiune: ' + data.get('size') + '\n\n' +
+      'Programați o evaluare gratuită.'
+    );
+    window.location.href = 'mailto:contact@b4b.md?subject=' + subject + '&body=' + body;
+  });
+})();
+</script>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     I18N SYSTEM - RO/EN/RU
+     ═══════════════════════════════════════════════════════════════════ -->
+<script>
+(function(){
+const translations = {
+  "nav.about": {
+    "ro": "Despre",
+    "en": "About",
+    "ru": "О нас"
+  },
+  "nav.services": {
+    "ro": "Servicii",
+    "en": "Services",
+    "ru": "Услуги"
+  },
+  "nav.concepts": {
+    "ro": "Glosar",
+    "en": "Glossary",
+    "ru": "Глоссарий"
+  },
+  "nav.industries": {
+    "ro": "Industrii",
+    "en": "Industries",
+    "ru": "Отрасли"
+  },
+  "nav.team": {
+    "ro": "Echipa",
+    "en": "Team",
+    "ru": "Команда"
+  },
+  "nav.cases": {
+    "ro": "Proiecte",
+    "en": "Cases",
+    "ru": "Проекты"
+  },
+  "nav.pricing": {
+    "ro": "Prețuri",
+    "en": "Pricing",
+    "ru": "Цены"
+  },
+  "nav.faq": {
+    "ro": "FAQ",
+    "en": "FAQ",
+    "ru": "FAQ"
+  },
+  "nav.cta": {
+    "ro": "Discută cu noi",
+    "en": "Get in touch",
+    "ru": "Связаться"
+  },
+  "hero.badge": {
+    "ro": "Studio software & consulting · Chișinău",
+    "en": "Software studio & consulting · Chișinău",
+    "ru": "Студия ПО и консалтинг · Кишинёв"
+  },
+  "hero.h1": {
+    "ro": "Sisteme operaționale pentru afaceri",
+    "en": "Operational systems for businesses",
+    "ru": "Операционные системы для бизнеса"
+  },
+  "hero.h2": {
+    "ro": "care nu mai vor să piardă timp.",
+    "en": "that won't waste time anymore.",
+    "ru": "которые не хотят терять время."
+  },
+  "hero.sub": {
+    "ro": "Construim software vertical pentru cafenele, saloane, notari, crame, service-uri auto și firme de curierat. Soluții deja validate, pe care le personalizăm pentru tine — nu reinventăm roata la fiecare proiect.",
+    "en": "We build vertical software for cafés, salons, notaries, wineries, auto services and courier companies. Already validated solutions that we personalize for you — we don't reinvent the wheel for each project.",
+    "ru": "Строим вертикальное ПО для кафе, салонов, нотариусов, виноделен, автосервисов и курьерских служб. Уже проверенные решения, которые мы адаптируем под вас."
+  },
+  "hero.cta1": {
+    "ro": "Rezerva evaluare gratuită · 30 min",
+    "en": "Book free assessment · 30 min",
+    "ru": "Бесплатная консультация · 30 мин"
+  },
+  "hero.cta2": {
+    "ro": "Vezi cum lucrăm",
+    "en": "See how we work",
+    "ru": "Как мы работаем"
+  },
+  "hero.kpi1": {
+    "ro": "Verticale specializate",
+    "en": "Specialized verticals",
+    "ru": "Специализированных вертикалей"
+  },
+  "hero.kpi2": {
+    "ro": "Produse livrate",
+    "en": "Products delivered",
+    "ru": "Продуктов запущено"
+  },
+  "hero.kpi3": {
+    "ro": "De la idee la lansare",
+    "en": "From idea to launch",
+    "ru": "От идеи до запуска"
+  },
+  "hero.kpi4": {
+    "ro": "MPay · SFS · GDPR",
+    "en": "Local · Moldova",
+    "ru": "Локально · Молдова"
+  },
+  "about.eyebrow": {
+    "ro": "Cum lucrăm",
+    "en": "How we work",
+    "ru": "Как мы работаем"
+  },
+  "about.h1": {
+    "ro": "Patru moduri",
+    "en": "Four ways",
+    "ru": "Четыре способа"
+  },
+  "about.h2": {
+    "ro": "de a începe cu B4B.",
+    "en": "to start with B4B.",
+    "ru": "начать с B4B."
+  },
+  "about.sub": {
+    "ro": "Suntem o firmă tânără de consultanță din Chișinău, fondată în 2026. Diferența noastră? Nu doar recomandăm — implementăm complet, cu garanție pentru rezultate.",
+    "en": "We're a young consulting firm from Chișinău, founded in 2026. Our difference? We don't just advise — we fully implement, with guarantees on results.",
+    "ru": "Молодая консалтинговая компания из Кишинёва, основанная в 2026. Наше отличие? Мы не просто советуем — полностью внедряем с гарантией результатов."
+  },
+  "about.f1_title": {
+    "ro": "Execuție end-to-end",
+    "en": "End-to-end execution",
+    "ru": "Полное исполнение"
+  },
+  "about.f1_desc": {
+    "ro": "De la audit la implementare și training echipe. Nu lăsăm clienții la jumătatea drumului.",
+    "en": "From audit to implementation and team training. We don't leave clients halfway.",
+    "ru": "От аудита до внедрения и обучения команд. Не оставляем клиентов на полпути."
+  },
+  "about.f2_title": {
+    "ro": "KPI măsurabili",
+    "en": "Measurable KPIs",
+    "ru": "Измеримые KPI"
+  },
+  "about.f2_desc": {
+    "ro": "Fiecare proiect are obiective cu cifre. Le măsurăm lunar și raportăm transparent.",
+    "en": "Every project has numerical goals. We measure monthly and report transparently.",
+    "ru": "У каждого проекта числовые цели. Измеряем ежемесячно, отчитываемся прозрачно."
+  },
+  "about.f3_title": {
+    "ro": "Garanție rezultate",
+    "en": "Results guarantee",
+    "ru": "Гарантия результатов"
+  },
+  "about.f3_desc": {
+    "ro": "Dacă nu atingem KPI-urile, extindem proiectul fără cost până la îndeplinire.",
+    "en": "If we don't hit KPIs, we extend the project at no cost until we do.",
+    "ru": "Если не достигаем KPI, продлеваем проект бесплатно до выполнения."
+  },
+  "about.card_label": {
+    "ro": "Companii deservite",
+    "en": "Companies served",
+    "ru": "Обслужено компаний"
+  },
+  "about.card_desc": {
+    "ro": "Lucrăm cu firme medii din 4 industrii diferite — fiecare cu propriile provocări operaționale.",
+    "en": "We work with medium-sized firms across 4 different industries — each with its own operational challenges.",
+    "ru": "Работаем с компаниями среднего размера в 4 различных отраслях — у каждой свои операционные вызовы."
+  },
+  "about.card_s1": {
+    "ro": "Industrii",
+    "en": "Industries",
+    "ru": "Отрасли"
+  },
+  "about.card_s2": {
+    "ro": "Limbi · RO/EN/RU",
+    "en": "Languages · RO/EN/RU",
+    "ru": "Языки · RO/EN/RU"
+  },
+  "problems.eyebrow": {
+    "ro": "Probleme reale",
+    "en": "Real problems",
+    "ru": "Реальные проблемы"
+  },
+  "problems.h1": {
+    "ro": "Recunoști vreuna din",
+    "en": "Do you recognize any of",
+    "ru": "Узнаёте одну из"
+  },
+  "problems.h2": {
+    "ro": "aceste situații?",
+    "en": "these situations?",
+    "ru": "этих ситуаций?"
+  },
+  "problems.sub": {
+    "ro": "Le-am întâlnit la zeci de afaceri din Moldova înainte să construim soluțiile B4B. Dacă măcar una îți sună familiar, putem ajuta.",
+    "en": "We encountered them in dozens of businesses in Moldova before building B4B solutions. If even one sounds familiar, we can help.",
+    "ru": "Мы встречали их в десятках бизнесов Молдовы. Если хоть одна знакома — мы можем помочь."
+  },
+  "problem.p1_title": {
+    "ro": "Pierdem timp cu rapoarte manuale",
+    "en": "Wasting time on manual reports",
+    "ru": "Тратим время на ручные отчёты"
+  },
+  "problem.p1_desc": {
+    "ro": "Echipa pierde zile întregi compilând rapoarte care s-ar putea genera automat din sisteme.",
+    "en": "Team spends entire days compiling reports that could be auto-generated.",
+    "ru": "Команда тратит дни на отчёты, которые могли бы генерироваться автоматически."
+  },
+  "problem.p2_title": {
+    "ro": "Nu știm exact ce se întâmplă",
+    "en": "Don't know what's really going on",
+    "ru": "Не знаем, что происходит"
+  },
+  "problem.p2_desc": {
+    "ro": "Date împrăștiate în Excel, telefoane și mesaje. Lipsa unei imagini clare despre business.",
+    "en": "Data scattered across Excel, phones and messages. No clear business picture.",
+    "ru": "Данные разбросаны по Excel, телефонам, мессенджерам. Нет ясной картины бизнеса."
+  },
+  "problem.p3_title": {
+    "ro": "Clienți pierduți din neglijență",
+    "en": "Lost clients from neglect",
+    "ru": "Теряем клиентов"
+  },
+  "problem.p3_desc": {
+    "ro": "Nu urmărim sistematic clienții potențiali. Mulți rămân fără follow-up și se duc la concurență.",
+    "en": "We don't systematically track leads. Many slip away to competitors.",
+    "ru": "Не отслеживаем потенциальных клиентов. Многие уходят к конкурентам."
+  },
+  "problem.p4_title": {
+    "ro": "Procese repetitive consumă timp",
+    "en": "Repetitive tasks eat time",
+    "ru": "Повторяющиеся задачи"
+  },
+  "problem.p4_desc": {
+    "ro": "Aceleași sarcini manuale, zi de zi. Angajații supraîncărcați, erori frecvente, frustrare în echipă.",
+    "en": "Same manual tasks every day. Overloaded staff, frequent errors, team frustration.",
+    "ru": "Одни и те же ручные задачи. Перегруженные сотрудники, ошибки, фрустрация."
+  },
+  "problem.p5_title": {
+    "ro": "Costuri operaționale în creștere",
+    "en": "Rising operational costs",
+    "ru": "Растущие затраты"
+  },
+  "problem.p5_desc": {
+    "ro": "Cheltuielile cresc mai repede decât veniturile. Nu identificăm clar unde se duc resursele.",
+    "en": "Costs growing faster than revenue. Can't identify where resources go.",
+    "ru": "Затраты растут быстрее доходов. Непонятно куда уходят ресурсы."
+  },
+  "problem.p6_title": {
+    "ro": "Vrem să creștem dar nu știm cum",
+    "en": "Want to scale but don't know how",
+    "ru": "Хотим расти но не знаем как"
+  },
+  "problem.p6_desc": {
+    "ro": "Avem potențial de creștere dar lipsește o strategie clară și instrumentele pentru a o pune în practică.",
+    "en": "We have growth potential but lack clear strategy and tools.",
+    "ru": "Есть потенциал роста, но нет чёткой стратегии и инструментов."
+  },
+  "services.eyebrow": {
+    "ro": "4 modele de colaborare",
+    "en": "4 collaboration models",
+    "ru": "4 модели сотрудничества"
+  },
+  "services.h1": {
+    "ro": "Patru moduri",
+    "en": "Four ways",
+    "ru": "Четыре способа"
+  },
+  "services.h2": {
+    "ro": "de a începe cu B4B.",
+    "en": "to start with B4B.",
+    "ru": "начать с B4B."
+  },
+  "services.sub": {
+    "ro": "În funcție de buget, urgență și control dorit, alegi modelul care ți se potrivește. Toate cu același stack tehnic, aceeași echipă, aceeași calitate.",
+    "en": "Depending on budget, urgency and desired control, you choose the model that suits you. All with the same tech stack, team, and quality.",
+    "ru": "В зависимости от бюджета, срочности и желаемого контроля — выбираешь модель. Один стек, одна команда, одно качество."
+  },
+  "services.s1_title": {
+    "ro": "Deploy vertical",
+    "en": "Vertical deploy",
+    "ru": "Вертикальное внедрение"
+  },
+  "services.s1_desc": {
+    "ro": "Pornim de la o soluție B4B deja construită pentru industria ta și o personalizăm complet. Brandul tău, fluxurile tale, integrările tale. Live în 4 săptămâni.",
+    "en": "We start from a B4B solution already built for your industry and customize completely. Your brand, your flows, your integrations. Live in 4 weeks.",
+    "ru": "Берём готовое решение B4B для вашей отрасли и полностью адаптируем. Запуск за 4 недели."
+  },
+  "services.s1_t1": {
+    "ro": "4 săptămâni",
+    "en": "4 weeks",
+    "ru": "4 недели"
+  },
+  "services.s1_t2": {
+    "ro": "Brand owned",
+    "en": "Brand owned",
+    "ru": "Свой бренд"
+  },
+  "services.s1_t3": {
+    "ro": "La cerere · ofertă personalizată",
+    "en": "Custom quote",
+    "ru": "По запросу"
+  },
+  "services.s2_title": {
+    "ro": "Abonament SaaS",
+    "en": "SaaS subscription",
+    "ru": "SaaS подписка"
+  },
+  "services.s2_desc": {
+    "ro": "Folosești soluția B4B direct în cloud, sub abonament lunar. Zero setup, brandul tău aplicat ușor. Plătești lunar, ieși oricând. Ideal pentru testare.",
+    "en": "Use B4B in cloud, monthly subscription. Zero setup, your brand applied. Pay monthly, leave anytime. Ideal for testing.",
+    "ru": "Используешь B4B в облаке по подписке. Никакой настройки. Идеально для тестирования."
+  },
+  "services.s2_t1": {
+    "ro": "Acces 24h",
+    "en": "24h access",
+    "ru": "Доступ за 24ч"
+  },
+  "services.s2_t2": {
+    "ro": "Zero setup",
+    "en": "Zero setup",
+    "ru": "Без настройки"
+  },
+  "services.s2_t3": {
+    "ro": "La cerere · ofertă personalizată",
+    "en": "Custom quote",
+    "ru": "По запросу"
+  },
+  "services.s3_title": {
+    "ro": "Software custom",
+    "en": "Custom software",
+    "ru": "Заказное ПО"
+  },
+  "services.s3_desc": {
+    "ro": "Dacă afacerea ta nu se încadrează în cele 11 verticale, construim soluție custom cu același stack modern (React + Node + Postgres + AI). Discovery, MVP, iterații, deploy.",
+    "en": "If your business doesn't fit our 11 verticals, we build custom with same modern stack. Discovery, MVP, iterations, deploy.",
+    "ru": "Если бизнес не вписывается в 11 вертикалей — строим под заказ. Discovery, MVP, итерации."
+  },
+  "services.s3_t1": {
+    "ro": "8-16 săptămâni",
+    "en": "8-16 weeks",
+    "ru": "8-16 недель"
+  },
+  "services.s3_t2": {
+    "ro": "Source code owned",
+    "en": "Source code owned",
+    "ru": "Код в собственности"
+  },
+  "services.s3_t3": {
+    "ro": "La cerere · ofertă personalizată",
+    "en": "Custom quote",
+    "ru": "По запросу"
+  },
+  "services.s4_title": {
+    "ro": "Consultanță",
+    "en": "Consulting",
+    "ru": "Консалтинг"
+  },
+  "services.s4_desc": {
+    "ro": "Înainte să cumperi software, trebuie să știi CE să cumperi. Audit operațional 360°, identificăm puncte de frecare, prioritizăm pe ROI, roadmap 6-12 luni.",
+    "en": "Before buying software, know WHAT to buy. 360° audit, friction points, ROI prioritization, 6-12 month roadmap.",
+    "ru": "Прежде чем покупать ПО — знай ЧТО покупать. Аудит 360°, болевые точки, план на 6-12 месяцев."
+  },
+  "services.s4_t1": {
+    "ro": "2-4 săptămâni",
+    "en": "2-4 weeks",
+    "ru": "2-4 недели"
+  },
+  "services.s4_t2": {
+    "ro": "Document 40+ p",
+    "en": "40+ pages doc",
+    "ru": "Документ 40+ стр"
+  },
+  "services.s4_t3": {
+    "ro": "La cerere · ofertă personalizată",
+    "en": "Custom quote",
+    "ru": "По запросу"
+  },
+  "industries.eyebrow": {
+    "ro": "Pentru cine lucrăm",
+    "en": "Who we work for",
+    "ru": "Для кого мы работаем"
+  },
+  "industries.h1": {
+    "ro": "11 verticale specializate.",
+    "en": "11 specialized verticals.",
+    "ru": "11 специализированных вертикалей."
+  },
+  "industries.h2": {
+    "ro": "Plus orice altceva, custom.",
+    "en": "Plus anything else, custom.",
+    "ru": "И всё остальное — на заказ."
+  },
+  "industries.sub": {
+    "ro": "Lucrăm cu companii din industrii diverse. Mai jos sunt verticalele unde avem deja proiecte active și cele deschise pentru noi clienți.",
+    "en": "We work with companies from diverse industries. Below are the verticals where we have active projects and those open for new clients.",
+    "ru": "Работаем с компаниями из разных отраслей. Ниже — вертикали с активными проектами и открытые для новых клиентов."
+  },
+  "ind.beauty.name": {
+    "ro": "Beauty & Lifestyle",
+    "en": "Beauty & Lifestyle",
+    "ru": "Красота и стиль"
+  },
+  "ind.beauty.status": {
+    "ro": "Client activ",
+    "en": "Active client",
+    "ru": "Активный клиент"
+  },
+  "ind.beauty.desc": {
+    "ro": "Saloane de înfrumusețare, studiouri artă, branduri lifestyle. Programări online, CRM clienți, fidelizare.",
+    "en": "Beauty salons, art studios, lifestyle brands. Online bookings, customer CRM, loyalty.",
+    "ru": "Салоны красоты, художественные студии, lifestyle-бренды. Онлайн-запись, CRM, лояльность."
+  },
+  "ind.beauty.t1": {
+    "ro": "Programări",
+    "en": "Bookings",
+    "ru": "Запись"
+  },
+  "ind.beauty.t2": {
+    "ro": "CRM",
+    "en": "CRM",
+    "ru": "CRM"
+  },
+  "ind.beauty.t3": {
+    "ro": "Loialitate",
+    "en": "Loyalty",
+    "ru": "Лояльность"
+  },
+  "ind.health.name": {
+    "ro": "Sănătate",
+    "en": "Healthcare",
+    "ru": "Здравоохранение"
+  },
+  "ind.health.status": {
+    "ro": "Client activ",
+    "en": "Active client",
+    "ru": "Активный клиент"
+  },
+  "ind.health.desc": {
+    "ro": "Clinici private, cabinete stomatologice și centre medicale. Programări pacienți, dosare electronice, rețete, conformitate GDPR și integrare SFS.",
+    "en": "Private clinics, dental practices and medical centers. Patient bookings, electronic records, prescriptions, GDPR compliance and SFS integration.",
+    "ru": "Частные клиники, стоматологии и медцентры. Запись пациентов, электронные карты, рецепты, GDPR и интеграция SFS."
+  },
+  "ind.health.t1": {
+    "ro": "Programări",
+    "en": "Bookings",
+    "ru": "Запись"
+  },
+  "ind.health.t2": {
+    "ro": "DME",
+    "en": "EMR",
+    "ru": "ЭМК"
+  },
+  "ind.health.t3": {
+    "ro": "GDPR",
+    "en": "GDPR",
+    "ru": "GDPR"
+  },
+  "ind.parking.name": {
+    "ro": "Parking & Mobilitate",
+    "en": "Parking & Mobility",
+    "ru": "Парковка и мобильность"
+  },
+  "ind.parking.status": {
+    "ro": "Client activ",
+    "en": "Active client",
+    "ru": "Активный клиент"
+  },
+  "ind.parking.desc": {
+    "ro": "Sisteme gestiune parcare, rezervări automate, plăți digitale, monitorizare ocupabilitate.",
+    "en": "Parking management systems, automated reservations, digital payments, occupancy monitoring.",
+    "ru": "Управление парковкой, автоматизация бронирования, цифровые платежи."
+  },
+  "ind.parking.t1": {
+    "ro": "Rezervări",
+    "en": "Bookings",
+    "ru": "Бронирование"
+  },
+  "ind.parking.t2": {
+    "ro": "Plăți digitale",
+    "en": "Digital payments",
+    "ru": "Платежи"
+  },
+  "ind.parking.t3": {
+    "ro": "Monitorizare",
+    "en": "Monitoring",
+    "ru": "Мониторинг"
+  },
+  "ind.construction.name": {
+    "ro": "Construcții & Antrepriză",
+    "en": "Construction & Contracting",
+    "ru": "Строительство"
+  },
+  "ind.construction.status": {
+    "ro": "Client activ",
+    "en": "Active client",
+    "ru": "Активный клиент"
+  },
+  "ind.construction.desc": {
+    "ro": "Firme de construcții, antreprize, instalatori, amenajări. Gestiune proiecte și șantiere, devize și ofertare, urmărire materiale și stocuri, echipe și pontaj, raportare costuri în timp real.",
+    "en": "Construction firms, contractors, installers, fit-outs. Project & site management, estimates & quoting, material & stock tracking, teams & timesheets, real-time cost reporting.",
+    "ru": "Строительные фирмы, подрядчики, монтажники, отделка. Управление проектами и объектами, сметы и КП, учёт материалов, бригады и табель, отчётность по затратам."
+  },
+  "ind.construction.t1": {
+    "ro": "Devize & ofertare",
+    "en": "Estimates & quotes",
+    "ru": "Сметы"
+  },
+  "ind.construction.t2": {
+    "ro": "Materiale & stocuri",
+    "en": "Materials & stock",
+    "ru": "Материалы"
+  },
+  "ind.construction.t3": {
+    "ro": "Echipe & șantier",
+    "en": "Teams & site",
+    "ru": "Бригады"
+  },
+  "ind.construction.t4": {
+    "ro": "Costuri live",
+    "en": "Live costs",
+    "ru": "Затраты"
+  },
+  "ind.prof.name": {
+    "ro": "Servicii profesionale",
+    "en": "Professional services",
+    "ru": "Профессиональные услуги"
+  },
+  "ind.prof.status": {
+    "ro": "Deschis",
+    "en": "Open",
+    "ru": "Открыто"
+  },
+  "ind.prof.desc": {
+    "ro": "Contabilitate, avocatură, audit, consultanță. Automatizare facturare, time tracking, gestiune dosare.",
+    "en": "Accounting, law, audit, consulting. Invoice automation, time tracking, case management.",
+    "ru": "Бухгалтерия, юристы, аудит. Автоматизация счетов, тайм-трекинг."
+  },
+  "ind.prof.t1": {
+    "ro": "Facturare",
+    "en": "Invoicing",
+    "ru": "Счета"
+  },
+  "ind.prof.t2": {
+    "ro": "Time tracking",
+    "en": "Time tracking",
+    "ru": "Тайм-трекинг"
+  },
+  "ind.prof.t3": {
+    "ro": "Dosare",
+    "en": "Cases",
+    "ru": "Дела"
+  },
+  "ind.horeca.name": {
+    "ro": "HoReCa & Retail",
+    "en": "HoReCa & Retail",
+    "ru": "HoReCa & Розница"
+  },
+  "ind.horeca.status": {
+    "ro": "Deschis",
+    "en": "Open",
+    "ru": "Открыто"
+  },
+  "ind.horeca.desc": {
+    "ro": "Restaurante, cafenele, magazine. POS digital, gestiune stoc, programe de loialitate, rezervări.",
+    "en": "Restaurants, cafes, shops. Digital POS, inventory management, loyalty programs.",
+    "ru": "Рестораны, кафе, магазины. POS, управление запасами, лояльность."
+  },
+  "ind.horeca.t1": {
+    "ro": "POS",
+    "en": "POS",
+    "ru": "POS"
+  },
+  "ind.horeca.t2": {
+    "ro": "Stoc",
+    "en": "Inventory",
+    "ru": "Запасы"
+  },
+  "ind.horeca.t3": {
+    "ro": "Loialitate",
+    "en": "Loyalty",
+    "ru": "Лояльность"
+  },
+  "team.eyebrow": {
+    "ro": "Echipa B4B",
+    "en": "B4B team",
+    "ru": "Команда B4B"
+  },
+  "team.h1": {
+    "ro": "Echipa B4B.",
+    "en": "B4B team.",
+    "ru": "Команда B4B."
+  },
+  "team.h2": {
+    "ro": "Specialiști cu acces direct, fără middle management.",
+    "en": "Specialists with direct access, no middle management.",
+    "ru": "Специалисты с прямым доступом, без посредников."
+  },
+  "team.sub": {
+    "ro": "La B4B vorbești cu cei care decid și cei care livrează. Nu cu account managers care fac telefon cu developerii. Zece ochi, cinci creiere, un singur skin in the game.",
+    "en": "At B4B you talk to those who decide and those who deliver. Not account managers calling developers. Ten eyes, five brains, one skin in the game.",
+    "ru": "В B4B ты говоришь с теми, кто решает и делает. Не с менеджерами, передающими разработчикам. Десять глаз, пять мозгов, одна шкура в игре."
+  },
+  "team.m1_role": {"ro": "CEO · Co-fondator", "en": "CEO · Co-founder", "ru": "CEO · Соучредитель"},
+  "team.m1_bio": {"ro": "Peste 15 ani de experiență antreprenorială. A construit și dezvoltat afaceri în diverse industrii din Republica Moldova, înțelegând în profunzime provocările companiilor locale — de la operațiuni la creștere. Conduce strategia B4B și relațiile directe cu clienții, identificând oportunități concrete de optimizare la nivel de afacere.", "en": "Over 15 years of entrepreneurial experience. Built and grew businesses across various industries in Moldova, with deep understanding of local company challenges — from operations to growth. Leads B4B strategy and direct client relationships, identifying concrete business-level optimization opportunities.", "ru": "Более 15 лет предпринимательского опыта. Создавал и развивал компании в различных отраслях Республики Молдова, глубоко понимая вызовы местных компаний — от операций до роста. Руководит стратегией B4B и прямыми отношениями с клиентами."},
+  "team.m2_role": {"ro": "CTO · Co-fondator", "en": "CTO · Co-founder", "ru": "CTO · Соучредитель"},
+  "team.m2_bio": {"ro": "Peste 13 ani de experiență în tehnologie și antreprenoriat internațional. Head of Technology la Syndika (consultanță Web3 & AI), anterior CTO la IX Swap și InvestaX (Singapore-licensed fintech), fondator Titanium Codes. Specializat în arhitectură de sisteme complexe, integrări CRM/ERP și transformare digitală. Conduce execuția tehnică a tuturor proiectelor B4B.", "en": "Over 13 years of experience in technology and international entrepreneurship. Head of Technology at Syndika (Web3 & AI consultancy), previously CTO at IX Swap and InvestaX (Singapore-licensed fintech), founder of Titanium Codes. Specialized in complex system architecture, CRM/ERP integrations and digital transformation. Leads technical execution of all B4B projects.", "ru": "Более 13 лет опыта в технологиях и международном предпринимательстве. Head of Technology в Syndika (Web3 и AI консалтинг), ранее CTO в IX Swap и InvestaX (fintech, лицензированный в Сингапуре), основатель Titanium Codes. Специализация: архитектура сложных систем, интеграции CRM/ERP, цифровая трансформация."},
+  "team.m3_role": {"ro": "CFO · Co-fondator", "en": "CFO · Co-founder", "ru": "CFO · Соучредитель"},
+  "team.m3_bio": {"ro": "Peste 15 ani de experiență antreprenorială și financiară. A construit și administrat afaceri în Moldova, dezvoltând o expertiză profundă în gestiunea financiară, raportare și control de gestiune. Construiește sistemele financiare ale clienților B4B — dashboard-uri, reconciliere automată, fluxuri de cash flow și KPI-uri operaționale.", "en": "Over 15 years of entrepreneurial and financial experience. Has built and managed businesses in Moldova, developing deep expertise in financial management, reporting, and management control. Builds B4B clients' financial systems — dashboards, automated reconciliation, cash flow streams, and operational KPIs.", "ru": "Более 15 лет опыта в предпринимательстве и финансах. Создавал и управлял бизнесами в Молдове, развив глубокую экспертизу в финансовом управлении, отчётности и контроле. Создаёт финансовые системы для клиентов B4B — дашборды, автоматическая сверка, cash flow и KPI."},
+  "team.m4_role": {
+    "ro": "QA Engineer · Quality Assurance Lead",
+    "en": "QA Engineer · Quality Assurance Lead",
+    "ru": "QA-инженер · Quality Assurance Lead"
+  },
+  "team.m4_bio": {
+    "ro": "12 ani de experiență ca QA Engineer în industrii reglementate — e-health, fintech, telecom și asigurări. Specializată în testare manuală, automation (Selenium, Java) și quality assurance pentru sisteme complexe. Asigură fiabilitatea și conformitatea fiecărui produs B4B înainte de go-live.",
+    "en": "12 years of QA Engineering experience in regulated industries — e-health, fintech, telecom and insurance. Specialized in manual testing, automation (Selenium, Java) and quality assurance for complex systems. Ensures reliability and compliance of every B4B product before go-live.",
+    "ru": "12 лет опыта QA Engineer в регулируемых отраслях — e-health, финтех, телеком и страхование. Специализация: ручное тестирование, автоматизация (Selenium, Java) и обеспечение качества сложных систем. Гарантирует надёжность и соответствие каждого продукта B4B перед запуском."
+  },
+  "team.m5_role": {
+    "ro": "Chief Accountant · Financial Lead",
+    "en": "Chief Accountant · Financial Lead",
+    "ru": "Главный бухгалтер · Financial Lead"
+  },
+  "team.m5_bio": {
+    "ro": "Chief Accountant cu experiență solidă în contabilitate și fiscalitate moldovenească. Coordonează operațiunile financiare ale B4B și clienților — facturare, raportare SFS, salarizare, conformitate. Asigură că fiecare proiect e implementat curat fiscal și că clienții primesc consultanță financiară clară.",
+    "en": "Chief Accountant with solid experience in Moldovan accounting and taxation. Coordinates financial operations for B4B and clients — invoicing, SFS reporting, payroll, compliance. Ensures every project is implemented cleanly from a fiscal perspective and that clients receive clear financial advice.",
+    "ru": "Главный бухгалтер с большим опытом в молдавской бухгалтерии и налогообложении. Координирует финансовые операции B4B и клиентов — счета, отчётность SFS, зарплата, соответствие. Обеспечивает чистое финансовое исполнение проектов и понятные финансовые консультации для клиентов."
+  },
+  "team.m3_expertise": {"ro": "Analiză financiară · control gestiune · raportare · 15+ ani experiență", "en": "Financial analysis · management control · reporting · 15+ years experience", "ru": "Финансовый анализ · контроль управления · отчётность · 15+ лет опыта"},
+  "team.m1_expertise": {"ro": "Strategie & dezvoltare business · antreprenoriat · 15+ ani experiență", "en": "Strategy & business development · entrepreneurship · 15+ years experience", "ru": "Стратегия и развитие бизнеса · предпринимательство · 15+ лет опыта"},
+  "team.m2_expertise": {"ro": "Arhitectură soluții digitale · CRM/ERP · automatizări · 13+ ani experiență", "en": "Digital solutions architecture · CRM/ERP · automation · 13+ years experience", "ru": "Архитектура цифровых решений · CRM/ERP · автоматизация · 13+ лет опыта"},
+  "cases.eyebrow": {
+    "ro": "Cazuri reale",
+    "en": "Real cases",
+    "ru": "Реальные кейсы"
+  },
+  "cases.h1": {
+    "ro": "Portofoliul nostru,",
+    "en": "Our portfolio,",
+    "ru": "Наше портфолио,"
+  },
+  "cases.h2": {
+    "ro": "pe industrii.",
+    "en": "by industry.",
+    "ru": "по отраслям."
+  },
+  "cases.sub": {
+    "ro": "Zece proiecte din portofoliul B4B — sisteme verticale construite pentru industrii diferite. Fiecare cu mockup-uri și funcționalități reale. Click pe orice card pentru detalii.",
+    "en": "Four clients who gave us access to build their systems and six internally developed vertical solutions — all with mockups, tech stack and real data. Click any card for details.",
+    "ru": "Четыре клиента, доверивших нам построить их системы, и шесть внутренних вертикальных решений — со скриншотами, стеком и реальными данными. Кликни любую карточку."
+  },
+  "case.c1_sector": {
+    "ro": "Educație · Muzică · Chișinău",
+    "en": "Education · Music · Chișinău",
+    "ru": "Образование · Музыка · Кишинёв"
+  },
+  "case.c1_title": {
+    "ro": "Ecosistem software pentru studio de muzică",
+    "en": "Software ecosystem for music studio",
+    "ru": "Программная экосистема для музыкальной студии"
+  },
+  "case.c1_r1": {
+    "ro": "Elevi activi",
+    "en": "Active students",
+    "ru": "Активные ученики"
+  },
+  "case.c1_r2": {
+    "ro": "Profesori în sistem",
+    "en": "Teachers in system",
+    "ru": "Преподаватели в системе"
+  },
+  "case.c1_desc": {
+    "ro": "5 aplicații sincronizate pentru studio: booking portal, panou admin, CRM cu AI agents, mobile app cu gamification, BI dashboard.",
+    "en": "5 sync apps for studio: booking portal, admin panel, CRM with AI agents, mobile app with gamification, BI dashboard.",
+    "ru": "5 синхронизированных приложений: портал бронирования, админ-панель, CRM с AI-агентами, мобильное приложение, BI."
+  },
+  "case.c2_sector": {
+    "ro": "Sănătate · Chișinău",
+    "en": "Healthcare · Chișinău",
+    "ru": "Здравоохранение · Кишинёв"
+  },
+  "case.c2_title": {
+    "ro": "Sistem programări & dosare pacienți",
+    "en": "Booking & patient records system",
+    "ru": "Система записи и карты пациентов"
+  },
+  "case.c2_r1": {
+    "ro": "Eficiență recepție",
+    "en": "Reception efficiency",
+    "ru": "Эффективность"
+  },
+  "case.c2_r2": {
+    "ro": "Conformitate GDPR",
+    "en": "GDPR compliance",
+    "ru": "Соответствие GDPR"
+  },
+  "case.c2_desc": {
+    "ro": "Digitalizare completă a cabinetului: programări online, dosare electronice, comunicare automatizată cu pacienții.",
+    "en": "Complete clinic digitization: online appointments, electronic records, automated patient communication.",
+    "ru": "Полная цифровизация клиники: онлайн-запись, электронные карты, коммуникация."
+  },
+  "case.c3_sector": {
+    "ro": "Parking & Mobilitate · Chișinău",
+    "en": "Parking & Mobility · Chișinău",
+    "ru": "Парковка · Кишинёв"
+  },
+  "case.c3_title": {
+    "ro": "Gestiune parcare & rezervări automate",
+    "en": "Parking management & automated bookings",
+    "ru": "Управление парковкой"
+  },
+  "case.c3_r1": {
+    "ro": "Rate ocupare",
+    "en": "Occupancy rate",
+    "ru": "Загрузка"
+  },
+  "case.c3_r2": {
+    "ro": "Costuri administrative",
+    "en": "Admin costs",
+    "ru": "Админ расходы"
+  },
+  "case.c3_desc": {
+    "ro": "Sistem complet de rezervări automate, plăți digitale și monitorizare în timp real a ocupabilității parcării.",
+    "en": "Complete system of automated reservations, digital payments and real-time occupancy monitoring.",
+    "ru": "Автоматизация бронирования, цифровые платежи, мониторинг в реальном времени."
+  },
+  "case.c4_sector": {
+    "ro": "Construcții · Chișinău",
+    "en": "Construction · Chișinău",
+    "ru": "Строительство · Кишинёв"
+  },
+  "case.c4_title": {
+    "ro": "Gestiune proiecte & ofertare",
+    "en": "Project management & quoting",
+    "ru": "Управление проектами и расчёт"
+  },
+  "case.c4_r1": {
+    "ro": "Timp ofertare",
+    "en": "Quoting time",
+    "ru": "Время на расчёт"
+  },
+  "case.c4_r2": {
+    "ro": "Rata câștig",
+    "en": "Win rate",
+    "ru": "Доля выигранных"
+  },
+  "case.c4_desc": {
+    "ro": "Platformă pentru ofertare rapidă, urmărire stadii lucrare și coordonare echipe pe șantiere multiple.",
+    "en": "Platform for rapid quoting, work stage tracking and multi-site team coordination.",
+    "ru": "Платформа для быстрого расчёта, отслеживания этапов и координации команд."
+  },
+  "process.eyebrow": {
+    "ro": "Cum lucrăm concret",
+    "en": "How we work concretely",
+    "ru": "Как мы работаем конкретно"
+  },
+  "process.h1": {
+    "ro": "4 pași. 4 săptămâni.",
+    "en": "4 steps. 4 weeks.",
+    "ru": "4 шага. 4 недели."
+  },
+  "process.h2": {
+    "ro": "Zero surprize.",
+    "en": "Zero surprises.",
+    "ru": "Ноль сюрпризов."
+  },
+  "process.sub": {
+    "ro": "Cel mai des aud întrebarea: «și cât durează?». Răspunsul scurt: 4 săptămâni pentru deploy pe o soluție verticală standard. Răspunsul lung — uite pe ce muncim săptămână cu săptămână.",
+    "en": "Most common question: «how long does it take?». Short answer: 4 weeks for vertical solution deploy. Long answer — here's what we work on week by week.",
+    "ru": "Самый частый вопрос: «сколько времени?». Короткий ответ: 4 недели для вертикального внедрения. Длинный — вот над чем работаем по неделям."
+  },
+  "process.s1_title": {
+    "ro": "Diagnostic",
+    "en": "Diagnosis",
+    "ru": "Диагностика"
+  },
+  "process.s1_desc": {
+    "ro": "Evaluare gratuită de 30 min. Înțelegem business-ul tău, identificăm prioritățile.",
+    "en": "Free 30-min assessment. We understand your business and prioritize.",
+    "ru": "Бесплатная оценка 30 мин. Понимаем бизнес, приоритеты."
+  },
+  "process.s2_title": {
+    "ro": "Propunere",
+    "en": "Proposal",
+    "ru": "Предложение"
+  },
+  "process.s2_desc": {
+    "ro": "Plan detaliat cu obiective, KPI-uri, durată și investiție clară. Fără surprize.",
+    "en": "Detailed plan with objectives, KPIs, duration and clear investment. No surprises.",
+    "ru": "Детальный план с целями, KPI, сроками и стоимостью. Без сюрпризов."
+  },
+  "process.s3_title": {
+    "ro": "Implementare",
+    "en": "Implementation",
+    "ru": "Внедрение"
+  },
+  "process.s3_desc": {
+    "ro": "Lucrăm împreună cu echipa ta. Update-uri săptămânale, ședințe regulate.",
+    "en": "We work together with your team. Weekly updates, regular meetings.",
+    "ru": "Работаем с вашей командой. Еженедельные обновления."
+  },
+  "process.s4_title": {
+    "ro": "Măsurare",
+    "en": "Measurement",
+    "ru": "Измерение"
+  },
+  "process.s4_desc": {
+    "ro": "Raport lunar cu progresul împotriva KPI-urilor. Ajustăm continuu.",
+    "en": "Monthly report on progress against KPIs. Continuous adjustment.",
+    "ru": "Ежемесячный отчёт по KPI. Постоянная настройка."
+  },
+  "pricing.eyebrow": {
+    "ro": "Investiție clară",
+    "en": "Clear investment",
+    "ru": "Прозрачная инвестиция"
+  },
+  "pricing.h1": {
+    "ro": "Prețuri transparente.",
+    "en": "Transparent pricing.",
+    "ru": "Прозрачные цены."
+  },
+  "pricing.h2": {
+    "ro": "Fără surprize la facturare.",
+    "en": "No invoice surprises.",
+    "ru": "Никаких сюрпризов в счёте."
+  },
+  "pricing.sub": {
+    "ro": "Patru pachete în funcție de cât de adânc vrei să mergem. Toate includ deploy complet, training și 30 zile mentenanță inclusă. Plată în 2 tranșe (50% start, 50% go-live).",
+    "en": "Four packages depending on how deep we go. All include full deploy, training and 30 days maintenance. Payment in 2 installments (50% start, 50% go-live).",
+    "ru": "Четыре пакета в зависимости от глубины проекта. Все включают полное внедрение, обучение и 30 дней поддержки."
+  },
+  "pricing.t1_tier": {
+    "ro": "Punctual",
+    "en": "One-time",
+    "ru": "Разовый"
+  },
+  "pricing.t1_name": {
+    "ro": "Audit",
+    "en": "Audit",
+    "ru": "Аудит"
+  },
+  "pricing.t1_desc": {
+    "ro": "Diagnostic complet al business-ului tău",
+    "en": "Complete diagnosis of your business",
+    "ru": "Полный диагностический отчёт"
+  },
+  "pricing.t1_price": {
+    "ro": "La cerere",
+    "en": "On request",
+    "ru": "По запросу"
+  },
+  "pricing.t1_duration": {
+    "ro": "2-4 săptămâni",
+    "en": "2-4 weeks",
+    "ru": "2-4 недели"
+  },
+  "pricing.t1_f1": {
+    "ro": "Audit operațional complet",
+    "en": "Complete operational audit",
+    "ru": "Полный аудит"
+  },
+  "pricing.t1_f2": {
+    "ro": "Raport detaliat cu findings",
+    "en": "Detailed report with findings",
+    "ru": "Детальный отчёт"
+  },
+  "pricing.t1_f3": {
+    "ro": "Plan de acțiune prioritizat",
+    "en": "Prioritized action plan",
+    "ru": "План действий"
+  },
+  "pricing.t1_f4": {
+    "ro": "Prezentare la conducere",
+    "en": "Management presentation",
+    "ru": "Презентация руководству"
+  },
+  "pricing.t2_tier": {
+    "ro": "Recomandat",
+    "en": "Recommended",
+    "ru": "Рекомендуемый"
+  },
+  "pricing.t2_name": {
+    "ro": "Implementare",
+    "en": "Implementation",
+    "ru": "Внедрение"
+  },
+  "pricing.t2_desc": {
+    "ro": "Sisteme CRM/ERP end-to-end",
+    "en": "End-to-end CRM/ERP systems",
+    "ru": "CRM/ERP под ключ"
+  },
+  "pricing.t2_price": {
+    "ro": "La cerere",
+    "en": "On request",
+    "ru": "По запросу"
+  },
+  "pricing.t2_duration": {
+    "ro": "4-8 săptămâni",
+    "en": "4-8 weeks",
+    "ru": "4-8 недель"
+  },
+  "pricing.t2_f1": {
+    "ro": "Selecție și config sistem",
+    "en": "System selection & config",
+    "ru": "Подбор и настройка"
+  },
+  "pricing.t2_f2": {
+    "ro": "Migrare date",
+    "en": "Data migration",
+    "ru": "Миграция данных"
+  },
+  "pricing.t2_f3": {
+    "ro": "Training complet echipă",
+    "en": "Complete team training",
+    "ru": "Обучение команды"
+  },
+  "pricing.t2_f4": {
+    "ro": "Suport 3 luni post-launch",
+    "en": "3 months post-launch support",
+    "ru": "Поддержка 3 мес"
+  },
+  "pricing.t2_f5": {
+    "ro": "Garanție rezultate",
+    "en": "Results guarantee",
+    "ru": "Гарантия результатов"
+  },
+  "pricing.t3_tier": {
+    "ro": "Premium",
+    "en": "Premium",
+    "ru": "Премиум"
+  },
+  "pricing.t3_name": {
+    "ro": "Transformare",
+    "en": "Transformation",
+    "ru": "Трансформация"
+  },
+  "pricing.t3_desc": {
+    "ro": "Program complet de transformare",
+    "en": "Complete transformation program",
+    "ru": "Полная программа"
+  },
+  "pricing.t3_price": {
+    "ro": "La cerere",
+    "en": "On request",
+    "ru": "По запросу"
+  },
+  "pricing.t3_duration": {
+    "ro": "8-16 săptămâni",
+    "en": "8-16 weeks",
+    "ru": "8-16 недель"
+  },
+  "pricing.t3_f1": {
+    "ro": "Strategie + sisteme + procese",
+    "en": "Strategy + systems + processes",
+    "ru": "Стратегия + системы"
+  },
+  "pricing.t3_f2": {
+    "ro": "Change management inclus",
+    "en": "Change management included",
+    "ru": "Управление изменениями"
+  },
+  "pricing.t3_f3": {
+    "ro": "Training continuu",
+    "en": "Continuous training",
+    "ru": "Постоянное обучение"
+  },
+  "pricing.t3_f4": {
+    "ro": "Suport 6 luni",
+    "en": "6 months support",
+    "ru": "Поддержка 6 мес"
+  },
+  "pricing.t3_f5": {
+    "ro": "Garanție KPI extinsă",
+    "en": "Extended KPI guarantee",
+    "ru": "Расширенная гарантия"
+  },
+  "pricing.t4_tier": {
+    "ro": "Continuu",
+    "en": "Ongoing",
+    "ru": "Постоянный"
+  },
+  "pricing.t4_name": {
+    "ro": "Advisory",
+    "en": "Advisory",
+    "ru": "Консалтинг"
+  },
+  "pricing.t4_desc": {
+    "ro": "Consiliere strategică permanentă",
+    "en": "Permanent strategic advisory",
+    "ru": "Постоянный консалтинг"
+  },
+  "pricing.t4_price": {
+    "ro": "La cerere",
+    "en": "On request",
+    "ru": "По запросу"
+  },
+  "pricing.t4_duration": {
+    "ro": "Lunar, flexibil",
+    "en": "Monthly, flexible",
+    "ru": "Ежемесячно, гибко"
+  },
+  "pricing.t4_f1": {
+    "ro": "Ședințe lunare",
+    "en": "Monthly sessions",
+    "ru": "Ежемесячные сессии"
+  },
+  "pricing.t4_f2": {
+    "ro": "Acces direct CEO/CTO",
+    "en": "Direct CEO/CTO access",
+    "ru": "Прямой доступ"
+  },
+  "pricing.t4_f3": {
+    "ro": "Dashboard personalizat",
+    "en": "Custom dashboard",
+    "ru": "Персональный дашборд"
+  },
+  "pricing.t4_f4": {
+    "ro": "Răspuns 2h zile lucrătoare",
+    "en": "2h response business days",
+    "ru": "Ответ за 2 часа"
+  },
+  "pricing.btn": {
+    "ro": "Discută",
+    "en": "Discuss",
+    "ru": "Обсудить"
+  },
+  "faq.eyebrow": {
+    "ro": "Întrebări frecvente",
+    "en": "Frequently asked",
+    "ru": "Частые вопросы"
+  },
+  "faq.h1": {
+    "ro": "Răspunsuri",
+    "en": "Direct",
+    "ru": "Прямые"
+  },
+  "faq.h2": {
+    "ro": "directe.",
+    "en": "answers.",
+    "ru": "ответы."
+  },
+  "faq.q1": {
+    "ro": "Care e investiția? Pot să-mi permit?",
+    "en": "What's the investment? Can I afford it?",
+    "ru": "Какие инвестиции? Могу ли позволить?"
+  },
+  "faq.a1": {
+    "ro": "Investiția depinde de scope-ul proiectului. Tipic, un proiect B4B reprezintă 2-4% din cifra de afaceri anuală a unei firme medii — o sumă pe care o recuperezi tipic în primele 12 luni prin economiile generate.",
+    "en": "Investment depends on project scope. Typically, a B4B project is 2-4% of annual revenue — recovered in 12 months through savings.",
+    "ru": "Инвестиции зависят от объёма. Обычно 2-4% от годового оборота, окупаются за 12 месяцев."
+  },
+  "faq.q2": {
+    "ro": "Cât durează până văd rezultate?",
+    "en": "How long until I see results?",
+    "ru": "Когда увижу результаты?"
+  },
+  "faq.a2": {
+    "ro": "Primele quick wins apar în săptămâna 3-4. Break-even (recuperarea integrală a investiției) tipic luna 9. ROI 1.6× la 12 luni.",
+    "en": "First quick wins appear in weeks 3-4. Break-even at month 9. 1.6× ROI at 12 months.",
+    "ru": "Первые победы на 3-4 неделе. Окупаемость на 9 месяце. ROI 1.6× за год."
+  },
+  "faq.q3": {
+    "ro": "Și dacă nu obținem rezultatele agreate?",
+    "en": "What if we don't get the agreed results?",
+    "ru": "А если не достигнем результатов?"
+  },
+  "faq.a3": {
+    "ro": "În etapa de propunere agreăm KPI-uri concrete cu cifre țintă. Dacă la finalul proiectului nu am atins KPI-urile, extindem perioada de implementare fără cost suplimentar până la atingere.",
+    "en": "In the proposal stage we agree on concrete KPIs. If we don't hit them, we extend the implementation period at no additional cost.",
+    "ru": "На этапе предложения согласуем KPI. Если не достигаем — продлеваем проект бесплатно."
+  },
+  "faq.q4": {
+    "ro": "Lucrați în rusă? Pot vorbi cu echipa direct?",
+    "en": "Do you work in Russian? Can I talk to the team directly?",
+    "ru": "Работаете на русском? Могу говорить с командой напрямую?"
+  },
+  "faq.a4": {
+    "ro": "Da. Operăm fluent în română, rusă și engleză. Documentația, training-urile și ședințele se desfășoară în limba preferată de tine, fără traducători intermediari.",
+    "en": "Yes. We operate fluently in Romanian, Russian and English. All documentation and meetings in your preferred language.",
+    "ru": "Да. Свободно работаем на румынском, русском и английском. Документация и встречи на вашем языке."
+  },
+  "faq.q5": {
+    "ro": "Datele afacerii mele sunt confidențiale?",
+    "en": "Is my business data confidential?",
+    "ru": "Конфиденциальны ли мои данные?"
+  },
+  "faq.a5": {
+    "ro": "NDA semnat înainte de orice discuție tehnică. Toate datele tale — financiare, operaționale, clienți — rămân strict confidențiale. Stocarea pe servere conforme GDPR.",
+    "en": "NDA signed before any technical discussion. All your data remains strictly confidential. GDPR-compliant servers.",
+    "ru": "NDA подписывается до технических обсуждений. Все данные строго конфиденциальны. GDPR серверы."
+  },
+  "faq.q6": {
+    "ro": "Sunteți firmă nouă — care e experiența voastră?",
+    "en": "You're a new firm — what's your experience?",
+    "ru": "Вы новая компания — какой у вас опыт?"
+  },
+  "faq.a6": {
+    "ro": "B4B a fost fondată în 2026, dar co-fondatorii au experiență consolidată în consultanță și tehnologie. Avem deja proiecte active în 4 industrii diferite și fiecare proiect e condus direct de unul dintre cofondatori.",
+    "en": "B4B was founded in 2026, but co-founders have established experience. We already have active projects in 4 different industries, each led directly by a co-founder.",
+    "ru": "B4B основана в 2026, но соучредители имеют опыт. Активные проекты в 4 отраслях, каждый ведёт соучредитель лично."
+  },
+  "faq.q7": {
+    "ro": "Cum încep colaborarea?",
+    "en": "How do I start the collaboration?",
+    "ru": "Как начать сотрудничество?"
+  },
+  "faq.a7": {
+    "ro": "Programezi o sesiune gratuită de 30 de minute pe pagina de contact. Discutăm despre business-ul tău, prioritățile și provocările. Dacă potrivirea e bună, primești o propunere detaliată în 3-5 zile.",
+    "en": "Book a free 30-minute session on the contact page. We discuss your business and priorities. If there's a good fit, you receive a detailed proposal in 3-5 days.",
+    "ru": "Записаться на бесплатные 30 минут на странице контактов. Обсуждаем бизнес. Если подходим — получаете предложение за 3-5 дней."
+  },
+  "ctaban.h1": {
+    "ro": "Gata să-ți transformi",
+    "en": "Ready to transform",
+    "ru": "Готовы трансформировать"
+  },
+  "ctaban.h2": {
+    "ro": "afacerea?",
+    "en": "your business?",
+    "ru": "бизнес?"
+  },
+  "ctaban.sub": {
+    "ro": "Programează o evaluare gratuită de 30 minute. Discutăm despre provocările tale și cum te putem ajuta.",
+    "en": "Book a free 30-minute assessment. Let's discuss your challenges and how we can help.",
+    "ru": "Запишитесь на бесплатную оценку 30 мин. Обсудим вызовы и как помочь."
+  },
+  "ctaban.cta": {
+    "ro": "Programează acum",
+    "en": "Book now",
+    "ru": "Записаться"
+  },
+  "contact.eyebrow": {
+    "ro": "Pasul următor",
+    "en": "Next step",
+    "ru": "Следующий шаг"
+  },
+  "contact.h1": {
+    "ro": "Evaluare gratuită",
+    "en": "Free assessment",
+    "ru": "Бесплатная оценка"
+  },
+  "contact.h2": {
+    "ro": "30 minute.",
+    "en": "30 minutes.",
+    "ru": "30 минут."
+  },
+  "contact.sub": {
+    "ro": "30 de minute online cu unul dintre co-fondatori. Nu vânzare, nu pitch agresiv. Discutăm afacerea ta, identificăm dacă te putem ajuta, și dacă da — cum. Dacă nu, îți recomandăm pe altcineva potrivit.",
+    "en": "30 minutes online with one of the co-founders. No sales, no aggressive pitch. We discuss your business, identify if we can help, and how. If not — we recommend someone else suitable.",
+    "ru": "30 минут онлайн с одним из сооснователей. Никаких продаж. Обсуждаем твой бизнес, понимаем — можем ли помочь. Если нет — порекомендуем других."
+  },
+  "form.name": {
+    "ro": "Numele tău",
+    "en": "Your name",
+    "ru": "Имя"
+  },
+  "form.email": {
+    "ro": "Email",
+    "en": "Email",
+    "ru": "Email"
+  },
+  "form.company": {
+    "ro": "Compania",
+    "en": "Company",
+    "ru": "Компания"
+  },
+  "form.size": {
+    "ro": "Dimensiunea echipei",
+    "en": "Team size",
+    "ru": "Размер команды"
+  },
+  "form.size_1": {
+    "ro": "1-10 persoane",
+    "en": "1-10 people",
+    "ru": "1-10 человек"
+  },
+  "form.size_2": {
+    "ro": "10-50 persoane",
+    "en": "10-50 people",
+    "ru": "10-50 человек"
+  },
+  "form.size_3": {
+    "ro": "50-200 persoane",
+    "en": "50-200 people",
+    "ru": "50-200 человек"
+  },
+  "form.size_4": {
+    "ro": "200+ persoane",
+    "en": "200+ people",
+    "ru": "200+ человек"
+  },
+  "form.submit": {
+    "ro": "Trimite cererea",
+    "en": "Send request",
+    "ru": "Отправить"
+  },
+  "footer.about": {
+    "ro": "Firmă de consultanță din Moldova specializată în optimizarea proceselor operaționale și transformare digitală pentru IMM-uri.",
+    "en": "Consulting firm from Moldova specialized in operational process optimization and digital transformation for SMEs.",
+    "ru": "Консалтинговая компания из Молдовы, специализирующаяся на оптимизации процессов и цифровой трансформации МСП."
+  },
+  "footer.col1": {
+    "ro": "Servicii",
+    "en": "Services",
+    "ru": "Услуги"
+  },
+  "footer.l1_1": {
+    "ro": "Audit",
+    "en": "Audit",
+    "ru": "Аудит"
+  },
+  "footer.l1_2": {
+    "ro": "CRM/ERP",
+    "en": "CRM/ERP",
+    "ru": "CRM/ERP"
+  },
+  "footer.l1_3": {
+    "ro": "Transformare",
+    "en": "Transformation",
+    "ru": "Трансформация"
+  },
+  "footer.l1_4": {
+    "ro": "Advisory",
+    "en": "Advisory",
+    "ru": "Консалтинг"
+  },
+  "footer.col2": {
+    "ro": "Companie",
+    "en": "Company",
+    "ru": "Компания"
+  },
+  "footer.l2_1": {
+    "ro": "Despre",
+    "en": "About",
+    "ru": "О нас"
+  },
+  "footer.l2_2": {
+    "ro": "Echipa",
+    "en": "Team",
+    "ru": "Команда"
+  },
+  "footer.l2_3": {
+    "ro": "Proiecte",
+    "en": "Cases",
+    "ru": "Проекты"
+  },
+  "footer.l2_4": {
+    "ro": "Industrii",
+    "en": "Industries",
+    "ru": "Отрасли"
+  },
+  "footer.col3": {
+    "ro": "Resurse",
+    "en": "Resources",
+    "ru": "Ресурсы"
+  },
+  "footer.l3_1": {
+    "ro": "FAQ",
+    "en": "FAQ",
+    "ru": "FAQ"
+  },
+  "footer.l3_2": {
+    "ro": "Prețuri",
+    "en": "Pricing",
+    "ru": "Цены"
+  },
+  "footer.l3_3": {
+    "ro": "Press kit",
+    "en": "Press kit",
+    "ru": "Пресс-кит"
+  },
+  "footer.l3_4": {
+    "ro": "Ghid gratuit",
+    "en": "Free guide",
+    "ru": "Бесплатное руководство"
+  },
+  "footer.col4": {
+    "ro": "Contact",
+    "en": "Contact",
+    "ru": "Контакты"
+  },
+  "footer.l4_4": {
+    "ro": "Chișinău, Moldova",
+    "en": "Chișinău, Moldova",
+    "ru": "Кишинёв, Молдова"
+  },
+  "footer.copy": {
+    "ro": "© 2026 B4B Moldova · Toate drepturile rezervate",
+    "en": "© 2026 B4B Moldova · All rights reserved",
+    "ru": "© 2026 B4B Moldova · Все права защищены"
+  },
+  "footer.legal1": {
+    "ro": "Confidențialitate",
+    "en": "Privacy",
+    "ru": "Конфиденциальность"
+  },
+  "footer.legal2": {
+    "ro": "Termeni",
+    "en": "Terms",
+    "ru": "Условия"
+  },
+  "footer.legal3": {
+    "ro": "Cookies",
+    "en": "Cookies",
+    "ru": "Cookies"
+  },
+  "cookie.title": {
+    "ro": "Folosim cookies",
+    "en": "We use cookies",
+    "ru": "Мы используем cookies"
+  },
+  "cookie.desc": {
+    "ro": "Site-ul folosește cookies pentru o experiență mai bună. ",
+    "en": "This site uses cookies for a better experience. ",
+    "ru": "Сайт использует cookies для лучшего опыта. "
+  },
+  "cookie.reject": {
+    "ro": "Doar esențiale",
+    "en": "Essential only",
+    "ru": "Только обязательные"
+  },
+  "cookie.accept": {
+    "ro": "Acceptă toate",
+    "en": "Accept all",
+    "ru": "Принять все"
+  },
+  "nav.calc": {
+    "ro": "Calculator",
+    "en": "Calculator",
+    "ru": "Калькулятор"
+  },
+  "nav.resources": {
+    "ro": "Ghid",
+    "en": "Guide",
+    "ru": "Гид"
+  },
+  "results.eyebrow": {
+    "ro": "Impact financiar documentat",
+    "en": "Documented financial impact",
+    "ru": "Задокументированное финансовое влияние"
+  },
+  "results.h1": {
+    "ro": "Cifre reale.",
+    "en": "Real numbers.",
+    "ru": "Реальные цифры."
+  },
+  "results.h2": {
+    "ro": "Proiecte reale.",
+    "en": "Real projects.",
+    "ru": "Реальные проекты."
+  },
+  "results.sub": {
+    "ro": "Datele de mai jos sunt extrase din proiectele finalizate și măsurate la 6-12 luni post-implementare. Nu estimări — rezultate documentate.",
+    "en": "The data below is extracted from completed projects and measured 6-12 months post-implementation. Not estimates — documented results.",
+    "ru": "Данные ниже извлечены из завершённых проектов, измеренных через 6-12 месяцев после внедрения."
+  },
+  "results.m1_desc": {
+    "ro": "Fiecare leu investit aduce 1.6 lei înapoi în primul an. Investiția se amortizează în lunile 9-12.",
+    "en": "Every leu invested returns 1.6 lei in the first year. Investment recovered in months 9-12.",
+    "ru": "Каждый вложенный лей возвращает 1.6 лея за первый год. Окупаемость 9-12 месяцев."
+  },
+  "results.m2_desc": {
+    "ro": "Prin automatizare și eliminarea proceselor redundante. Aliniat cu mediana BCG pentru IMM-uri.",
+    "en": "Through automation and eliminating redundant processes. Aligned with BCG median for SMEs.",
+    "ru": "Через автоматизацию. Соответствует медиане BCG для МСП."
+  },
+  "results.m3_desc": {
+    "ro": "Ore recuperate lunar per echipă de 5 persoane, redirecționate către activități cu valoare adăugată.",
+    "en": "Hours recovered monthly per team of 5, redirected to value-added activities.",
+    "ru": "Часов в месяц на команду из 5 человек, направленных на ценные задачи."
+  },
+  "results.m4_desc": {
+    "ro": "Creștere medie venituri în primele 12 luni. Studii McKinsey indică 10% median pe piețe dezvoltate.",
+    "en": "Average revenue growth in first 12 months. McKinsey studies show 10% median in developed markets.",
+    "ru": "Средний рост выручки за первый год. McKinsey: 10% медиана на развитых рынках."
+  },
+  "results.tbl_title": {
+    "ro": "Înainte vs După B4B",
+    "en": "Before vs After B4B",
+    "ru": "До и После B4B"
+  },
+  "results.tbl_sub": {
+    "ro": "Cifre agregate din proiecte finalizate",
+    "en": "Aggregate data from completed projects",
+    "ru": "Агрегированные данные"
+  },
+  "results.tbl_h1": {
+    "ro": "Indicator",
+    "en": "Metric",
+    "ru": "Показатель"
+  },
+  "results.tbl_h2": {
+    "ro": "Înainte",
+    "en": "Before",
+    "ru": "До"
+  },
+  "results.tbl_h3": {
+    "ro": "După",
+    "en": "After",
+    "ru": "После"
+  },
+  "results.tbl_h4": {
+    "ro": "Diferență",
+    "en": "Change",
+    "ru": "Изменение"
+  },
+  "results.tbl_r1": {
+    "ro": "Timp generare rapoarte lunare",
+    "en": "Time to generate monthly reports",
+    "ru": "Время на отчёты"
+  },
+  "results.tbl_r1_b": {
+    "ro": "3 zile",
+    "en": "3 days",
+    "ru": "3 дня"
+  },
+  "results.tbl_r1_a": {
+    "ro": "4 ore",
+    "en": "4 hours",
+    "ru": "4 часа"
+  },
+  "results.tbl_r2": {
+    "ro": "Erori în procesele administrative",
+    "en": "Errors in admin processes",
+    "ru": "Ошибки в админ-процессах"
+  },
+  "results.tbl_r2_b": {
+    "ro": "12-18/lună",
+    "en": "12-18/month",
+    "ru": "12-18/мес"
+  },
+  "results.tbl_r2_a": {
+    "ro": "2-4/lună",
+    "en": "2-4/month",
+    "ru": "2-4/мес"
+  },
+  "results.tbl_r3": {
+    "ro": "Cost procesare comandă",
+    "en": "Order processing cost",
+    "ru": "Стоимость обработки заказа"
+  },
+  "results.tbl_r3_b": {
+    "ro": "185 MDL",
+    "en": "185 MDL",
+    "ru": "185 MDL"
+  },
+  "results.tbl_r3_a": {
+    "ro": "110 MDL",
+    "en": "110 MDL",
+    "ru": "110 MDL"
+  },
+  "results.tbl_r4": {
+    "ro": "Timp răspuns la client",
+    "en": "Customer response time",
+    "ru": "Время ответа клиенту"
+  },
+  "results.tbl_r4_b": {
+    "ro": "48 ore",
+    "en": "48 hours",
+    "ru": "48 часов"
+  },
+  "results.tbl_r4_a": {
+    "ro": "8 ore",
+    "en": "8 hours",
+    "ru": "8 часов"
+  },
+  "results.tbl_r5": {
+    "ro": "Venituri per angajat/lună",
+    "en": "Revenue per employee/month",
+    "ru": "Выручка на сотрудника"
+  },
+  "results.tbl_r5_b": {
+    "ro": "38.000 MDL",
+    "en": "38,000 MDL",
+    "ru": "38 000 MDL"
+  },
+  "results.tbl_r5_a": {
+    "ro": "44.200 MDL",
+    "en": "44,200 MDL",
+    "ru": "44 200 MDL"
+  },
+  "results.tbl_note": {
+    "ro": "* Date agregate din proiectele B4B finalizate. Rezultatele individuale variază în funcție de sectorul și dimensiunea companiei.",
+    "en": "* Aggregated data from completed B4B projects. Individual results vary by sector and company size.",
+    "ru": "* Агрегированные данные. Результаты зависят от сектора и размера компании."
+  },
+  "calc.eyebrow": {
+    "ro": "Calculează economia",
+    "en": "Calculate savings",
+    "ru": "Рассчитай экономию"
+  },
+  "calc.h1": {
+    "ro": "Cât te costă",
+    "en": "How much costs you",
+    "ru": "Сколько стоит"
+  },
+  "calc.h2": {
+    "ro": "să NU digitalizezi?",
+    "en": "NOT to digitize?",
+    "ru": "НЕ цифровизироваться?"
+  },
+  "calc.sub": {
+    "ro": "Introdu trei numere și-ți arătăm cât pierzi pe an cu procesele manuale și cât ai economisi cu o soluție B4B. Calcul realist, bazat pe medii din 10 proiecte.",
+    "en": "Enter three numbers and we'll show you how much you lose yearly on manual processes and what you'd save with B4B. Realistic calculation from 10 projects.",
+    "ru": "Введи три числа — покажем, сколько теряешь в год на ручных процессах и сколько сэкономишь с B4B."
+  },
+  "calc.inputs_title": {
+    "ro": "Date despre compania ta",
+    "en": "About your company",
+    "ru": "О вашей компании"
+  },
+  "calc.emp_label": {
+    "ro": "Număr de angajați",
+    "en": "Number of employees",
+    "ru": "Сотрудников"
+  },
+  "calc.rev_label": {
+    "ro": "Cifră de afaceri anuală",
+    "en": "Annual revenue",
+    "ru": "Годовая выручка"
+  },
+  "calc.rev_unit": {
+    "ro": "M MDL",
+    "en": "M MDL",
+    "ru": "M MDL"
+  },
+  "calc.hrs_label": {
+    "ro": "Ore manuale/săptămână per angajat",
+    "en": "Manual hours/week per employee",
+    "ru": "Ручных часов/неделю"
+  },
+  "calc.note": {
+    "ro": "Estimările se bazează pe -22% costuri operaționale și 12h economisite per angajat pe lună — aliniate cu mediana McKinsey/BCG pentru IMM-uri din Europa de Est.",
+    "en": "Estimates based on -22% operational costs and 12h saved per employee monthly — aligned with McKinsey/BCG median for Eastern European SMEs.",
+    "ru": "Оценки основаны на -22% операционных затрат и 12ч экономии в месяц на сотрудника."
+  },
+  "calc.res_title": {
+    "ro": "Estimare anuală",
+    "en": "Annual estimate",
+    "ru": "Годовая оценка"
+  },
+  "calc.res_sub": {
+    "ro": "Economii totale estimate",
+    "en": "Estimated total savings",
+    "ru": "Общая экономия"
+  },
+  "calc.savings_label": {
+    "ro": "MDL · 22% din costurile operaționale curente",
+    "en": "MDL · 22% of current operational costs",
+    "ru": "MDL · 22% от операционных затрат"
+  },
+  "calc.hrs_lbl": {
+    "ro": "Ore recuperate",
+    "en": "Hours recovered",
+    "ru": "Восстановлено часов"
+  },
+  "calc.roi_lbl": {
+    "ro": "ROI proiectat",
+    "en": "Projected ROI",
+    "ru": "Прогноз ROI"
+  },
+  "calc.be_lbl": {
+    "ro": "Break-even",
+    "en": "Break-even",
+    "ru": "Окупаемость"
+  },
+  "calc.months": {
+    "ro": " luni",
+    "en": " months",
+    "ru": " мес"
+  },
+  "calc.fte_lbl": {
+    "ro": "Echivalent FTE",
+    "en": "FTE equivalent",
+    "ru": "FTE эквивалент"
+  },
+  "calc.employees": {
+    "ro": " angajați",
+    "en": " employees",
+    "ru": " сотрудников"
+  },
+  "calc.proj5_lbl": {
+    "ro": "Proiecție 5 ani",
+    "en": "5-year projection",
+    "ru": "Прогноз на 5 лет"
+  },
+  "calc.cta": {
+    "ro": "Validează cifrele cu un consultant →",
+    "en": "Validate with a consultant →",
+    "ru": "Уточнить с консультантом →"
+  },
+  "cov.eyebrow": {
+    "ro": "Acoperire geografică",
+    "en": "Geographic coverage",
+    "ru": "Географический охват"
+  },
+  "cov.h1": {
+    "ro": "Proiecte active în",
+    "en": "Active projects in",
+    "ru": "Активные проекты"
+  },
+  "cov.h2": {
+    "ro": "toată Moldova.",
+    "en": "all of Moldova.",
+    "ru": "по всей Молдове."
+  },
+  "cov.sub": {
+    "ro": "Sediul nostru e în Chișinău, dar lucrăm cu companii din toată țara. Ne deplasăm pentru sesiuni de lucru și auditori la sediul clientului.",
+    "en": "Our headquarters is in Chișinău, but we work with companies from across the country. We travel for working sessions and audits.",
+    "ru": "Штаб в Кишинёве, работаем по всей стране. Выезжаем на места для аудитов."
+  },
+  "cov.hq": {
+    "ro": "SEDIU CENTRAL",
+    "en": "HEADQUARTERS",
+    "ru": "ГЛАВНЫЙ ОФИС"
+  },
+  "cov.chis_desc": {
+    "ro": "Sediul nostru și majoritatea proiectelor active. Disponibili pentru întâlniri zilnice.",
+    "en": "Our HQ and most active projects. Available for daily meetings.",
+    "ru": "Главный офис и большинство активных проектов."
+  },
+  "cov.chis_clients": {
+    "ro": "Clienți activi",
+    "en": "Active clients",
+    "ru": "Активных клиентов"
+  },
+  "cov.nord_desc": {
+    "ro": "Bălți, Soroca, Edineț. Ne deplasăm pentru sesiuni de lucru și auditori la sediul clientului.",
+    "en": "Bălți, Soroca, Edineț. We travel for working sessions and audits at the client site.",
+    "ru": "Бельцы, Сороки, Единцы. Выезжаем на сессии."
+  },
+  "cov.nord_avail": {
+    "ro": "Disponibilitate",
+    "en": "Availability",
+    "ru": "Доступность"
+  },
+  "cov.nord_val": {
+    "ro": "La cerere",
+    "en": "On request",
+    "ru": "По запросу"
+  },
+  "cov.sud_desc": {
+    "ro": "Cahul, Comrat, Ungheni. Sesiuni hibride sau on-site pentru proiecte cu specificul regional.",
+    "en": "Cahul, Comrat, Ungheni. Hybrid or on-site sessions for regional projects.",
+    "ru": "Кахул, Комрат, Унгены. Гибридные или очные сессии."
+  },
+  "cov.sud_avail": {
+    "ro": "Disponibilitate",
+    "en": "Availability",
+    "ru": "Доступность"
+  },
+  "cov.sud_val": {
+    "ro": "La cerere",
+    "en": "On request",
+    "ru": "По запросу"
+  },
+  "cov.s1": {
+    "ro": "Companii deservite",
+    "en": "Companies served",
+    "ru": "Обслуживаемых компаний"
+  },
+  "cov.s2": {
+    "ro": "Industrii active",
+    "en": "Active industries",
+    "ru": "Активных отраслей"
+  },
+  "cov.s3": {
+    "ro": "Limbi de lucru",
+    "en": "Working languages",
+    "ru": "Рабочих языков"
+  },
+  "cov.s4": {
+    "ro": "Timp răspuns",
+    "en": "Response time",
+    "ru": "Время ответа"
+  },
+  "test.eyebrow": {
+    "ro": "Ce spun clienții",
+    "en": "What clients say",
+    "ru": "Что говорят клиенты"
+  },
+  "test.h1": {
+    "ro": "Cuvintele lor,",
+    "en": "Their words,",
+    "ru": "Их слова,"
+  },
+  "test.h2": {
+    "ro": "nu ale noastre.",
+    "en": "not ours.",
+    "ru": "не наши."
+  },
+  "test.sub": {
+    "ro": "Feedback documentat de la clienții noștri activi din Moldova. Citate aprobate explicit pentru publicare.",
+    "en": "Documented feedback from our active Moldovan clients. Quotes explicitly approved for publication.",
+    "ru": "Задокументированный отзыв от активных клиентов. Цитаты одобрены к публикации."
+  },
+  "test.t1": {
+    "ro": "\"B4B a analizat procesele noastre în detaliu înainte de a propune orice soluție. O abordare structurată pe care nu o întâlnisem anterior la alți furnizori.\"",
+    "en": "\"B4B analyzed our processes in detail before proposing any solution. A structured approach we hadn't seen from other vendors.\"",
+    "ru": "\"B4B детально проанализировал наши процессы. Структурированный подход.\""
+  },
+  "test.t1_role": {
+    "ro": "Fondator · Artist by Valeria Pasha · Chișinău",
+    "en": "Founder · Artist by Valeria Pasha · Chișinău",
+    "ru": "Основатель · Artist by Valeria Pasha"
+  },
+  "test.t2": {
+    "ro": "\"Procesul de raportare lunară a fost automatizat complet. Timpul alocat anterior — aproximativ 3 zile de lucru — a fost redirecționat către activități cu valoare adăugată mai mare.\"",
+    "en": "\"Monthly reporting was fully automated. The time previously spent — about 3 working days — was redirected to higher-value activities.\"",
+    "ru": "\"Ежемесячная отчётность полностью автоматизирована. 3 рабочих дня перенаправлены на более ценные задачи.\""
+  },
+  "test.t2_role": {
+    "ro": "Fondator, Orthodontica · Chișinău",
+    "en": "Founder, Orthodontica · Chișinău",
+    "ru": "Основатель, Orthodontica · Кишинёв"
+  },
+  "test.t3": {
+    "ro": "\"Rata de ocupare a parcării a crescut semnificativ după implementarea sistemului de rezervări automate. Datele în timp real ne permit decizii operaționale rapide.\"",
+    "en": "\"Parking occupancy rate increased significantly after implementing the automated booking system. Real-time data enables fast operational decisions.\"",
+    "ru": "\"Загруженность парковки выросла после внедрения системы бронирования. Данные в реальном времени.\""
+  },
+  "test.t3_role": {
+    "ro": "Fondator, Bureti Park · Chișinău",
+    "en": "Founder, Bureti Park · Chișinău",
+    "ru": "Основатель, Bureti Park · Кишинёв"
+  },
+  "test.t4": {
+    "ro": "\"Echipa B4B a coordonat eficient mai multe șantiere simultan prin platforma de project management. Timpul de ofertare s-a redus considerabil.\"",
+    "en": "\"The B4B team efficiently coordinated multiple sites through the project management platform. Quoting time was significantly reduced.\"",
+    "ru": "\"Команда B4B эффективно координирует объекты через платформу. Время на расчёт сократилось.\""
+  },
+  "test.t4_role": {
+    "ro": "Fondator, Coperture Moderne · Bologna, Italia",
+    "en": "Founder, Coperture Moderne · Bologna, Italy",
+    "ru": "Основатель, Coperture Moderne · Болонья, Италия"
+  },
+  "jrn.eyebrow": {
+    "ro": "Cronologie tipică",
+    "en": "Typical timeline",
+    "ru": "Типичная хронология"
+  },
+  "jrn.h1": {
+    "ro": "Ce câștigi —",
+    "en": "What you gain —",
+    "ru": "Что вы получаете —"
+  },
+  "jrn.h2": {
+    "ro": "săptămână cu săptămână.",
+    "en": "week by week.",
+    "ru": "неделя за неделей."
+  },
+  "jrn.sub": {
+    "ro": "De la prima sesiune gratuită până la rezultatele consolidate după 12 luni. Iată ce câștigi în fiecare etapă a unui proiect tipic cu B4B.",
+    "en": "From first free session to consolidated results after 12 months. Here's what you gain at each stage.",
+    "ru": "От первой бесплатной сессии до результатов через 12 месяцев."
+  },
+  "jrn.s1_lbl": {
+    "ro": "Total economisit",
+    "en": "Total saved",
+    "ru": "Всего сэкономлено"
+  },
+  "jrn.s1_val": {
+    "ro": "MDL · după 12 luni",
+    "en": "MDL · after 12 months",
+    "ru": "MDL · через 12 мес"
+  },
+  "jrn.s2_lbl": {
+    "ro": "Ore recuperate",
+    "en": "Hours recovered",
+    "ru": "Восстановлено часов"
+  },
+  "jrn.s2_val": {
+    "ro": "60h × 12 luni",
+    "en": "60h × 12 months",
+    "ru": "60ч × 12 мес"
+  },
+  "jrn.s3_lbl": {
+    "ro": "Break-even",
+    "en": "Break-even",
+    "ru": "Окупаемость"
+  },
+  "jrn.s3_val": {
+    "ro": "Investiția se întoarce",
+    "en": "Investment recovered",
+    "ru": "Инвестиции окупились"
+  },
+  "jrn.s4_lbl": {
+    "ro": "ROI final",
+    "en": "Final ROI",
+    "ru": "Финальный ROI"
+  },
+  "jrn.s4_val": {
+    "ro": "Confirmat la 12 luni",
+    "en": "Confirmed at 12 months",
+    "ru": "Подтверждён за 12 мес"
+  },
+  "jrn.st1_title": {
+    "ro": "Lansare",
+    "en": "Launch",
+    "ru": "Запуск"
+  },
+  "jrn.st1_period": {
+    "ro": "Săpt. 1-4",
+    "en": "Week 1-4",
+    "ru": "Нед. 1-4"
+  },
+  "jrn.st1_desc": {
+    "ro": "Evaluare gratuită, diagnostic complet și prima soluție implementată. Identificăm exact ce procese sunt blocante.",
+    "en": "Free assessment, full diagnosis and first solution implemented. We identify exactly which processes are blocking.",
+    "ru": "Бесплатная оценка, полная диагностика, первое решение."
+  },
+  "jrn.st1_save": {
+    "ro": "Economii cumulate",
+    "en": "Cumulative savings",
+    "ru": "Накопленная экономия"
+  },
+  "jrn.st1_hrs": {
+    "ro": "Ore recuperate",
+    "en": "Hours recovered",
+    "ru": "Восстановлено часов"
+  },
+  "jrn.st2_title": {
+    "ro": "Implementare",
+    "en": "Implementation",
+    "ru": "Внедрение"
+  },
+  "jrn.st2_period": {
+    "ro": "Luna 2-6",
+    "en": "Month 2-6",
+    "ru": "Мес. 2-6"
+  },
+  "jrn.st2_desc": {
+    "ro": "Sistemul digital complet livrat. Echipa lucrează diferit, procesele cheie sunt automatizate, primele rezultate vizibile.",
+    "en": "Complete digital system delivered. Team works differently, key processes automated, first results visible.",
+    "ru": "Полная цифровая система. Команда работает по-новому."
+  },
+  "jrn.st2_save": {
+    "ro": "Economii cumulate",
+    "en": "Cumulative savings",
+    "ru": "Накопленная экономия"
+  },
+  "jrn.st2_hrs": {
+    "ro": "Ore recuperate",
+    "en": "Hours recovered",
+    "ru": "Восстановлено часов"
+  },
+  "jrn.st3_title": {
+    "ro": "Consolidare",
+    "en": "Consolidation",
+    "ru": "Закрепление"
+  },
+  "jrn.st3_period": {
+    "ro": "Luna 7-12",
+    "en": "Month 7-12",
+    "ru": "Мес. 7-12"
+  },
+  "jrn.st3_desc": {
+    "ro": "Break-even atins în luna 9. Optimizări fine, monitorizare lunară. După luna 9, fiecare leu economisit e profit pur.",
+    "en": "Break-even at month 9. Fine optimizations, monthly monitoring. After month 9, every leu saved is pure profit.",
+    "ru": "Окупаемость на 9 месяце. После — чистая прибыль."
+  },
+  "jrn.st3_save": {
+    "ro": "Economii cumulate",
+    "en": "Cumulative savings",
+    "ru": "Накопленная экономия"
+  },
+  "jrn.st3_hrs": {
+    "ro": "Ore recuperate",
+    "en": "Hours recovered",
+    "ru": "Восстановлено часов"
+  },
+  "res.eyebrow": {
+    "ro": "Resursă gratuită",
+    "en": "Free resource",
+    "ru": "Бесплатный ресурс"
+  },
+  "res.h1": {
+    "ro": "7 procese pe care orice IMM moldovenesc le",
+    "en": "7 processes any Moldovan SME",
+    "ru": "7 процессов, которые любой МСП Молдовы"
+  },
+  "res.h2": {
+    "ro": "pierde lunar.",
+    "en": "loses monthly.",
+    "ru": "теряет ежемесячно."
+  },
+  "res.sub": {
+    "ro": "Ghid practic de 22 pagini cu cifre din piața Moldovei 2026, exemple concrete și un sistem de auto-evaluare. Identifici exact unde se duc orele și banii — fără să suni pe nimeni.",
+    "en": "22-page practical guide with Moldova 2026 market data, concrete examples and a self-assessment system.",
+    "ru": "22-страничный гид с данными рынка Молдовы 2026, конкретные примеры и самооценка."
+  },
+  "res.b1": {
+    "ro": "Cele 7 procese-vampir documentate în peste 10 proiecte B4B — cu cifre exacte în MDL/an",
+    "en": "The 7 vampire processes documented in 10+ B4B projects — with exact MDL/year figures",
+    "ru": "7 процессов-вампиров в 10+ проектах B4B — с цифрами в MDL"
+  },
+  "res.b2": {
+    "ro": "Benchmark-uri reale pentru IMM-urile din Moldova: ore pierdute, erori, cost mediu per proces",
+    "en": "Real benchmarks for Moldovan SMEs: lost hours, errors, average process cost",
+    "ru": "Реальные бенчмарки для МСП Молдовы"
+  },
+  "res.b3": {
+    "ro": "Checklist de auto-evaluare cu 24 întrebări — în 15 minute știi unde pierzi cel mai mult",
+    "en": "24-question self-assessment checklist — in 15 min you know where you lose most",
+    "ru": "Чек-лист из 24 вопросов — за 15 минут узнаете, где теряете больше всего"
+  },
+  "res.b4": {
+    "ro": "Tabel cu soluții recomandate · de la quick wins gratuite la implementări complexe",
+    "en": "Recommended solutions table · from free quick wins to complex implementations",
+    "ru": "Таблица решений · от бесплатных побед до сложных внедрений"
+  },
+  "res.tb1": {
+    "ro": "Fără spam · email-ul tău rămâne privat",
+    "en": "No spam · your email stays private",
+    "ru": "Без спама · email останется приватным"
+  },
+  "res.tb2": {
+    "ro": "PDF livrat instant pe email",
+    "en": "PDF delivered instantly via email",
+    "ru": "PDF мгновенно на email"
+  },
+  "res.tb3": {
+    "ro": "Dezabonare cu 1 click",
+    "en": "Unsubscribe with 1 click",
+    "ru": "Отписка одним кликом"
+  },
+  "res.form_badge": {
+    "ro": "22 pagini · PDF",
+    "en": "22 pages · PDF",
+    "ru": "22 стр. · PDF"
+  },
+  "res.form_title": {
+    "ro": "Descarcă ghidul gratuit",
+    "en": "Download the free guide",
+    "ru": "Скачать бесплатный гид"
+  },
+  "res.form_sub": {
+    "ro": "Completează 30 secunde · PDF instant pe email",
+    "en": "30 seconds · PDF instantly via email",
+    "ru": "30 секунд · PDF мгновенно"
+  },
+  "res.f_name": {
+    "ro": "Nume & prenume",
+    "en": "Full name",
+    "ru": "Имя и фамилия"
+  },
+  "res.f_email": {
+    "ro": "Email profesional",
+    "en": "Work email",
+    "ru": "Рабочий email"
+  },
+  "res.f_company": {
+    "ro": "Companie",
+    "en": "Company",
+    "ru": "Компания"
+  },
+  "res.f_submit": {
+    "ro": "Trimite-mi ghidul →",
+    "en": "Send me the guide →",
+    "ru": "Отправить гид →"
+  },
+  "res.f_privacy": {
+    "ro": "Folosim datele tale doar pentru a-ți trimite ghidul. Nu partajăm cu terți.",
+    "en": "We use your data only to send the guide. We don't share with third parties.",
+    "ru": "Используем данные только для отправки гида."
+  },
+  "trust.title": {
+    "ro": "Companii moldovenești care lucrează cu B4B",
+    "en": "Moldovan companies working with B4B",
+    "ru": "Молдавские компании, работающие с B4B"
+  },
+  "trust.b1": {
+    "ro": "NDA înainte de discuții tehnice",
+    "en": "NDA before technical discussions",
+    "ru": "NDA до технических обсуждений"
+  },
+  "trust.b1_sub": {
+    "ro": "Confidențialitate totală",
+    "en": "Total confidentiality",
+    "ru": "Полная конфиденциальность"
+  },
+  "trust.b2": {
+    "ro": "Conformitate GDPR · servere EU",
+    "en": "GDPR compliant · EU servers",
+    "ru": "GDPR · серверы ЕС"
+  },
+  "trust.b2_sub": {
+    "ro": "Protecția datelor",
+    "en": "Data protection",
+    "ru": "Защита данных"
+  },
+  "trust.b3": {
+    "ro": "Garanție rezultate",
+    "en": "Results guarantee",
+    "ru": "Гарантия результатов"
+  },
+  "trust.b3_sub": {
+    "ro": "Clauză contract KPI",
+    "en": "KPI contract clause",
+    "ru": "KPI в контракте"
+  },
+  "trust.b4": {
+    "ro": "Răspuns rapid 2h",
+    "en": "Fast 2h response",
+    "ru": "Быстрый ответ 2ч"
+  },
+  "trust.b4_sub": {
+    "ro": "Zile lucrătoare",
+    "en": "Business days",
+    "ru": "Рабочие дни"
+  },
+  "news.badge": {
+    "ro": "Newsletter B4B · Lunar",
+    "en": "B4B Newsletter · Monthly",
+    "ru": "Newsletter B4B · Ежемесячный"
+  },
+  "news.h1": {
+    "ro": "O dată pe lună,",
+    "en": "Once a month,",
+    "ru": "Раз в месяц,"
+  },
+  "news.h2": {
+    "ro": "insights aplicabile.",
+    "en": "actionable insights.",
+    "ru": "практические инсайты."
+  },
+  "news.sub": {
+    "ro": "Cele mai utile învățăminte din proiectele noastre — fără teorie, fără spam, fără rezumate de cărți. Doar tactici reale pe care le poți aplica săptămâna viitoare.",
+    "en": "The most useful learnings from our projects — no theory, no spam, no book summaries. Just real tactics you can apply next week.",
+    "ru": "Самые полезные уроки из наших проектов — без теории, без спама. Только реальная тактика."
+  },
+  "news.cta": {
+    "ro": "Abonează-mă →",
+    "en": "Subscribe me →",
+    "ru": "Подписаться →"
+  },
+  "news.disclaimer": {
+    "ro": "O dată pe lună · dezabonare cu 1 click · nu împărtășim emailul tău cu nimeni",
+    "en": "Once a month · 1-click unsubscribe · we don't share your email",
+    "ru": "Раз в месяц · отписка в 1 клик · не делимся email"
+  },
+  "form.phone": {
+    "ro": "Telefon",
+    "en": "Phone",
+    "ru": "Телефон"
+  },
+  "footer.l4_5": {
+    "ro": "Lun-Vin · 09:00-18:00",
+    "en": "Mon-Fri · 09:00-18:00",
+    "ru": "Пн-Пт · 09:00-18:00"
+  }
+};
+
+function applyLang(lang){
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const val = translations[key]?.[lang];
+    if(val !== undefined){
+      // Handle special cases
+      if(el.tagName === 'OPTION'){
+        el.textContent = val;
+      } else if(el.tagName === 'INPUT' && el.type === 'submit'){
+        el.value = val;
+      } else {
+        el.textContent = val;
+      }
+    }
+  });
+
+  // Update html lang attribute
+  document.documentElement.lang = lang;
+
+  // Update active button states
+  document.querySelectorAll('.lang-btn, .mlang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+
+  localStorage.setItem('b4b-lang', lang);
+}
+
+// Initialize: check URL param, then localStorage, then default
+const urlLang = new URLSearchParams(window.location.search).get('lang');
+const savedLang = localStorage.getItem('b4b-lang');
+const initLang = (urlLang && ['ro','en','ru'].includes(urlLang)) ? urlLang :
+                 (savedLang && ['ro','en','ru'].includes(savedLang)) ? savedLang : 'ro';
+
+applyLang(initLang);
+
+// Bind lang buttons
+document.querySelectorAll('.lang-btn, .mlang-btn').forEach(btn => {
+  btn.addEventListener('click', function(){
+    applyLang(this.getAttribute('data-lang'));
+  });
+});
+
+// Service worker
+if('serviceWorker' in navigator && location.protocol === 'https:'){
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(()=>{});
+  });
+}
+})();
+</script>
+
+
+<script>
+/* B4B progressive disclosure — built at runtime, no markup changes */
+(function(){
+  var GROUPS = [
+    {sel:'.concepts-grid', visible:3, ro:'Vezi toți cei 6 termeni', en:'See all 6 terms', ru:'Показать все 6 терминов', mode:'children'},
+    {sel:'.industries-grid', visible:6, ro:'Vezi toate cele 11 industrii', en:'See all 11 industries', ru:'Показать все 11 отраслей', mode:'children'},
+    {sel:'#cases-internal', visible:0, ro:'Vezi toate proiectele B4B (6)', en:'See all B4B projects (6)', ru:'Все проекты B4B (6)', mode:'whole'},
+    {sel:'.team-grid', visible:3, ro:'Vezi toată echipa (5)', en:'See full team (5)', ru:'Вся команда (5)', mode:'children'}
+  ];
+  var LESS = {ro:'Arată mai puțin', en:'Show less', ru:'Свернуть'};
+  function lang(){
+    var a=document.querySelector('[data-lang].active');
+    if(a&&a.getAttribute('data-lang')) return a.getAttribute('data-lang');
+    var h=(document.documentElement.lang||'ro').slice(0,2).toLowerCase();
+    return ['ro','en','ru'].indexOf(h)>=0?h:'ro';
+  }
+  var items=[];
+  function elKids(el){return Array.prototype.filter.call(el.childNodes,function(n){return n.nodeType===1;});}
+  GROUPS.forEach(function(g){
+    var el=document.querySelector(g.sel); if(!el) return;
+    var kids=g.mode==='children'?elKids(el):[];
+    if(g.mode==='children' && kids.length<=g.visible) return; /* nothing to hide */
+    var btn=document.createElement('button');
+    btn.type='button'; btn.className='b4b-more-btn';
+    btn.setAttribute('data-ro',g.ro); btn.setAttribute('data-en',g.en); btn.setAttribute('data-ru',g.ru);
+    var wrap=document.createElement('div'); wrap.className='b4b-more-wrap'; wrap.appendChild(btn);
+    el.insertAdjacentElement('afterend',wrap);
+    var it={btn:btn,el:el,g:g,kids:kids,open:false};
+    function apply(){
+      if(g.mode==='whole'){ el.style.display = it.open?'' : 'none'; }
+      else { it.kids.forEach(function(k,i){ k.style.display=(it.open||i<g.visible)?'':'none'; }); }
+    }
+    apply();
+    btn.addEventListener('click',function(){
+      it.open=!it.open; apply(); label(it);
+      if(!it.open) wrap.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+    items.push(it);
+  });
+  function label(it){
+    var l=lang();
+    it.btn.textContent = it.open ? (LESS[l]||LESS.ro) : (it.btn.getAttribute('data-'+l)||it.btn.getAttribute('data-ro'));
+  }
+  function refresh(){ items.forEach(label); }
+  refresh();
+  document.querySelectorAll('[data-lang]').forEach(function(x){ x.addEventListener('click',function(){ setTimeout(refresh,60); }); });
+})();
+</script>
+
+</body>
+</html>
