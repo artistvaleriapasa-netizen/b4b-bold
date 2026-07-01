@@ -818,11 +818,11 @@ section{
 .team{background:var(--white)}
 .team-grid{
   display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:18px;
+  grid-template-columns:repeat(5, 1fr);
+  gap:16px;
 }
-@media(max-width:1280px){.team-grid{grid-template-columns:repeat(3, 1fr) !important}}
-@media(max-width:800px){.team-grid{grid-template-columns:repeat(2, 1fr) !important}}
+@media(max-width:1100px){.team-grid{grid-template-columns:repeat(3, 1fr) !important}}
+@media(max-width:760px){.team-grid{grid-template-columns:repeat(2, 1fr) !important}}
 @media(max-width:480px){.team-grid{grid-template-columns:1fr !important}}
 .team-card{
   background:var(--white);
@@ -838,6 +838,7 @@ section{
 }
 .team-avatar{
   aspect-ratio:1;
+  max-height:240px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -974,27 +975,31 @@ section{
   align-self:center;
   margin-bottom:8px;
 }
-.team-info{padding:24px}
+.team-info{padding:20px}
 .team-role{
-  font-size:12px;
+  font-size:11px;
   font-weight:600;
   color:var(--primary);
   text-transform:uppercase;
   letter-spacing:0.08em;
-  margin-bottom:8px;
+  margin-bottom:6px;
 }
 .team-info h3{
-  font-size:22px;
+  font-size:18px;
   font-weight:700;
   color:var(--black);
   letter-spacing:-0.02em;
-  margin-bottom:12px;
+  margin-bottom:10px;
 }
 .team-info p{
-  font-size:14px;
+  font-size:13px;
   color:var(--gray-500);
   line-height:1.6;
-  margin-bottom:20px;
+  margin-bottom:16px;
+  display:-webkit-box;
+  -webkit-line-clamp:4;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
 }
 .team-tags{
   display:flex;
@@ -7068,7 +7073,7 @@ if('serviceWorker' in navigator && location.protocol === 'https:'){
     {sel:'.concepts-grid', visible:3, ro:'Vezi toți cei 6 termeni', en:'See all 6 terms', ru:'Показать все 6 терминов', mode:'children'},
     {sel:'.industries-grid', visible:6, ro:'Vezi toate cele 11 industrii', en:'See all 11 industries', ru:'Показать все 11 отраслей', mode:'children'},
     {sel:'#cases-real', visible:6, ro:'Vezi toate proiectele (11)', en:'See all projects (11)', ru:'Все проекты (11)', mode:'children'},
-    {sel:'.team-grid', visible:3, ro:'Vezi toată echipa (5)', en:'See full team (5)', ru:'Вся команда (5)', mode:'children'}
+    {sel:'.team-grid', visible:5, ro:'Vezi toată echipa (5)', en:'See full team (5)', ru:'Вся команда (5)', mode:'children'}
   ];
   var LESS = {ro:'Arată mai puțin', en:'Show less', ru:'Свернуть'};
   function lang(){
