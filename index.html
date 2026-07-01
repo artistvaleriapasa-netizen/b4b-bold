@@ -111,6 +111,14 @@
   --shadow-xl:0 24px 48px -8px rgba(10,10,26,0.18);
   --shadow-primary:0 12px 32px -8px rgba(80,70,229,0.35);
   --shadow-primary-lg:0 20px 40px -8px rgba(80,70,229,0.45);
+
+  /* Motion — one physics for the whole site (see .claude/skills/motion) */
+  --ease-out:cubic-bezier(0.22,1,0.36,1);
+  --ease-in-out:cubic-bezier(0.65,0,0.35,1);
+  --ease-spring:cubic-bezier(0.34,1.56,0.64,1);
+  --dur-fast:0.18s;
+  --dur-base:0.32s;
+  --dur-slow:0.6s;
 }
 
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
@@ -230,7 +238,7 @@ nav.scrolled{padding:10px 32px;background:rgba(255,255,255,0.95)}
   font-size:14px;
   font-weight:600;
   text-decoration:none;
-  transition:all 0.2s;
+  transition:transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
   border:none;
   cursor:pointer;
   font-family:inherit;
@@ -239,10 +247,12 @@ nav.scrolled{padding:10px 32px;background:rgba(255,255,255,0.95)}
 }
 .btn-primary:hover{
   background:var(--primary-dark);
-  transform:translateY(-1px);
+  transform:translateY(-2px);
   box-shadow:var(--shadow-primary-lg);
 }
 .btn-primary:active{transform:translateY(0)}
+.btn-primary svg{transition:transform 0.2s ease}
+.btn-primary:hover svg{transform:translateX(3px)}
 
 .btn-secondary{
   display:inline-flex;
@@ -255,12 +265,12 @@ nav.scrolled{padding:10px 32px;background:rgba(255,255,255,0.95)}
   font-size:14px;
   font-weight:600;
   text-decoration:none;
-  transition:all 0.2s;
+  transition:transform var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
   border:1px solid var(--gray-200);
   font-family:inherit;
   cursor:pointer;
 }
-.btn-secondary:hover{background:var(--gray-100);border-color:var(--gray-300)}
+.btn-secondary:hover{background:var(--gray-100);border-color:var(--gray-300);transform:translateY(-2px)}
 
 .btn-large{padding:14px 28px;font-size:15px}
 
@@ -310,7 +320,7 @@ nav.scrolled{padding:10px 32px;background:rgba(255,255,255,0.95)}
   right:-100px;
   width:600px;
   height:600px;
-  background:radial-gradient(circle, rgba(80,70,229,0.12) 0%, transparent 70%);
+  background:radial-gradient(circle, rgba(80,70,229,0.07) 0%, transparent 70%);
   border-radius:50%;
   pointer-events:none;
 }
@@ -321,7 +331,7 @@ nav.scrolled{padding:10px 32px;background:rgba(255,255,255,0.95)}
   left:-100px;
   width:500px;
   height:500px;
-  background:radial-gradient(circle, rgba(236,72,153,0.08) 0%, transparent 70%);
+  background:radial-gradient(circle, rgba(236,72,153,0.035) 0%, transparent 70%);
   border-radius:50%;
   pointer-events:none;
 }
@@ -337,36 +347,18 @@ nav.scrolled{padding:10px 32px;background:rgba(255,255,255,0.95)}
 .hero-badge{
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  background:rgba(80,70,229,0.08);
-  border:1px solid rgba(80,70,229,0.15);
-  padding:8px 16px;
+  gap:7px;
+  background:var(--white);
+  border:1px solid var(--gray-200);
+  padding:7px 14px;
   border-radius:var(--radius-full);
   font-size:13px;
   font-weight:500;
-  color:var(--primary);
+  color:var(--gray-700);
   margin-bottom:24px;
+  box-shadow:var(--shadow-sm);
 }
-.hero-badge .pulse{
-  width:6px;
-  height:6px;
-  background:var(--success);
-  border-radius:50%;
-  position:relative;
-}
-.hero-badge .pulse::after{
-  content:'';
-  position:absolute;
-  inset:-3px;
-  border:2px solid var(--success);
-  border-radius:50%;
-  opacity:0.5;
-  animation:pulse 2s ease-out infinite;
-}
-@keyframes pulse{
-  0%{transform:scale(1);opacity:0.5}
-  100%{transform:scale(2);opacity:0}
-}
+.hero-badge svg{color:var(--primary);flex-shrink:0}
 
 h1.hero-h{
   font-size:clamp(40px, 7vw, 80px);
@@ -378,6 +370,7 @@ h1.hero-h{
   max-width:900px;
   margin-left:auto;
   margin-right:auto;
+  text-wrap:balance;
 }
 h1.hero-h .gradient-text{
   background:var(--gradient-bold);
@@ -393,6 +386,7 @@ h1.hero-h .gradient-text{
   max-width:680px;
   margin:0 auto 40px;
   font-weight:400;
+  text-wrap:balance;
 }
 
 .hero-cta-group{
@@ -400,8 +394,28 @@ h1.hero-h .gradient-text{
   gap:12px;
   justify-content:center;
   flex-wrap:wrap;
-  margin-bottom:64px;
+  margin-bottom:20px;
 }
+
+/* Hero trust row */
+.hero-trust{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px 24px;
+  list-style:none;
+  margin:0 auto 56px;
+  padding:0;
+}
+.hero-trust li{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  font-size:14px;
+  font-weight:500;
+  color:var(--gray-500);
+}
+.hero-trust svg{color:var(--success);flex-shrink:0}
 
 /* Hero KPI strip */
 .hero-kpis{
@@ -411,13 +425,13 @@ h1.hero-h .gradient-text{
   max-width:900px;
   margin:0 auto;
   padding:32px;
-  background:rgba(255,255,255,0.6);
-  backdrop-filter:blur(20px);
-  border:1px solid rgba(229,229,234,0.5);
+  background:var(--white);
+  border:1px solid var(--gray-200);
   border-radius:var(--radius-xl);
-  box-shadow:var(--shadow-lg);
+  box-shadow:var(--shadow-md);
 }
-.hero-kpi{text-align:left}
+.hero-kpi{text-align:left;transition:transform 0.2s ease}
+.hero-kpi:hover{transform:translateY(-2px)}
 .hero-kpi .num{
   font-size:clamp(28px, 3.5vw, 40px);
   font-weight:800;
@@ -425,10 +439,6 @@ h1.hero-h .gradient-text{
   letter-spacing:-0.03em;
   line-height:1;
   margin-bottom:6px;
-  background:var(--gradient-primary);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
 }
 .hero-kpi .lbl{
   font-size:13px;
@@ -436,6 +446,14 @@ h1.hero-h .gradient-text{
   font-weight:500;
   line-height:1.4;
 }
+
+/* Staggered hero entrance (disabled under prefers-reduced-motion below) */
+.hero-badge.reveal{transition-delay:0.05s}
+.hero-h.reveal{transition-delay:0.12s}
+.hero-sub.reveal{transition-delay:0.19s}
+.hero-cta-group.reveal{transition-delay:0.26s}
+.hero-trust.reveal{transition-delay:0.33s}
+.hero-kpis.reveal{transition-delay:0.40s}
 
 /* ═══════════════════════════════════════════════════════════════════
    SECTIONS COMMON
@@ -474,11 +492,9 @@ section{
   margin-bottom:20px;
   max-width:720px;
 }
+/* Restrained accent: solid brand color, not a loud gradient (Apple-style) */
 .section-h .gradient-text{
-  background:var(--gradient-bold);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
+  color:var(--primary);
 }
 
 .section-sub{
@@ -1072,10 +1088,7 @@ section{
 .case-result .v{
   font-size:28px;
   font-weight:800;
-  background:var(--gradient-bold);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
+  color:var(--primary-light);
   letter-spacing:-0.03em;
   line-height:1;
   margin-bottom:4px;
@@ -1086,6 +1099,66 @@ section{
   color:rgba(255,255,255,0.7);
   line-height:1.7;
 }
+/* Case card footer link — visible on dark */
+.case-foot{
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,0.12);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.case-foot .lnk{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.5px;
+  color:var(--primary-light);
+  transition:color var(--dur-fast) var(--ease-out);
+}
+.case-foot .arw{
+  font-size:18px;
+  color:var(--primary-light);
+  transition:transform var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.case-card:hover .case-foot .lnk,
+.case-card:hover .case-foot .arw{color:#fff}
+.case-card:hover .case-foot .arw{transform:translateX(4px)}
+
+/* Portfolio call-to-action */
+.cases-cta{
+  margin-top:56px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+  text-align:center;
+}
+.cases-cta-text{
+  font-size:19px;
+  font-weight:500;
+  color:rgba(255,255,255,0.8);
+  max-width:520px;
+}
+.cases-cta-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#25D366;
+  color:#fff;
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:-0.01em;
+  padding:16px 32px;
+  border-radius:var(--radius-full);
+  text-decoration:none;
+  box-shadow:0 12px 32px -8px rgba(37,211,102,0.5);
+  transition:transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+.cases-cta-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 20px 44px -8px rgba(37,211,102,0.6);
+}
+.cases-cta-btn svg{flex-shrink:0}
 
 /* ═══════════════════════════════════════════════════════════════════
    PROCESS SECTION
@@ -1131,6 +1204,52 @@ section{
    PRICING SECTION
    ═══════════════════════════════════════════════════════════════════ */
 .pricing{background:var(--gray-50)}
+/* Price-range callout */
+.price-range{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:32px;
+  flex-wrap:wrap;
+  max-width:680px;
+  margin:0 auto 20px;
+  padding:28px 36px;
+  background:var(--white);
+  border:1px solid var(--gray-200);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-md);
+}
+.price-range-item{text-align:center}
+.price-range-val{
+  font-family:var(--font-mono);
+  font-size:clamp(24px, 3vw, 32px);
+  font-weight:800;
+  color:var(--black);
+  letter-spacing:-0.02em;
+  line-height:1.1;
+}
+.price-range-lbl{
+  font-size:13px;
+  color:var(--gray-500);
+  font-weight:500;
+  margin-top:6px;
+}
+.price-range-or{
+  font-size:12px;
+  font-weight:700;
+  color:var(--primary);
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  flex-shrink:0;
+}
+.price-range-note{
+  max-width:600px;
+  margin:0 auto 56px;
+  text-align:center;
+  font-size:15px;
+  color:var(--gray-500);
+  line-height:1.65;
+}
 .pricing-grid{
   display:grid;
   grid-template-columns:repeat(4, 1fr);
@@ -1330,17 +1449,16 @@ section{
    ═══════════════════════════════════════════════════════════════════ */
 .contact{background:var(--gray-50);padding:120px 32px}
 .contact-card{
-  max-width:980px;
+  max-width:600px;
   margin:0 auto;
   background:var(--white);
   border-radius:var(--radius-xl);
-  padding:60px;
+  padding:56px;
   box-shadow:var(--shadow-lg);
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:start;
+  text-align:center;
 }
+.contact-left .section-eyebrow{justify-content:center}
+.contact-methods{max-width:440px;margin:0 auto;text-align:left}
 .contact-left h2{
   font-size:36px;
   font-weight:800;
@@ -1434,7 +1552,7 @@ section{
   transform:translateX(-50%);
   width:600px;
   height:600px;
-  background:radial-gradient(circle, rgba(80,70,229,0.3) 0%, transparent 60%);
+  background:radial-gradient(circle, rgba(80,70,229,0.18) 0%, transparent 60%);
   border-radius:50%;
 }
 .cta-banner-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
@@ -1446,10 +1564,7 @@ section{
   margin-bottom:16px;
 }
 .cta-banner h2 .gradient-text{
-  background:var(--gradient-bold);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
+  color:var(--primary-light);
 }
 .cta-banner p{
   font-size:18px;
@@ -1707,10 +1822,11 @@ body.menu-open{overflow:hidden}
   .contact-card{padding:32px 24px}
   .case-results{grid-template-columns:1fr}
   .about-stat-grid{grid-template-columns:1fr}
+  .price-range{flex-direction:column;gap:16px}
 }
 
 /* Animations */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease, transform 0.7s ease}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
 @media(prefers-reduced-motion:reduce){
@@ -1979,18 +2095,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
      ═══════════════════════════════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-badge reveal">
-      <span class="pulse"></span>
-      <span data-i18n="hero.badge">Studio software & consulting · Chișinău</span>
-    </div>
-
     <h1 class="hero-h reveal">
       <span data-i18n="hero.h1">Sisteme operaționale pentru afaceri</span><br>
-      <span class="gradient-text" data-i18n="hero.h2">care nu mai vor să piardă timp.</span>
+      <span class="gradient-text" data-i18n="hero.h2">care nu mai vor să piardă.</span>
     </h1>
 
     <p class="hero-sub reveal" data-i18n="hero.sub">
-      Construim software vertical pentru cafenele, saloane, notari, crame, service-uri auto și firme de curierat. Soluții deja validate, pe care le personalizăm pentru tine — nu reinventăm roata la fiecare proiect.
+      Construim software vertical pentru clinici, cafenele, saloane, notari, crame, service-uri auto și orice business mic sau mijlociu. Soluții deja validate, pe care le personalizăm pentru tine — nu reinventăm roata la fiecare proiect.
     </p>
 
     <div class="hero-cta-group reveal">
@@ -2001,13 +2112,19 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       <a href="#services" class="btn-secondary btn-large" data-i18n="hero.cta2">Vezi cum lucrăm</a>
     </div>
 
+    <ul class="hero-trust reveal" aria-label="Ce garantăm">
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="hero.trust1">Fără obligații</span></li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="hero.trust2">Răspuns în 24h</span></li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="hero.trust3">Confidențial · NDA la cerere</span></li>
+    </ul>
+
     <div class="hero-kpis reveal">
       <div class="hero-kpi">
         <div class="num">12</div>
         <div class="lbl" data-i18n="hero.kpi1">Verticale specializate</div>
       </div>
       <div class="hero-kpi">
-        <div class="num" style="background:linear-gradient(135deg,#EC4899,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">10</div>
+        <div class="num">10</div>
         <div class="lbl" data-i18n="hero.kpi2">Produse livrate</div>
       </div>
       <div class="hero-kpi">
@@ -2015,7 +2132,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <div class="lbl" data-i18n="hero.kpi3">De la idee la lansare</div>
       </div>
       <div class="hero-kpi">
-        <div class="num" style="background:linear-gradient(135deg,#10B981,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">100%</div>
+        <div class="num">100%</div>
         <div class="lbl" data-i18n="hero.kpi4">MPay · SFS · GDPR</div>
       </div>
     </div>
@@ -2427,7 +2544,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     <div style="text-align:center;margin-bottom:64px;max-width:760px;margin-left:auto;margin-right:auto">
       <div style="font-size:11px;font-weight:700;color:#5046E5;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px">Glosar pe înțelesul tău</div>
       <h2 style="font-size:clamp(32px,4.5vw,52px);font-weight:900;letter-spacing:-0.03em;line-height:1.1;color:#0A0A1A;margin:0 0 20px">
-        Ce e <span style="background:linear-gradient(135deg,#5046E5 0%,#EC4899 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">ERP, CRM, SaaS, AI</span> și de ce ai nevoie de ele.
+        Ce e <span style="color:#5046E5">ERP, CRM, SaaS, AI</span> și de ce ai nevoie de ele.
       </h2>
       <p style="font-size:18px;color:#6B6B7B;line-height:1.6;margin:0">
         Termeni tech care sună complicat dar care îți pot transforma afacerea. 
@@ -2668,25 +2785,25 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   <!-- Clients accessing -->
   <!-- Cafenea -->
   <rect x="20" y="120" width="56" height="50" rx="6" fill="#FFFFFF" stroke="#E5E7EB"/>
-  <text x="48" y="134" font-family="Arial" font-size="14" text-anchor="middle">☕</text>
+  <circle cx="48" cy="130" r="7" fill="#5046E5"/><text x="48" y="133" font-family="Arial" font-size="8" fill="#FFFFFF" text-anchor="middle" font-weight="700">X</text>
   <text x="48" y="148" font-family="Arial" font-size="6" fill="#0A0A1A" text-anchor="middle" font-weight="700">Cafenea X</text>
   <text x="48" y="158" font-family="Arial" font-size="5" fill="#10B981" text-anchor="middle" font-weight="600">€200/lună ✓</text>
   
   <!-- Salon -->
   <rect x="86" y="120" width="56" height="50" rx="6" fill="#FFFFFF" stroke="#E5E7EB"/>
-  <text x="114" y="134" font-family="Arial" font-size="14" text-anchor="middle">💅</text>
+  <circle cx="114" cy="130" r="7" fill="#5046E5"/><text x="114" y="133" font-family="Arial" font-size="8" fill="#FFFFFF" text-anchor="middle" font-weight="700">Y</text>
   <text x="114" y="148" font-family="Arial" font-size="6" fill="#0A0A1A" text-anchor="middle" font-weight="700">Salon Y</text>
   <text x="114" y="158" font-family="Arial" font-size="5" fill="#10B981" text-anchor="middle" font-weight="600">€300/lună ✓</text>
   
   <!-- Service auto -->
   <rect x="152" y="120" width="56" height="50" rx="6" fill="#FFFFFF" stroke="#E5E7EB"/>
-  <text x="180" y="134" font-family="Arial" font-size="14" text-anchor="middle">🔧</text>
+  <circle cx="180" cy="130" r="7" fill="#5046E5"/><text x="180" y="133" font-family="Arial" font-size="8" fill="#FFFFFF" text-anchor="middle" font-weight="700">Z</text>
   <text x="180" y="148" font-family="Arial" font-size="6" fill="#0A0A1A" text-anchor="middle" font-weight="700">Service Z</text>
   <text x="180" y="158" font-family="Arial" font-size="5" fill="#10B981" text-anchor="middle" font-weight="600">€400/lună ✓</text>
   
   <!-- Curier -->
   <rect x="218" y="120" width="56" height="50" rx="6" fill="#FFFFFF" stroke="#E5E7EB"/>
-  <text x="246" y="134" font-family="Arial" font-size="14" text-anchor="middle">📦</text>
+  <circle cx="246" cy="130" r="7" fill="#5046E5"/><text x="246" y="133" font-family="Arial" font-size="8" fill="#FFFFFF" text-anchor="middle" font-weight="700">W</text>
   <text x="246" y="148" font-family="Arial" font-size="6" fill="#0A0A1A" text-anchor="middle" font-weight="700">Express W</text>
   <text x="246" y="158" font-family="Arial" font-size="5" fill="#10B981" text-anchor="middle" font-weight="600">€500/lună ✓</text>
   
@@ -2748,7 +2865,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   
   <!-- AI response -->
   <rect x="80" y="68" width="220" height="60" rx="14" fill="url(#ai-violet)"/>
-  <text x="90" y="80" font-family="Arial" font-size="6" fill="rgba(255,255,255,0.85)" font-weight="700">🤖 AI ASSISTANT · 14:32</text>
+  <text x="90" y="80" font-family="Arial" font-size="6" fill="rgba(255,255,255,0.85)" font-weight="700">AI ASSISTANT · 14:32</text>
   <text x="90" y="92" font-family="Arial" font-size="7" fill="#FFF" font-weight="600">Mâine avem 3 sloturi disponibile:</text>
   <text x="90" y="102" font-family="Arial" font-size="6" fill="rgba(255,255,255,0.95)">• 10:30 cu Diana (45 min · €350)</text>
   <text x="90" y="112" font-family="Arial" font-size="6" fill="rgba(255,255,255,0.95)">• 14:00 cu Maria (60 min · €420)</text>
@@ -2761,7 +2878,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   
   <!-- Confirmation -->
   <rect x="120" y="158" width="180" height="22" rx="11" fill="rgba(124,58,237,0.15)"/>
-  <text x="130" y="168" font-family="Arial" font-size="6" fill="#7C3AED" font-weight="700">🤖 AI · 14:33</text>
+  <text x="130" y="168" font-family="Arial" font-size="6" fill="#7C3AED" font-weight="700">AI · 14:33</text>
   <text x="130" y="176" font-family="Arial" font-size="7" fill="#0A0A1A" font-weight="600">✓ Confirmat. SMS reminder cu 2h înainte.</text>
   
   <!-- Stats badge -->
@@ -2811,7 +2928,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   <!-- Workflow chain -->
   <!-- Trigger -->
   <rect x="14" y="40" width="60" height="40" rx="8" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1.5"/>
-  <text x="44" y="52" font-family="Arial" font-size="6" fill="#92400E" text-anchor="middle" font-weight="700">⚡ TRIGGER</text>
+  <text x="44" y="52" font-family="Arial" font-size="6" fill="#92400E" text-anchor="middle" font-weight="700">TRIGGER</text>
   <text x="44" y="64" font-family="Arial" font-size="6" fill="#0A0A1A" text-anchor="middle" font-weight="700">Comandă nouă</text>
   <text x="44" y="73" font-family="Arial" font-size="5" fill="#6B7280" text-anchor="middle">(WhatsApp)</text>
   
@@ -3012,7 +3129,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <div class="tags">
           <span class="tag" data-i18n="services.s1_t1">4 săptămâni</span>
           <span class="tag" data-i18n="services.s1_t2">Brand owned</span>
-          <span class="tag" data-i18n="services.s1_t3">La cerere · ofertă personalizată</span>
         </div>
       </div>
       <div class="service-card">
@@ -3022,7 +3138,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <div class="tags">
           <span class="tag" data-i18n="services.s2_t1">Acces 24h</span>
           <span class="tag" data-i18n="services.s2_t2">Zero setup</span>
-          <span class="tag" data-i18n="services.s2_t3">La cerere · ofertă personalizată</span>
         </div>
       </div>
       <div class="service-card">
@@ -3032,7 +3147,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <div class="tags">
           <span class="tag" data-i18n="services.s3_t1">8-16 săptămâni</span>
           <span class="tag" data-i18n="services.s3_t2">Source code owned</span>
-          <span class="tag" data-i18n="services.s3_t3">La cerere · ofertă personalizată</span>
         </div>
       </div>
       <div class="service-card">
@@ -3042,7 +3156,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <div class="tags">
           <span class="tag" data-i18n="services.s4_t1">2-4 săptămâni</span>
           <span class="tag" data-i18n="services.s4_t2">Document 40+ p</span>
-          <span class="tag" data-i18n="services.s4_t3">La cerere · ofertă personalizată</span>
         </div>
       </div>
     </div>
@@ -3251,7 +3364,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <p style="font-size:14px;color:#6B6B7B;line-height:1.6;margin-bottom:20px" data-i18n="cov.chis_desc">Sediul nostru și majoritatea proiectelor active. Disponibili pentru întâlniri zilnice.</p>
         <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid #E5E5EA">
           <span style="font-size:12px;color:#6B6B7B;font-weight:500" data-i18n="cov.chis_clients">Clienți activi</span>
-          <span style="font-size:32px;font-weight:800;background:linear-gradient(135deg,#5046E5,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;letter-spacing:-0.03em">8+</span>
+          <span style="font-size:32px;font-weight:800;color:#5046E5;line-height:1;letter-spacing:-0.03em">8+</span>
         </div>
       </div>
 
@@ -3264,7 +3377,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <p style="font-size:14px;color:#6B6B7B;line-height:1.6;margin-bottom:20px" data-i18n="cov.nord_desc">Bălți, Soroca, Edineț. Ne deplasăm pentru sesiuni de lucru și auditori la sediul clientului.</p>
         <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid #E5E5EA">
           <span style="font-size:12px;color:#6B6B7B;font-weight:500" data-i18n="cov.nord_avail">Disponibilitate</span>
-          <span style="font-size:14px;font-weight:600;color:#5046E5" data-i18n="cov.nord_val">La cerere</span>
+          <span style="font-size:14px;font-weight:600;color:#5046E5" data-i18n="cov.nord_val">Pe proiect</span>
         </div>
       </div>
 
@@ -3277,7 +3390,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <p style="font-size:14px;color:#6B6B7B;line-height:1.6;margin-bottom:20px" data-i18n="cov.sud_desc">Cahul, Comrat, Ungheni. Sesiuni hibride sau on-site pentru proiecte cu specificul regional.</p>
         <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid #E5E5EA">
           <span style="font-size:12px;color:#6B6B7B;font-weight:500" data-i18n="cov.sud_avail">Disponibilitate</span>
-          <span style="font-size:14px;font-weight:600;color:#EC4899" data-i18n="cov.sud_val">La cerere</span>
+          <span style="font-size:14px;font-weight:600;color:#EC4899" data-i18n="cov.sud_val">Pe proiect</span>
         </div>
       </div>
     </div>
@@ -3461,9 +3574,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <p class="case-desc">
           Șantier OS: obiecte în lucru, inventar materiale, CRM &amp; ofertare, pontaj pe teren și asistent AI — într-un singur sistem.
         </p>
-        <div style="margin-top:24px;padding-top:20px;border-top:1px solid #E5E5EA;display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:13px;color:#5046E5;font-weight:700;letter-spacing:0.5px">VEZI CAZUL COMPLET</span>
-          <span style="font-size:18px;color:#5046E5">→</span>
+        <div class="case-foot">
+          <span class="lnk">VEZI CAZUL COMPLET</span>
+          <span class="arw">→</span>
         </div>
       </a>
       <a href="/cases/artist-by-valeria/" class="case-card" style="text-decoration:none;color:inherit;display:block">
@@ -3483,9 +3596,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <p class="case-desc">
           5 aplicații sincronizate pentru studio: booking portal, panou admin, CRM cu AI agents, mobile app cu gamification, BI dashboard.
         </p>
-        <div style="margin-top:24px;padding-top:20px;border-top:1px solid #E5E5EA;display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:13px;color:#5046E5;font-weight:700;letter-spacing:0.5px">VEZI CAZUL COMPLET</span>
-          <span style="font-size:18px;color:#5046E5">→</span>
+        <div class="case-foot">
+          <span class="lnk">VEZI CAZUL COMPLET</span>
+          <span class="arw">→</span>
         </div>
       </a>
 
@@ -3506,9 +3619,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <p class="case-desc">
           Digitalizare completă a cabinetului: programări online, dosare electronice, comunicare automatizată cu pacienții.
         </p>
-        <div style="margin-top:24px;padding-top:20px;border-top:1px solid #E5E5EA;display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:13px;color:#5046E5;font-weight:700;letter-spacing:0.5px">VEZI CAZUL COMPLET</span>
-          <span style="font-size:18px;color:#5046E5">→</span>
+        <div class="case-foot">
+          <span class="lnk">VEZI CAZUL COMPLET</span>
+          <span class="arw">→</span>
         </div>
       </a>
 
@@ -3529,9 +3642,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <p class="case-desc">
           Sistem complet de rezervări automate, plăți digitale și monitorizare în timp real a ocupabilității parcării.
         </p>
-        <div style="margin-top:24px;padding-top:20px;border-top:1px solid #E5E5EA;display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:13px;color:#5046E5;font-weight:700;letter-spacing:0.5px">VEZI CAZUL COMPLET</span>
-          <span style="font-size:18px;color:#5046E5">→</span>
+        <div class="case-foot">
+          <span class="lnk">VEZI CAZUL COMPLET</span>
+          <span class="arw">→</span>
         </div>
       </a>
 
@@ -3552,15 +3665,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <p class="case-desc">
           Platformă pentru ofertare rapidă, urmărire stadii lucrare și coordonare echipe pe șantiere multiple.
         </p>
-        <div style="margin-top:24px;padding-top:20px;border-top:1px solid #E5E5EA;display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:13px;color:#5046E5;font-weight:700;letter-spacing:0.5px">VEZI CAZUL COMPLET</span>
-          <span style="font-size:18px;color:#5046E5">→</span>
+        <div class="case-foot">
+          <span class="lnk">VEZI CAZUL COMPLET</span>
+          <span class="arw">→</span>
         </div>
       </a>
-    </div>
-
-    <!-- Internal B4B products (6) -->
-    <div class="cases-grid" id="cases-internal">
       <a href="/cases/bistro/" class="case-card" style="text-decoration:none;color:inherit;display:block">
         <div style="display:inline-block;padding:4px 10px;background:rgba(80,70,229,0.1);color:#5046E5;border-radius:6px;font-size:10px;font-weight:700;letter-spacing:1px;margin-bottom:12px">LIVE</div>
         <div class="case-client">Bistro</div>
@@ -3579,9 +3688,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <p class="case-desc">
           POS + meniu QR + comenzi în timp real + integrare MPay + fidelizare clienți. Bază pentru orice cafenea cu 1-3 puncte.
         </p>
-        <div style="margin-top:24px;padding-top:20px;border-top:1px solid #E5E5EA;display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:13px;color:#5046E5;font-weight:700;letter-spacing:0.5px">VEZI SOLUȚIA</span>
-          <span style="font-size:18px;color:#5046E5">→</span>
+        <div class="case-foot">
+          <span class="lnk">VEZI SOLUȚIA</span>
+          <span class="arw">→</span>
         </div>
       </a>
 
@@ -3603,9 +3712,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <p class="case-desc">
           Booking 24/7 + fișe client + comisioane staff + abonamente + fidelizare. Bază pentru saloane 5-15 angajați.
         </p>
-        <div style="margin-top:24px;padding-top:20px;border-top:1px solid #E5E5EA;display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:13px;color:#5046E5;font-weight:700;letter-spacing:0.5px">VEZI SOLUȚIA</span>
-          <span style="font-size:18px;color:#5046E5">→</span>
+        <div class="case-foot">
+          <span class="lnk">VEZI SOLUȚIA</span>
+          <span class="arw">→</span>
         </div>
       </a>
 
@@ -3627,9 +3736,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <p class="case-desc">
           Dosar electronic + MSign + arhivă + e-Factură SFS + plăți online. Construit conform Legii 246/2018.
         </p>
-        <div style="margin-top:24px;padding-top:20px;border-top:1px solid #E5E5EA;display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:13px;color:#5046E5;font-weight:700;letter-spacing:0.5px">VEZI SOLUȚIA</span>
-          <span style="font-size:18px;color:#5046E5">→</span>
+        <div class="case-foot">
+          <span class="lnk">VEZI SOLUȚIA</span>
+          <span class="arw">→</span>
         </div>
       </a>
 
@@ -3651,9 +3760,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <p class="case-desc">
           Shop online + abonament club vin + tasting reservations + export docs + B2B distribuitori. Pentru crame mid-size.
         </p>
-        <div style="margin-top:24px;padding-top:20px;border-top:1px solid #E5E5EA;display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:13px;color:#5046E5;font-weight:700;letter-spacing:0.5px">VEZI SOLUȚIA</span>
-          <span style="font-size:18px;color:#5046E5">→</span>
+        <div class="case-foot">
+          <span class="lnk">VEZI SOLUȚIA</span>
+          <span class="arw">→</span>
         </div>
       </a>
 
@@ -3675,9 +3784,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <p class="case-desc">
           Programări pe mecanici + recepție cu OBD2 + fișe intervenție + catalog piese VIN match + portal client.
         </p>
-        <div style="margin-top:24px;padding-top:20px;border-top:1px solid #E5E5EA;display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:13px;color:#5046E5;font-weight:700;letter-spacing:0.5px">VEZI SOLUȚIA</span>
-          <span style="font-size:18px;color:#5046E5">→</span>
+        <div class="case-foot">
+          <span class="lnk">VEZI SOLUȚIA</span>
+          <span class="arw">→</span>
         </div>
       </a>
 
@@ -3699,14 +3808,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <p class="case-desc">
           Dispatch live + hartă rute + scan AWB + POD electronic + portal B2B + reconciliere COD zilnică.
         </p>
-        <div style="margin-top:24px;padding-top:20px;border-top:1px solid #E5E5EA;display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:13px;color:#5046E5;font-weight:700;letter-spacing:0.5px">VEZI SOLUȚIA</span>
-          <span style="font-size:18px;color:#5046E5">→</span>
+        <div class="case-foot">
+          <span class="lnk">VEZI SOLUȚIA</span>
+          <span class="arw">→</span>
         </div>
       </a>
     </div>
 
-    
+    <div class="cases-cta">
+      <p class="cases-cta-text" data-i18n="cases.cta_text">Vrei un sistem ca acestea pentru afacerea ta?</p>
+      <a href="https://wa.me/37378000019" target="_blank" rel="noopener" class="cases-cta-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z"/></svg>
+        <span data-i18n="cases.cta_btn">Sună-ne acum</span>
+      </a>
+    </div>
+
   </div>
 </section>
 <!-- ═══════════════════════════════════════════════════════════════════
@@ -3980,16 +4096,28 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <span class="gradient-text" data-i18n="pricing.h2">Fără surprize la facturare.</span>
       </h2>
       <p class="section-sub" data-i18n="pricing.sub">
-        Patru pachete în funcție de cât de adânc vrei să mergem. Ofertăm la cerere pentru a personaliza investiția pe specificul tău — nu credem în prețuri generice. Răspuns &lt;24h.
+        Patru pachete, în funcție de cât de adânc mergem împreună — cu preț clar de la început.
       </p>
     </div>
+
+    <div class="price-range">
+      <div class="price-range-item">
+        <div class="price-range-val" data-i18n="pricing.range_val1">3.000–7.000 €</div>
+        <div class="price-range-lbl" data-i18n="pricing.range_lbl1">o singură dată · pe viață</div>
+      </div>
+      <div class="price-range-or" data-i18n="pricing.range_or">sau / și</div>
+      <div class="price-range-item">
+        <div class="price-range-val" data-i18n="pricing.range_val2">25–300 €</div>
+        <div class="price-range-lbl" data-i18n="pricing.range_lbl2">pe lună · abonament</div>
+      </div>
+    </div>
+    <p class="price-range-note" data-i18n="pricing.range_note">În funcție de soft, nevoile tale și mărimea afacerii. Nu vorbim de zeci de mii — ajustăm pachetul pe bugetul tău. Toate includ deploy, training și 30 zile mentenanță; plata în 2 tranșe.</p>
 
     <div class="pricing-grid">
       <div class="pricing-card">
         <div class="pricing-tier" data-i18n="pricing.t1_tier">Punctual</div>
         <div class="pricing-name" data-i18n="pricing.t1_name">Audit</div>
         <div class="pricing-desc" data-i18n="pricing.t1_desc">Diagnostic complet al business-ului tău</div>
-        <div class="pricing-price" data-i18n="pricing.t1_price">La cerere</div>
         <div class="pricing-duration" data-i18n="pricing.t1_duration">2-4 săptămâni</div>
         <ul class="pricing-features">
           <li data-i18n="pricing.t1_f1">Audit operațional complet</li>
@@ -4003,8 +4131,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       <div class="pricing-card featured">
         <div class="pricing-tier" data-i18n="pricing.t2_tier">Recomandat</div>
         <div class="pricing-name" data-i18n="pricing.t2_name">Implementare</div>
-        <div class="pricing-desc" data-i18n="pricing.t2_desc">Sisteme CRM/ERP end-to-end</div>
-        <div class="pricing-price" data-i18n="pricing.t2_price">La cerere</div>
+        <div class="pricing-desc" data-i18n="pricing.t2_desc">Sisteme CRM/ERP complete, de la zero la lansare</div>
         <div class="pricing-duration" data-i18n="pricing.t2_duration">4-8 săptămâni</div>
         <ul class="pricing-features">
           <li data-i18n="pricing.t2_f1">Selecție și config sistem</li>
@@ -4020,7 +4147,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <div class="pricing-tier" data-i18n="pricing.t3_tier">Premium</div>
         <div class="pricing-name" data-i18n="pricing.t3_name">Transformare</div>
         <div class="pricing-desc" data-i18n="pricing.t3_desc">Program complet de transformare</div>
-        <div class="pricing-price" data-i18n="pricing.t3_price">La cerere</div>
         <div class="pricing-duration" data-i18n="pricing.t3_duration">8-16 săptămâni</div>
         <ul class="pricing-features">
           <li data-i18n="pricing.t3_f1">Strategie + sisteme + procese</li>
@@ -4036,7 +4162,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <div class="pricing-tier" data-i18n="pricing.t4_tier">Continuu</div>
         <div class="pricing-name" data-i18n="pricing.t4_name">Advisory</div>
         <div class="pricing-desc" data-i18n="pricing.t4_desc">Consiliere strategică permanentă</div>
-        <div class="pricing-price" data-i18n="pricing.t4_price">La cerere</div>
         <div class="pricing-duration" data-i18n="pricing.t4_duration">Lunar, flexibil</div>
         <ul class="pricing-features">
           <li data-i18n="pricing.t4_f1">Ședințe lunare</li>
@@ -4533,9 +4658,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       <div class="section-eyebrow" data-i18n="contact.eyebrow">Hai să vorbim</div>
       <h2>
         <span data-i18n="contact.h1">Evaluare gratuită</span><br>
-        <span style="background:linear-gradient(135deg,#5046E5 0%,#EC4899 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text" data-i18n="contact.h2">30 minute.</span>
+        <span style="color:#5046E5" data-i18n="contact.h2">30 minute.</span>
       </h2>
-      <p data-i18n="contact.sub">Lasă-ne datele tale și revenim în maximum 2 ore în zilele lucrătoare. Sau scrie-ne direct pe WhatsApp.</p>
+      <p data-i18n="contact.sub">Sună-ne, scrie-ne un email sau dă-ne un mesaj pe WhatsApp — răspundem în maximum 2 ore în zilele lucrătoare.</p>
 
       <div class="contact-methods">
         <a href="tel:+37378000019" class="contact-method">
@@ -4567,37 +4692,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         </a>
       </div>
     </div>
-
-    <form class="contact-form" id="contact-form">
-      <div class="form-group">
-        <label data-i18n="form.name">Numele tău</label>
-        <input type="text" name="name" required>
-      </div>
-      <div class="form-group">
-        <label data-i18n="form.email">Email</label>
-        <input type="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label data-i18n="form.phone">Telefon</label>
-        <input type="tel" name="phone" placeholder="+373 XX XXX XXX">
-      </div>
-      <div class="form-group">
-        <label data-i18n="form.company">Compania</label>
-        <input type="text" name="company" required>
-      </div>
-      <div class="form-group">
-        <label data-i18n="form.size">Dimensiunea echipei</label>
-        <select name="size">
-          <option data-i18n="form.size_1">1-10 persoane</option>
-          <option data-i18n="form.size_2">10-50 persoane</option>
-          <option data-i18n="form.size_3">50-200 persoane</option>
-          <option data-i18n="form.size_4">200+ persoane</option>
-        </select>
-      </div>
-      <button type="submit" data-i18n="form.submit">
-        Trimite cererea
-      </button>
-    </form>
   </div>
 </section>
 
@@ -4865,9 +4959,9 @@ const translations = {
     "ru": "Связаться"
   },
   "hero.badge": {
-    "ro": "Studio software & consulting · Chișinău",
-    "en": "Software studio & consulting · Chișinău",
-    "ru": "Студия ПО и консалтинг · Кишинёв"
+    "ro": "Software studio · Chișinău, Moldova",
+    "en": "Software studio · Chișinău, Moldova",
+    "ru": "Студия разработки · Кишинёв, Молдова"
   },
   "hero.h1": {
     "ro": "Sisteme operaționale pentru afaceri",
@@ -4875,14 +4969,14 @@ const translations = {
     "ru": "Операционные системы для бизнеса"
   },
   "hero.h2": {
-    "ro": "care nu mai vor să piardă timp.",
-    "en": "that won't waste time anymore.",
-    "ru": "которые не хотят терять время."
+    "ro": "care nu mai vor să piardă.",
+    "en": "that are done losing.",
+    "ru": "которым надоело терять."
   },
   "hero.sub": {
-    "ro": "Construim software vertical pentru cafenele, saloane, notari, crame, service-uri auto și firme de curierat. Soluții deja validate, pe care le personalizăm pentru tine — nu reinventăm roata la fiecare proiect.",
-    "en": "We build vertical software for cafés, salons, notaries, wineries, auto services and courier companies. Already validated solutions that we personalize for you — we don't reinvent the wheel for each project.",
-    "ru": "Строим вертикальное ПО для кафе, салонов, нотариусов, виноделен, автосервисов и курьерских служб. Уже проверенные решения, которые мы адаптируем под вас."
+    "ro": "Construim software vertical pentru clinici, cafenele, saloane, notari, crame, service-uri auto și orice business mic sau mijlociu. Soluții deja validate, pe care le personalizăm pentru tine — nu reinventăm roata la fiecare proiect.",
+    "en": "We build vertical software for clinics, cafés, salons, notaries, wineries, auto shops and any small or medium business. Already validated solutions that we personalize for you — we don't reinvent the wheel for each project.",
+    "ru": "Строим вертикальное ПО для клиник, кафе, салонов, нотариусов, виноделен, автосервисов и любого малого или среднего бизнеса. Уже проверенные решения, которые мы адаптируем под вас — не изобретаем колесо в каждом проекте."
   },
   "hero.cta1": {
     "ro": "Rezerva evaluare gratuită · 30 min",
@@ -4893,6 +4987,21 @@ const translations = {
     "ro": "Vezi cum lucrăm",
     "en": "See how we work",
     "ru": "Как мы работаем"
+  },
+  "hero.trust1": {
+    "ro": "Fără obligații",
+    "en": "No commitment",
+    "ru": "Без обязательств"
+  },
+  "hero.trust2": {
+    "ro": "Răspuns în 24h",
+    "en": "Reply within 24h",
+    "ru": "Ответ за 24 часа"
+  },
+  "hero.trust3": {
+    "ro": "Confidențial · NDA la cerere",
+    "en": "Confidential · NDA on request",
+    "ru": "Конфиденциально · NDA по запросу"
   },
   "hero.kpi1": {
     "ro": "Verticale specializate",
@@ -5458,6 +5567,16 @@ const translations = {
     "en": "Four clients who gave us access to build their systems and six internally developed vertical solutions — all with mockups, tech stack and real data. Click any card for details.",
     "ru": "Четыре клиента, доверивших нам построить их системы, и шесть внутренних вертикальных решений — со скриншотами, стеком и реальными данными. Кликни любую карточку."
   },
+  "cases.cta_text": {
+    "ro": "Vrei un sistem ca acestea pentru afacerea ta?",
+    "en": "Want a system like these for your business?",
+    "ru": "Хотите такую систему для своего бизнеса?"
+  },
+  "cases.cta_btn": {
+    "ro": "Sună-ne acum",
+    "en": "Call us now",
+    "ru": "Позвоните нам"
+  },
   "case.c1_sector": {
     "ro": "Educație · Muzică · Chișinău",
     "en": "Education · Music · Chișinău",
@@ -5634,9 +5753,39 @@ const translations = {
     "ru": "Никаких сюрпризов в счёте."
   },
   "pricing.sub": {
-    "ro": "Patru pachete în funcție de cât de adânc vrei să mergem. Toate includ deploy complet, training și 30 zile mentenanță inclusă. Plată în 2 tranșe (50% start, 50% go-live).",
-    "en": "Four packages depending on how deep we go. All include full deploy, training and 30 days maintenance. Payment in 2 installments (50% start, 50% go-live).",
-    "ru": "Четыре пакета в зависимости от глубины проекта. Все включают полное внедрение, обучение и 30 дней поддержки."
+    "ro": "Patru pachete, în funcție de cât de adânc mergem împreună — cu preț clar de la început.",
+    "en": "Four packages, depending on how deep we go together — with a clear price from the start.",
+    "ru": "Четыре пакета — в зависимости от глубины работы, с понятной ценой с самого начала."
+  },
+  "pricing.range_val1": {
+    "ro": "3.000–7.000 €",
+    "en": "€3,000–7,000",
+    "ru": "3 000–7 000 €"
+  },
+  "pricing.range_lbl1": {
+    "ro": "o singură dată · pe viață",
+    "en": "one-time · lifetime",
+    "ru": "разово · навсегда"
+  },
+  "pricing.range_or": {
+    "ro": "sau / și",
+    "en": "or / and",
+    "ru": "или / и"
+  },
+  "pricing.range_val2": {
+    "ro": "25–300 €",
+    "en": "€25–300",
+    "ru": "25–300 €"
+  },
+  "pricing.range_lbl2": {
+    "ro": "pe lună · abonament",
+    "en": "per month · subscription",
+    "ru": "в месяц · подписка"
+  },
+  "pricing.range_note": {
+    "ro": "În funcție de soft, nevoile tale și mărimea afacerii. Nu vorbim de zeci de mii — ajustăm pachetul pe bugetul tău. Toate includ deploy, training și 30 zile mentenanță; plata în 2 tranșe.",
+    "en": "Depending on the software, your needs and company size. We're not talking tens of thousands — we adjust the package to your budget. All include deploy, training and 30 days maintenance; payment in 2 installments.",
+    "ru": "В зависимости от софта, задач и размера бизнеса. Речь не о десятках тысяч — подстраиваем пакет под твой бюджет. Всё включает внедрение, обучение и 30 дней поддержки; оплата в 2 транша."
   },
   "pricing.t1_tier": {
     "ro": "Punctual",
@@ -5694,9 +5843,9 @@ const translations = {
     "ru": "Внедрение"
   },
   "pricing.t2_desc": {
-    "ro": "Sisteme CRM/ERP end-to-end",
-    "en": "End-to-end CRM/ERP systems",
-    "ru": "CRM/ERP под ключ"
+    "ro": "Sisteme CRM/ERP complete, de la zero la lansare",
+    "en": "Complete CRM/ERP systems, from zero to launch",
+    "ru": "Полные CRM/ERP системы, от нуля до запуска"
   },
   "pricing.t2_price": {
     "ro": "La cerere",
@@ -6444,9 +6593,9 @@ const translations = {
     "ru": "Доступность"
   },
   "cov.nord_val": {
-    "ro": "La cerere",
-    "en": "On request",
-    "ru": "По запросу"
+    "ro": "Pe proiect",
+    "en": "Per project",
+    "ru": "Под проект"
   },
   "cov.sud_desc": {
     "ro": "Cahul, Comrat, Ungheni. Sesiuni hibride sau on-site pentru proiecte cu specificul regional.",
@@ -6459,9 +6608,9 @@ const translations = {
     "ru": "Доступность"
   },
   "cov.sud_val": {
-    "ro": "La cerere",
-    "en": "On request",
-    "ru": "По запросу"
+    "ro": "Pe proiect",
+    "en": "Per project",
+    "ru": "Под проект"
   },
   "cov.s1": {
     "ro": "Companii deservite",
@@ -6918,7 +7067,7 @@ if('serviceWorker' in navigator && location.protocol === 'https:'){
   var GROUPS = [
     {sel:'.concepts-grid', visible:3, ro:'Vezi toți cei 6 termeni', en:'See all 6 terms', ru:'Показать все 6 терминов', mode:'children'},
     {sel:'.industries-grid', visible:6, ro:'Vezi toate cele 11 industrii', en:'See all 11 industries', ru:'Показать все 11 отраслей', mode:'children'},
-    {sel:'#cases-internal', visible:0, ro:'Vezi toate proiectele B4B (6)', en:'See all B4B projects (6)', ru:'Все проекты B4B (6)', mode:'whole'},
+    {sel:'#cases-real', visible:6, ro:'Vezi toate proiectele (11)', en:'See all projects (11)', ru:'Все проекты (11)', mode:'children'},
     {sel:'.team-grid', visible:3, ro:'Vezi toată echipa (5)', en:'See full team (5)', ru:'Вся команда (5)', mode:'children'}
   ];
   var LESS = {ro:'Arată mai puțin', en:'Show less', ru:'Свернуть'};
@@ -6947,6 +7096,7 @@ if('serviceWorker' in navigator && location.protocol === 'https:'){
     apply();
     btn.addEventListener('click',function(){
       it.open=!it.open; apply(); label(it);
+      if(it.open){ it.el.querySelectorAll('.reveal').forEach(function(r){ r.classList.add('visible'); }); }
       if(!it.open) wrap.scrollIntoView({behavior:'smooth',block:'center'});
     });
     items.push(it);
