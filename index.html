@@ -1208,6 +1208,35 @@ section{
 /* ═══════════════════════════════════════════════════════════════════
    PRICING SECTION
    ═══════════════════════════════════════════════════════════════════ */
+/* ═══ DE CE B4B (elevator pitch under hero) ═══ */
+.why{
+  padding:80px 32px;
+  background:var(--white);
+  border-top:1px solid var(--gray-100);
+}
+.why .section-inner{max-width:820px;margin:0 auto;text-align:center}
+.why .section-eyebrow{justify-content:center;margin-bottom:20px}
+.why-lead{
+  font-size:clamp(24px, 3.4vw, 34px);
+  font-weight:800;
+  letter-spacing:-0.02em;
+  line-height:1.28;
+  color:var(--black);
+  max-width:760px;
+  margin:0 auto 24px;
+  text-wrap:balance;
+}
+.why-accent{color:var(--primary)}
+.why-body{
+  font-size:clamp(16px, 1.6vw, 18px);
+  line-height:1.7;
+  color:var(--gray-500);
+  max-width:640px;
+  margin:0 auto;
+  text-wrap:pretty;
+}
+@media(max-width:600px){.why{padding:56px 20px}}
+
 .pricing{background:var(--gray-50)}
 /* Price-range callout */
 .price-range{
@@ -1828,6 +1857,25 @@ body.menu-open{overflow:hidden}
   .case-results{grid-template-columns:1fr}
   .about-stat-grid{grid-template-columns:1fr}
   .price-range{flex-direction:column;gap:16px}
+
+  /* ── Mobile polish ── */
+  /* Headings: less oversized on small screens */
+  .section-h{font-size:28px}
+  h1.hero-h{font-size:36px}
+  /* Testimonials: shorter, tighter cards */
+  #testimonials{padding:56px 20px !important}
+  .test-grid{gap:16px !important}
+  .test-grid > div{padding:26px 22px !important}
+  .test-grid > div p[data-i18n^="test.t"]{font-size:15px !important;line-height:1.6 !important}
+  /* Pricing: kill dead space, tighter cards */
+  .pricing-card{padding:26px 22px}
+  .pricing-desc{min-height:0;margin-bottom:14px}
+  .pricing-duration{margin-bottom:14px}
+  .pricing-features{padding:16px 0;margin-bottom:18px}
+  .pricing-features li{padding:6px 0}
+  /* Floating buttons: smaller, tucked into corner so they don't cover text */
+  .whatsapp-float{width:50px;height:50px;bottom:16px;right:14px}
+  .scroll-top{width:38px;height:38px;bottom:74px;right:20px}
 }
 
 /* Animations */
@@ -2141,6 +2189,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <div class="lbl" data-i18n="hero.kpi4">MPay · SFS · GDPR</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     DE CE B4B (elevator pitch)
+     ═══════════════════════════════════════════════════════════════════ -->
+<section class="why" id="why">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal" data-i18n="why.eyebrow">De ce B4B</div>
+    <p class="why-lead reveal"><span data-i18n="why.lead1">Construim sisteme operaționale pentru afaceri care nu mai vor să piardă — </span><span class="why-accent" data-i18n="why.lead2">timp, bani sau clienți.</span></p>
+    <p class="why-body reveal" data-i18n="why.body">SMB-urile își țin, în mare parte, operațiunile în Excel-uri, mesaje pe WhatsApp și în capul proprietarului. Rezultatul? Comenzi uitate, clienți care pleacă la concurenți, zile întregi pierdute pe rapoarte făcute manual și zero imagine clară asupra a ceea ce se întâmplă cu adevărat.</p>
   </div>
 </section>
 
@@ -5007,6 +5066,26 @@ const translations = {
     "ro": "Confidențial · NDA la cerere",
     "en": "Confidential · NDA on request",
     "ru": "Конфиденциально · NDA по запросу"
+  },
+  "why.eyebrow": {
+    "ro": "De ce B4B",
+    "en": "Why B4B",
+    "ru": "Почему B4B"
+  },
+  "why.lead1": {
+    "ro": "Construim sisteme operaționale pentru afaceri care nu mai vor să piardă — ",
+    "en": "We build operational systems for businesses that are done losing — ",
+    "ru": "Мы строим операционные системы для бизнеса, который больше не хочет терять — "
+  },
+  "why.lead2": {
+    "ro": "timp, bani sau clienți.",
+    "en": "time, money or customers.",
+    "ru": "время, деньги или клиентов."
+  },
+  "why.body": {
+    "ro": "SMB-urile își țin, în mare parte, operațiunile în Excel-uri, mesaje pe WhatsApp și în capul proprietarului. Rezultatul? Comenzi uitate, clienți care pleacă la concurenți, zile întregi pierdute pe rapoarte făcute manual și zero imagine clară asupra a ceea ce se întâmplă cu adevărat.",
+    "en": "Most SMBs run their operations in spreadsheets, WhatsApp messages and the owner's head. The result? Forgotten orders, customers leaving for competitors, whole days lost on manual reports, and zero clear picture of what's actually going on.",
+    "ru": "Малый и средний бизнес по большей части ведёт операции в Excel-таблицах, переписках в WhatsApp и в голове у собственника. Результат? Забытые заказы, клиенты, уходящие к конкурентам, целые дни, потраченные на отчёты вручную, и ноль ясной картины того, что происходит на самом деле."
   },
   "hero.kpi1": {
     "ro": "Verticale specializate",
